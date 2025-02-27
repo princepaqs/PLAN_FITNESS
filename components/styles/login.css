@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+/* 🔹 Main Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;  
+    height: 100%;
+}
+
+/* 🔹 Left Section (Header) */
+.header {
+    background-color: #8C0909;
+    width: 50%;
+    height: 100%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 10%;
+    flex-direction: column;
+}
+
+/* Title & Text */
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    font-family: "Gajraj One", sans-serif;
+    font-size: 7vw; 
+    text-align: left;
+    line-height: 6vw;
+    text-shadow: 
+        -2px -2px 0 black, 
+         2px -2px 0 black, 
+        -2px  2px 0 black, 
+         2px  2px 0 black;
+}
+
+/* Logo */
+.logo {
+    /* width: auto; */
+    /* height: 50%; */
+    margin-bottom: 5%;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 1vw;
+    font-style: italic;
+    text-align: left;
+    margin-top: 10%;
+}
+
+/* 🔹 Right Section (Login Form) */
+.login-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    
+    padding: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* align-items: center; */
+}
+
+h3 {
+    /* font-size: 3vw; */
+    text-align: center;
+    color: #8C0909;
+    margin-bottom: 10%;
+}
+
+label {
+    color: #8C0909;
+    font-size: 1vw;
+}
+
+input {
+    margin-bottom: 3%;
+    width: 100%;
+    height: 6vh;
+    padding: 3%;
+    font-size: 1vw;
+    text-align: left;
+}
+
+button {
+    background-color: #8C0909;
+    width: 100%;
+    color: white;
+    margin-top: 10%;
+    padding: 3%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1vw;
+    align-self: center;
+}
+
+/* 🌟 Responsive Styles */
+
+/* 🖥️ For Desktop Screens (Above 1280px) */
+@media (min-width: 1280px) {
+    .text {
+        font-size: 7vw;
+        line-height: 6vw;
+    }
+
+    .logo {
+        height: 70%;
+    }
+
+    h3 {
+        font-size: 2vw;
+    }
+
+    input {
+        font-size: 1vw;
+        height: 5vh;
+    }
+
+    button {
+        font-size: 1vw;
+    }
+}
+
+/* 📱 For Tablets (768px - 1279px) */
+@media (max-width: 1279px) {
+    .text {
+        font-size: 6vw;
+        line-height: 6vw;
+    }
+
+    .logo {
+        height: 50%;
+    }
+
+    .header {
+        padding: 5%;
+    }
+
+    label{
+        text-align: left;
+    }
+
+    .login-container {
+        padding: 10%;
+    }
+
+    input {
+        height: 4vh;
+        font-size: 1vw;
+    }
+
+    button {
+        /* width: 70%; */
+        font-size: 1vw;
+    }
+}
+
+/* 📲 For Mobile Phones (Below 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header, .login-container {
+        width: 100%;
+        height: auto;
+        padding: 5%;
+        text-align: center;
+    }
+
+    .title {
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+    }
+
+    .text {
+        font-size: 10vw;
+        line-height: 8vw;
+        /* text-align: center; */
+    }
+
+    .logo {
+        width: 20%;
+    }
+
+    .subtitle {
+        margin-top: 2%;
+        font-size: 1.5vw;
+    }
+
+    h3 {
+        font-size: 3vw;
+    }
+
+    label {
+        font-size: 2vw;
+    }
+
+    input {
+        height: 100%;
+        /* width: 70%; */
+        font-size: 2vw;
+    }
+
+    form {
+        /* margin-top: 10%; */
+        padding: 10%;
+    }
+
+    button {
+        /* width: 50%; */
+        font-size: 2vw;
+    }
+}
