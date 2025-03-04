@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #8C0909;
+    color: white;
+    height: 100%;
+    width: 20%;
+    /* align-items: center; */
+    /* justify-content: center; */
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+img {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    width: 20%;
+    height: auto;
+    margin-bottom: 10%;
+}
+
+.name {
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.email {
+    font-size: smaller;
+    margin-bottom: 10%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+    margin-left: 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 50%;
+    text-align: left;
+    display: block;
+    /* justify-content: center; */
+    align-items: center;
+    font-weight: bold   ;
+}
+
+a:not(logout) {
+    margin-left: 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 50%;
+    text-align: left;
+}
+
+a:hover, a:active {
+    color: black;
+    background-color: white;
+}
+
+.sidebar a.active {
+    background-color: white;
+    color: black;
+}
+
+/* .sidebar a:not(.logout) {
+    color:white;
+    background-color: none;
+} */
+
+.logout {
+    margin-top: auto;
+    margin-bottom: 10%;
+    margin-left: 0%;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* font-weight: bold; */
+    font-size: 3vh;
+    align-self: center;
+    /* text-align: center;   */
+}
+
+.logout:hover {
+    color: black;
+    background-color: white;
+    /* padding: 10%; */
+}
+
+.content {
+    margin-left: 20%;
+    padding: 1%;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAN FITNESS</title>
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <img src="../assets/images/Icon.png" alt="logo" class="logo">
+                <div class="text">
+                    <span>PLAN</span>
+                    <span>FITNESS</span>
+                </div>
+            </div>
+            <div class="subtitle">
+                <h2>Plan your workouts, push your limits,</h2>
+                <h2>and achieve the results you deserve.</h2>
+            </div>
+        </div>
+        <div class="login-container">
+            <form class="login-form">
+                <h3>Login</h3>
+            
+                <label for="email">Email</label>
+                <input id="email" type="email">
+                <span id="email-error" class="error-message"></span> <!-- Error message -->
+            
+                <label for="password">Password</label>
+<div class="password-container">
+    <input id="password" type="password">
+    <span class="toggle-password material-symbols-outlined" id="toggle-password">visibility</span>
+    <!-- <span class="toggle-password material-symbols-outlined" id="toggle-password">visibility_off</span> -->
+</div>
+<span id="password-error" class="error-message"></span> <!-- Error message -->
+
+                <span id="password-error" class="error-message"></span> <!-- Error message -->
+            
+                <button id="login-btn">Login</button>
+            </form>
+            
+        </div>
+    </div>
+    <div class="error-message-box" id="error-message-box">
+        <span class="error-title">Login</span>
+        <p class="error-message-login" id="error-message-login">Test message.</p>
+        <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Close</button>
+    </div>
+</body>
+
+<script type="module" src="./javascript/index.js"></script>
+</html>
