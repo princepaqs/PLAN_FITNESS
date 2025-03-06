@@ -34,14 +34,14 @@ html, body {
     margin-bottom: 10%;
 }
 
-img {
+.profile-icon {
     border-radius: 50%;
     border-style: solid;
     border-width: 1px;
     border-color: black;
     width: 20%;
     height: auto;
-    margin-bottom: 10%;
+    margin-bottom: 1%;
 }
 
 .name {
@@ -72,8 +72,8 @@ a {
 
 a:not(logout) {
     margin-left: 20%;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     padding-left: 3%;
     padding-right: 50%;
     text-align: left;
@@ -86,7 +86,7 @@ a:hover, a:active {
 
 .sidebar a.active {
     background-color: white;
-    color: black;
+    color: #8C0909;
 }
 
 /* .sidebar a:not(.logout) {
@@ -119,3 +119,69 @@ a:hover, a:active {
     height: 100%;
     overflow: auto;
 }
+
+.header {
+    height: 30%;
+    background-color: #7cdd84cc;
+}
+
+.header1 {
+    height: 100%;
+    width: 50%;
+    flex-direction: row;
+    /* background-color: #dd7c7ccc; */
+}
+
+.title {
+    font-family: "Gajraj One", sans-serif;
+    /* background-color: #cccc; */
+}
+
+.title-icon {
+    height: 15vh;
+    width: auto;
+}
+
+.title-name {
+    height: 15vh;
+}
+
+.page-title {
+    /* font-family: "Poppins", "sans-serif"; */
+    font-size: 5vh;
+    font-weight: 600;
+    color: #8C0909;
+}
+
+.page-profile {
+    flex-direction: row;
+    box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1%;
+    margin: 2vh;
+}
+
+.page-profile-content {
+    font-size: 3vh;
+    width: 100%;
+    /* display: grid; */
+    /* background-color: aqua; */
+    align-items: flex-end;
+}
+
+.username {
+    color: #8C0909;
+    font-weight: bold;
+}
+
+.usericon {
+    height: 7vh;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    object-fit: cover;
+}
+

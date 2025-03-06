@@ -40,10 +40,10 @@ html, body {
 }
 
 .text {
-    display: flex;
+    display: none;
     flex-direction: column;
     font-family: "Gajraj One", sans-serif;
-    font-size: 7vw; 
+    font-size: 3vw; 
     text-align: left;
     line-height: 6vw;
     text-shadow: 
@@ -55,9 +55,9 @@ html, body {
 
 /* Logo */
 .logo {
-    /* width: auto; */
-    /* height: 50%; */
-    margin-bottom: 5%;
+    width: auto;
+    height: 100%;
+    /* margin-bottom: 5%; */
 }
 
 /* Subtitle */
@@ -65,7 +65,7 @@ html, body {
     font-size: 1vw;
     font-style: italic;
     text-align: left;
-    margin-top: 10%;
+    /* margin-top: 5%; */
 }
 
 /* 🔹 Right Section (Login Form) */
@@ -190,6 +190,7 @@ button {
     font-size: .7vw;
     text-align: center;
     margin-top: 10%;
+    margin-bottom: 10%;
     /* justify-content: center; */
 }
 
