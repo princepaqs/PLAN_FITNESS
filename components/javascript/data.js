@@ -4,19 +4,22 @@ const trainers = [
         id: 'T001',
         name: 'Prince Paquiado',
         contact: '09123456789',
-        status: 'Available'
+        status: 'Available',
+        profile: '../../assets/images/Icon.png'
     },
     {
         id: 'T002',
         name: 'Lexus Guevara',
         contact: '09123456789',
-        status: 'Available'
+        status: 'Available',
+        profile: '../../assets/images/Icon.png'
     },
     {
         id: 'T003',
         name: 'Nicole Frances Meneses',
         contact: '09123456789',
-        status: 'On Leave'
+        status: 'On Leave',
+        profile: '../../assets/images/Icon.png'
     }
 ]
 

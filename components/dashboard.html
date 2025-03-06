@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=manage_search" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=swap_vert" />
 </head>
 <body>
     <div class="sidebar">
@@ -26,7 +29,7 @@
         <a class="logout" href="login.html">Log out</a>
     </div>
     <div class="content">
-        <div class="headers">
+        <header class="headers">
             <div class="header1">
                 <div class="title">
                     <img class="title-icon" src="../assets/images/Icon.png" alt="">
@@ -43,12 +46,61 @@
                 </div>
             </div>
             <div class="header2">
-
+                <div class="dateTime">
+                    <p class="date" id="date">Day name, Month, Day, Year</p>
+                    <p class="time" id="time">hh:mm AM/PM</p>
+                </div>
+                <div class="report">
+                    <div class="report-title">Report</div>
+                    <div class="report-content">
+                        <div class="report-members-content">
+                            <p class="total-new-members">Total New Members this Month</p>
+                            <span class="members">10</span>
+                            <p class="total-members-increase">+125% from last month</p>
+                        </div>
+                        <div class="report-sales-content">
+                            <div class="total-sales">Total Sales this Month</div>
+                            <div class="sales">₱125,766</div>
+                            <div class="total-sales-increase">+50% from last month</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
+        <section class="dashboard-content">
+            <div class="trainers">
+                <div class="trainer-title">Trainers</div>
+                <ul class="trainer-members" id="trainerList">
+                    <!-- Trainers will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div class="active-members">
+                <div class="table-header">
+                    <div class="members-title">Active Members</div>
+                    <div class="search-wrapper">
+                        <input type="search" name="search" id="search" class="member-search" placeholder="Search" oninput="searchTable()">
+                        <!-- <span class="material-symbols-outlined search-icon">search</span> -->
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="member-table">
+                        <thead>
+                            <tr>
+                                <th>Member ID</th>
+                                <th onclick="sortTable(1)">Name <span class="material-symbols-outlined">swap_vert</span></th>
+                                <th onclick="sortTable(2, true)">Plan Date Start <span class="material-symbols-outlined">swap_vert</span></th>
+                                <th onclick="sortTable(3, true)">Plan Date Expiry <span class="material-symbols-outlined">swap_vert</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="active-members-lists"></tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </section>
     </div>
     
 </body>
 
-<script src="./javascript/dashboard.js"></script>
+<script type="module" src="./javascript/dashboard.js"></script>
 </html>

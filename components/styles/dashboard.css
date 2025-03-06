@@ -76,7 +76,7 @@ a:not(logout) {
     padding-bottom: 5%;
     padding-left: 3%;
     padding-right: 50%;
-    text-align: left;
+    text-align: left;   
 }
 
 a:hover, a:active {
@@ -120,9 +120,11 @@ a:hover, a:active {
     overflow: auto;
 }
 
-.header {
-    height: 30%;
-    background-color: #7cdd84cc;
+.headers {
+    height: 40%;
+    /* background-color: #7cdd84cc; */
+    flex-direction: row;
+    display: flex;
 }
 
 .header1 {
@@ -184,4 +186,167 @@ a:hover, a:active {
     border-color: black;
     object-fit: cover;
 }
+
+.header2 {
+    /* background-color: aquamarine; */
+    height: 100%;
+    width: 50%;
+    flex-direction: row;
+}
+
+.dateTime {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* box-shadow: 5px 5px 10px 2px rgb(138, 138, 138); */
+    width: 50%;
+    margin-left: auto;
+    padding: 1%;
+}
+
+.report {
+    margin-top: 3%;
+    /* height: 100%; */
+    box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
+    padding: 2%;
+}
+
+.report-title {
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+.report-content {
+    flex-direction: row;
+    display: flex;
+}
+
+.report-members-content, .report-sales-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+.members, .sales {
+    font-size: 6vh;
+    font-weight: bold;
+    margin-top: 10%;
+}
+
+.total-members-increase, .total-sales-increase {
+    font-style: italic;
+    color: #8C0909;
+}
+
+.dashboard-content {
+    height: 60%;
+    /* background-color: #dd7c7ccc; */
+    display: flex;
+    flex-direction: row;
+}
+
+.trainers {
+    width: 20%;
+    padding: 2%;
+    box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
+    /* background-color: aquamarine; */
+}
+
+.trainer-title, .members-title {
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.trainer-members {
+    display: flex;
+    flex-direction: column;
+}
+
+.trainer-details {
+    display: flex;
+    align-items: left;
+    font-weight: bold;
+    /* justify-content: space-between; */
+    width: 100%;
+    margin-top: 3%;
+}
+
+.trainer-profile {
+    height: 5vh;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    object-fit: cover;
+    margin-right: 5%;
+}
+
+.active-members {
+    width: 80%;
+    margin-top: 2%;
+    padding-left: 2%;
+    position: relative;
+    overflow-y: auto;
+}
+
+.table-header {
+    padding-bottom: 2%;
+}
+
+.members-title, .members-search, .table-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.member-search {
+    /* padding-right: 30px; Make room for the icon */
+    padding: 1%;
+    width: 30%;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;  /* Position the icon inside the input, on the right */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the icon */
+    pointer-events: none; /* Make the icon unclickable */
+}
+
+.table-container {
+    width: 100%;
+    border-spacing: 5%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    background-color: white;
+    top: 15%;
+    position: sticky;
+}
+
+td {
+    padding: 1%;
+    white-space: nowrap;
+}
+
+/* .member-table, tr, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+} */
+
+
+
+
 
