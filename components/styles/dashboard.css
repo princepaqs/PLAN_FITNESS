@@ -50,7 +50,7 @@ html, body {
 }
 
 .email {
-    font-size: smaller;
+    font-size: .8vw;
     margin-bottom: 10%;
 }
 
@@ -67,7 +67,7 @@ a {
     display: block;
     /* justify-content: center; */
     align-items: center;
-    font-weight: bold   ;
+    font-weight: bold;
 }
 
 a:not(logout) {
@@ -86,7 +86,7 @@ a:hover, a:active {
 
 .sidebar a.active {
     background-color: white;
-    color: #8C0909;
+    color: black;
 }
 
 /* .sidebar a:not(.logout) {
@@ -134,11 +134,6 @@ a:hover, a:active {
     /* background-color: #dd7c7ccc; */
 }
 
-.title {
-    font-family: "Gajraj One", sans-serif;
-    /* background-color: #cccc; */
-}
-
 .title-icon {
     height: 15vh;
     width: auto;
@@ -161,8 +156,9 @@ a:hover, a:active {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1%;
-    margin: 2vh;
+    padding: 2%;
+    /* margin: 2%; */
+    width: 98%;
 }
 
 .page-profile-content {
@@ -346,7 +342,422 @@ td {
     border-collapse: collapse;
 } */
 
+@media (max-width: 1279px) {
 
+    .sidebar {
+        width: 20%;
+    }
+    
+    a {
+        font-size: 1.5vh;
+    }
+
+    .logout {
+        font-size: 2vh;
+    }
+
+    .content {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    .headers {
+        height: 35%;
+    }
+    
+    .title-icon, .title-name {
+        height: 10vh;
+    }
+
+    .page-title {
+        font-size: 3vh;
+    }
+
+    .page-profile-content {
+        font-size: 2vh;
+    }
+
+    .usericon {
+        height: 5vh;
+    }
+
+    .username {
+        font-size: 2vh;
+    }
+
+    .dateTime {
+        font-size: 2vh;
+        width: 100%;
+    }
+
+    .report-title {
+        font-size: 2vh;
+    }
+
+    .report-content {
+        /* flex-direction: column; */
+    }
+
+    .report-members-content, .report-sales-content {
+        width: 100%;
+        margin: 2%;
+    }
+
+    .members, .sales {
+        font-size: 4vh;
+    }
+
+    .total-members-increase, .total-sales-increase {
+        font-size: 1.5vh;
+    }
+
+    .dashboard-content {
+        height: 65%;
+    }
+
+    .trainers {
+        width: 25%;
+    }
+
+    .trainer-title, .members-title {
+        font-size: 1.5vh;
+    }
+
+    .trainer-profile {
+        height: 3vh;
+    }
+
+    .trainer-members {
+        font-size: 1.5vh;
+    }
+
+    .active-members {
+        width: 90%;
+    }
+
+    .table-header {
+        padding-bottom: 1%;
+    }
+
+    .members-title, .members-search, .table-header {
+        font-size: 1.5vh;
+    }
+
+    .member-search {
+        padding: 1%;
+        width: 40%;
+    }
+
+    .search-icon {
+        right: 5px;
+    }
+
+    .table-container {
+        border-spacing: 2%;
+    }
+
+    th {
+        font-size: 1.5vh;
+        top: 10%;
+    }
+
+    td {
+        padding: 1%;
+        font-size: 1.5vh;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .sidebar {
+        width: 20%;
+    }
+
+    a {
+        font-size: 1.2vh;
+    }
+
+    .logout {
+        font-size: 1.8vh;
+    }
+
+    .content {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    .headers {
+        height: 30%;
+    }
+
+    .title-icon, .title-name {
+        height: 8vh;
+    }
+
+    .page-title {
+        font-size: 2.5vh;
+    }
+
+    .page-profile-content {
+        font-size: 1.8vh;
+    }
+
+    .usericon {
+        height: 4vh;
+    }
+
+    .username {
+        font-size: 1.8vh;
+    }
+
+    .dateTime {
+        font-size: 1.8vh;
+        width: 100%;
+    }
+
+    .report-title {
+        font-size: 1.8vh;
+    }
+
+    .report-content {
+        /* flex-direction: column; */
+    }
+
+    .report-members-content, .report-sales-content {
+        width: 100%;
+        margin: 2%;
+        font-size: 2vh;
+    }
+
+    .members, .sales {
+        font-size: 3vh;
+    }
+
+    .total-members-increase, .total-sales-increase {
+        font-size: 1.2vh;
+    }
+
+    .dashboard-content {
+        height: 70%;
+    }
+
+    .trainers {
+        width: 30%;
+    }
+
+    .trainer-title, .members-title {
+        font-size: 1.2vh;
+    }
+
+    .trainer-profile {
+        height: 2.5vh;
+    }
+
+    .trainer-members {
+        font-size: 1.2vh;
+    }
+
+    .active-members {
+        width: 100%;
+    }
+
+    .table-header {
+        padding-bottom: 1%;
+    }
+
+    .members-title, .members-search, .table-header {
+        font-size: 1.2vh;
+    }
+
+    .member-search {
+        padding: 1%;
+        width: 50%;
+    }
+
+    .search-icon {
+        right: 5px;
+    }
+
+    .table-container {
+        border-spacing: 2%;
+    }
+
+    th {
+        font-size: 1.2vh;
+        top: 5%;
+    }
+
+    td {
+        padding: 1%;
+        font-size: 1.2vh;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .sidebar {
+        width: 100%;
+        height: 40%;
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .sidebar.hidden{
+        width: 100%;
+        height: 5%;
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        /* opacity: 0; */
+    }
+
+    .menu {
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Moves the menu icon to the right */
+        cursor: pointer;
+        font-size: 24px; /* Adjust size if needed */
+        color: white; /* Adjust color if needed */
+    }
+
+    /* .sidebar:hover, .sidebar:active {
+        height: 10%;
+    } */
+
+    .user {
+        margin-top: 12%;
+        margin-left: 5%;
+        margin-bottom: 0%;
+        align-items: center;
+    }
+
+    .profile-icon {
+        height: 4vh;
+        width: auto;
+    }
+
+    .name {
+        font-size: 2vh;
+    }
+
+    .email {
+        font-size: 1.5vh;
+        margin-bottom: 5%;
+    }
+
+    a {
+        flex-direction: row;
+        font-size: 1.5vh;
+        margin-left: 0%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    a:not(logout) {
+        margin-left: 0%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        /* text-align: right;    */
+    }
+
+    .logout {
+        font-size: 1.5vh;
+    }
+
+    .title-icon, .title-name {
+        height: 5vh;
+    }
+
+    .page-title {
+        font-size: 2vh;
+    }
+
+    .content {
+        flex-direction: column;
+        display: flex;
+        margin-left: 0%;
+        padding: 3%;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .headers {
+        height: 100%;
+        width: 100%;
+        margin: 0%;
+        flex-direction: column;
+    }
+
+    .header1 {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .page-title {
+        font-size: 3vh;
+    }
+
+    .page-profile {
+        display: flex;
+        margin: 1%;
+        margin-left: auto;
+        width: 50%;
+    }
+
+    .header2 {
+        height: auto%;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .dateTime {
+        display: flex;
+        align-items: end;
+        /* justify-content: space-between; */
+        width: 50%;
+        margin-top: 1%;
+        margin-left: auto;
+        padding: 1%;
+        font-size: 50%;
+    }
+
+    .report {
+        margin-top: 3%;
+        padding: 2%;
+        width: 100%;
+        margin-bottom: 2%;
+        /* display: flex; */
+    }
+
+    .dashboard-content {
+        height: 100%;
+        flex-direction: column;
+        display: flex;
+        /* margin-top: 5%; */
+    }
+
+    .trainers {
+        width: 100%;
+        padding: 2%;
+        display: f;
+        /* margin-top: 50%; */
+    }
+
+}
 
 
 

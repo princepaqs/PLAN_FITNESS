@@ -162,7 +162,7 @@ button {
     position: absolute;
     top: 0%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
+    transform: translate(-50%, -50%);
     font-weight: bold;
     visibility: hidden;
     /* flex-direction: row; */
@@ -172,7 +172,7 @@ button {
 .open-error-message-box {
     visibility: visible;
     top: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%);
     transition: transform 0.5s;
 }
 
@@ -180,14 +180,14 @@ button {
 
 .error-title {
     color: #8C0909;
-    font-size: 1vw;
+    font-size: 100%;
     text-align: left;
     margin-bottom: 20%;
 }
 
 .error-message-login {
     color: black;
-    font-size: .7vw;
+    font-size: 100%;
     text-align: center;
     margin-top: 10%;
     margin-bottom: 10%;
@@ -200,7 +200,7 @@ button {
     border-color: black;
     border-width: 1px;
     border-style: solid;
-    font-size: 1vw;
+    font-size: 100%;
     text-align: center;
     width: 40%; 
     justify-self: center;
@@ -272,6 +272,11 @@ button {
         /* width: 70%; */
         font-size: 1vw;
     }
+
+    .error-message-box {
+        font-size: 50%;
+        width: 30%;
+    }
 }
 
 /* 📲 For Mobile Phones (Below 768px) */
@@ -332,5 +337,10 @@ button {
     button {
         /* width: 50%; */
         font-size: 2vw;
+    }
+
+    .error-message-box {
+        /* font-size: 1.5vw; */
+        width: 50%;
     }
 }

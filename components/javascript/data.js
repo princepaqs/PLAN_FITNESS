@@ -1,8 +1,25 @@
+const cashiers = [
+    {
+        id: 'C001',
+        name: 'John Alvin P. Estrella',
+        email: 'admin@gmail.com', //alvin.admin@pf.com
+        password: 'admin',
+        contact: '09123456789',
+        address: 'San Marcos, Maypajo, Caloocan City, NCR',
+        dayOff: 'wednesday',
+        nickname: 'alvin',
+        dateHired: '01/01/2025',
+        status: 'active',
+    }
+]
+
 // Trainers
 const trainers = [
     {
         id: 'T001',
         name: 'Prince Paquiado',
+        email: 'prince@gmail.com',
+        password: 'prince',
         contact: '09123456789',
         status: 'Available',
         profile: '../../assets/images/Icon.png'
@@ -10,6 +27,8 @@ const trainers = [
     {
         id: 'T002',
         name: 'Lexus Guevara',
+        email: 'lexus@gmail.com',
+        password: 'lexus',
         contact: '09123456789',
         status: 'Available',
         profile: '../../assets/images/Icon.png'
@@ -17,6 +36,8 @@ const trainers = [
     {
         id: 'T003',
         name: 'Nicole Frances Meneses',
+        email: 'nicole@gmail.com',
+        password: 'nicole',
         contact: '09123456789',
         status: 'On Leave',
         profile: '../../assets/images/Icon.png'
@@ -141,20 +162,6 @@ const members = [
         plan: 'BFP-01',
         status: 'Active'
     },
-]
-
-const cashier = [
-    {
-        id: 'C001',
-        name: 'John Alvin P. Estrella',
-        email: 'alvin.admin@pf.com',
-        contact: '09123456789',
-        address: 'San Marcos, Maypajo, Caloocan City, NCR',
-        dayOff: 'wednesday',
-        nickname: 'alvin',
-        dateHired: '01/01/2025',
-        status: 'active',
-    }
 ]
 
 const plan = [
@@ -454,4 +461,4 @@ const logs = [
     },
 ]
 
-export { trainers, members, cashier, plan, transactions, logs };
+export { trainers, members, cashiers, plan, transactions, logs };

@@ -1,4 +1,4 @@
-import { trainers, cashier } from "./data.js";
+import { trainers, cashiers } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");
@@ -33,11 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
         validateField(emailInput, emailError, "Email is required");
         validateField(passwordInput, passwordError, "Password is required");
 
+        const cashierList = [...cashiers ].find(cashier => cashier.email === emailInput.value && cashier.password === passwordInput.value);
+        const trainerList = [...trainers ].find(trainer => trainer.email === emailInput.value && trainer.password === passwordInput.value);
+
         if (!emailInput.value.trim() || !passwordInput.value.trim()) {
             errorMessageBox.classList.add("open-error-message-box");
             errorMessageLogin.innerHTML = "Please fill in all fields!";
             return false;
-        } else if (emailInput.value == "admin@gmail.com" && passwordInput.value == "admin") {
+        } else if (cashierList) {
             // Show success message
             errorMessageBox.classList.add("open-error-message-box");
             errorMessageLogin.innerHTML = "You're all set! Logged in successfully.";
@@ -51,6 +54,21 @@ document.addEventListener("DOMContentLoaded", function () {
             // Redirect after 2 seconds
             setTimeout(() => {
                 window.location.href = "dashboard.html";
+            }, 2000);
+        } else if (trainerList) {
+            // Show success message
+            errorMessageBox.classList.add("open-error-message-box");
+            errorMessageLogin.innerHTML = "You're all set! Logged in successfully.";
+
+            // Hide the close button
+            closeErrorMessageBox.style.display = "none";
+
+            // Store email in local storage
+            localStorage.setItem("email", emailInput.value);
+
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = "dashboardTrainers.html";
             }, 2000);
         } else {
             errorMessageBox.classList.add("open-error-message-box");

@@ -1,12 +1,24 @@
-import { members, trainers } from './data.js'
+import { members, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
-// console.log("Email: ", emailInput);
 
-if(!emailInput){
+if (!emailInput) {
     alert("You are not logged in!");
-}else{
-    // alert("Welcome " + emailInput);
+} else {
+    // Find user in both trainers and cashiers lists
+    const userList = [...cashiers, ...trainers].find(user => user.email === emailInput);
+
+    if (!userList) {
+        alert("Invalid user!");
+    } else {
+        // Extract first name only
+        const firstName = userList.name.split(" ")[0];
+
+        // Update UI elements
+        document.getElementById('name').innerHTML = userList.name;
+        document.getElementById('email').innerHTML = userList.email;
+        document.getElementById('username').innerHTML = firstName;
+    }
 }
 
 function loadTrainers() {
@@ -15,42 +27,38 @@ function loadTrainers() {
     trainers.forEach(trainer => {
         const trainerItem = document.createElement('li');
         trainerItem.classList.add('trainer-details');
-        
+
         // Create the profile image element
         const trainerProfile = document.createElement('img');
         trainerProfile.src = trainer.profile;
         trainerProfile.alt = trainer.name;
         trainerProfile.classList.add('trainer-profile');
-        
+
         // Create the trainer name element
         const trainerName = document.createElement('div');
         trainerName.classList.add('trainer-name');
         trainerName.textContent = trainer.name;
-        
+
         // Append the profile image and name to the trainer item
         trainerItem.appendChild(trainerProfile);
         trainerItem.appendChild(trainerName);
-        
+
         // Append the trainer item to the list
         trainerList.appendChild(trainerItem);
     });
 }
-
-// Call the loadTrainers function when the page loads
 window.onload = loadTrainers;
 
 const dateElement = document.getElementById('date');
 const timeElement = document.getElementById('time');
 
-let currentDateTime = new Date();
-
-console.log(currentDateTime);
-
-let dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' };
-let timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
-
-dateElement.innerHTML = currentDateTime.toLocaleDateString('en-US', dateOptions);
-timeElement.innerHTML = currentDateTime.toLocaleTimeString('en-US', timeOptions);
+setInterval(() => {
+    let currentDateTime = new Date();
+    let dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' };
+    let timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+    dateElement.innerHTML = currentDateTime.toLocaleDateString('en-US', dateOptions);
+    timeElement.innerHTML = currentDateTime.toLocaleTimeString('en-US', timeOptions);
+}, 1000);
 
 const tableBody = document.querySelector(".active-members-lists");
 
@@ -114,3 +122,11 @@ window.searchTable = function searchTable() {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu");
+    const sidebar = document.querySelector(".sidebar");
+
+    menuIcon.addEventListener("click", function () {
+        sidebar.classList.toggle("hidden"); // Toggles sidebar visibility
+    });
+});

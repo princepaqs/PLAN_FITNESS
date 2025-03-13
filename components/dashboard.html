@@ -8,9 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=manage_search" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=swap_vert" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
     <div class="sidebar">
@@ -18,6 +16,8 @@
             <img class="profile-icon" src="../assets/images/Icon1.png" alt="logo">
             <span class="name" id="name">Juan Dela Cruz</span>
             <span class="email" id="email">juandelacruz@gmail.com</span>
+            <span class="menu material-symbols-outlined">menu</span>
+
         </div>
         <a class="active" href="#">Dashboard</a>
         <a href="administration.html">Administration</a>
@@ -34,11 +34,12 @@
                 <div class="title">
                     <img class="title-icon" src="../assets/images/Icon.png" alt="">
                     <img src="../assets/images/IconTitle.png" alt="" class="title-name">
+                    <div class="page-title">Dashboard</div>
                 </div>
-                <div class="page-title">Dashboard</div>
+                
                 <div class="page-profile">
                     <div>
-                        <span class="page-profile-content">Welcome Back, <span class="username">name</span></span>
+                        <span class="page-profile-content">Welcome Back, <span class="username" id="username">name</span></span>
                     </div>
                     <div>
                         <img src="../assets/images/Icon.png" alt="" class="usericon">
