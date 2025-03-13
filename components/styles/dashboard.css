@@ -719,7 +719,7 @@ td {
     }
 
     .header2 {
-        height: auto%;
+        height: 100%;
         width: 100%;
         flex-direction: row;
     }
@@ -729,7 +729,7 @@ td {
         align-items: end;
         /* justify-content: space-between; */
         width: 50%;
-        margin-top: 1%;
+        /* margin-top: 1%; */
         margin-left: auto;
         padding: 1%;
         font-size: 50%;
