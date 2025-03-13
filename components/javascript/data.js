@@ -2,6 +2,7 @@ const cashiers = [
     {
         id: 'C001',
         name: 'John Alvin P. Estrella',
+        nickname: 'Alvin',
         email: 'admin@gmail.com', //alvin.admin@pf.com
         password: 'admin',
         contact: '09123456789',

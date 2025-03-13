@@ -25,6 +25,10 @@ html, body {
     overflow: auto;
 }
 
+.menu.material-symbols-outlined {
+    display: none;
+}
+
 .user {
     display: flex;
     flex-direction: column;
@@ -612,6 +616,10 @@ td {
         display: flex;
         overflow: hidden;
         /* opacity: 0; */
+    }
+
+    .menu.material-symbols-outlined {
+        display: flex;
     }
 
     .menu {
