@@ -22,7 +22,7 @@ html, body {
     position: fixed;
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow: none;
 }
 
 .menu.material-symbols-outlined {
@@ -60,6 +60,7 @@ html, body {
 
 a {
     color: white;
+    width: 100%;
     text-decoration: none;
     font-size: medium;
     margin-left: 20%;
@@ -80,17 +81,19 @@ a:not(logout) {
     padding-bottom: 5%;
     padding-left: 3%;
     padding-right: 50%;
-    text-align: left;   
+    text-align: center;   
 }
 
 a:hover, a:active {
     color: black;
     background-color: white;
+    width: 80%;
 }
 
 .sidebar a.active {
     background-color: white;
     color: black;
+    width: 80%;
 }
 
 /* .sidebar a:not(.logout) {
@@ -183,7 +186,7 @@ a:hover, a:active {
     flex-direction: column;
     /* justify-content: space-between; */
     box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
-    width: 40%;
+    width: 50%;
     padding: 2%;
     height: 100%;
 }
@@ -220,17 +223,6 @@ a:hover, a:active {
     font-weight: bold;
 }
 
-.update-profile {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
-    width: 100%;
-    padding: 2%;
-    margin-left: 2%;
-    height: 100%;
-}
-
 button {
     font-family: 'Poppins', sans-serif;
     font-size: 2vh;
@@ -241,6 +233,113 @@ button {
     /* border: none; */
 }
 
+.update-profile {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* box-shadow: 5px 5px 10px 2px rgb(138, 138, 138); */
+    width: 100%;
+    padding: 2%;
+    margin-top: -9%;
+    margin-left: 2%;
+    height: 120%;
+}
+
+.open.update-details-content {
+    display: none;
+}
+
+.update-details-content, .update-password-content {
+    margin-top: -6%;
+    padding: 2%;
+    padding-left: 6%;
+    padding-right: 6%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -32%;
+    box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
+}
+
+.update-password-content {
+    margin-top: -6%;
+}
+
+.update-details-title, .update-password-title {
+    font-size: 2vh;
+    font-weight: bold;
+    text-align: left;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    /* color: #8C0909; */
+}
+
+.update-details-form, .update-password-form {
+    color: #8C0909;
+    font-size: 1.8vh;
+    font-weight: bold;
+    flex-direction: column;
+    margin-left: 20%;
+}
+
+.update-details-form-title, .update-password-form-title {
+    margin-top: 2%;
+}
+
+.update-details-form-input, .update-password-form-input {
+    width: 70%;
+    /* margin-top: 2%; */
+    padding: 1%;
+    font-size: 2vh;
+    display: flex;
+}
+
+.update-details-buttons, .update-password-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: 5%;
+}
+
+.update-details-save, .update-details-cancel, .update-password-save, .update-password-cancel {
+    margin-left: 2%;
+    font-size: 1.5vh;
+    padding: 1%;
+}
+
+.update-details-cancel, .update-password-cancel {
+    background-color: #ececec;
+    color: #8C0909;
+}
+
 .update-password {
-    margin-top: 30%;
+    margin-top: 35%;
+    /* width: 15%; */
+    /* position: fixed; */
+}
+
+.open.update-password-content {
+    display: none;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+.update-password-form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
 }

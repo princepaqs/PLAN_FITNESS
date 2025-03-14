@@ -22,7 +22,6 @@ html, body {
     position: fixed;
     margin: 0;
     padding: 0;
-    overflow: auto;
 }
 
 .menu.material-symbols-outlined {
@@ -60,6 +59,7 @@ html, body {
 
 a {
     color: white;
+    width: 100%;
     text-decoration: none;
     font-size: medium;
     margin-left: 20%;
@@ -80,17 +80,19 @@ a:not(logout) {
     padding-bottom: 5%;
     padding-left: 3%;
     padding-right: 50%;
-    text-align: left;   
+    text-align: center;   
 }
 
 a:hover, a:active {
     color: black;
     background-color: white;
+    width: 80%;
 }
 
 .sidebar a.active {
     background-color: white;
     color: black;
+    width: 80%;
 }
 
 /* .sidebar a:not(.logout) {
@@ -606,6 +608,10 @@ td {
         position: relative;
         display: flex;
         overflow: hidden;
+    }
+
+    .sidebar a.active {
+        width: 100%;
     }
 
     .sidebar.hidden{

@@ -56,8 +56,59 @@
                 <div class="profile-contact">09123456789</div>
             </div>
             <div class="update-profile">
-                <button class="update-details">Update Details</button>
+                <button class="update-details open">Update Details</button>
+                <div class="update-details-content open">
+                    <div class="update-details-title">Update Details</div>
+                    <div class="update-details-form">
+                        <div class="update-details-form-content">
+                            <div class="update-details-form-title">Full Name:</div>
+                            <input type="text" class="update-details-form-input" id="fullname" placeholder="Juan Dela Cruz">
+                        </div>
+                        <div class="update-details-form-content">
+                            <div class="update-details-form-title">Nickname:</div>
+                            <input type="text" class="update-details-form-input" id="nickname" placeholder="Pedro">
+                        </div>
+                        <div class="update-details-form-content">
+                            <div class="update-details-form-title">Contact Number:</div>
+                            <input type="text" class="update-details-form-input" id="contact" placeholder="09123456789">
+                        </div>
+                    </div>
+                    <div class="update-details-buttons">
+                        <button class="update-details-save">Save</button>
+                        <button class="update-details-cancel">Cancel</button>
+                    </div>
+                </div>
                 <button class="update-password">Update Password</button>
+                <div class="update-password-content open">
+                    <div class="update-password-title">Update Password</div>
+                    <div class="update-password-form">
+                        <div class="update-password-form-content">
+                            <div class="update-password-form-title">Old Password:</div>
+                            <div class="password-wrapper">
+                                <input type="password" class="update-password-form-input" id="oldPassword">
+                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('oldPassword', this)">visibility_off</span>
+                            </div>
+                        </div>
+                        <div class="update-password-form-content">
+                            <div class="update-password-form-title">New Password:</div>
+                            <div class="password-wrapper">
+                                <input type="password" class="update-password-form-input" id="newPassword">
+                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('newPassword', this)">visibility_off</span>
+                            </div>
+                        </div>
+                        <div class="update-password-form-content">
+                            <div class="update-password-form-title">Confirm Password:</div>
+                            <div class="password-wrapper">
+                                <input type="password" class="update-password-form-input" id="confirmPassword">
+                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('confirmPassword', this)">visibility_off</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="update-password-buttons">
+                        <button class="update-password-save">Save</button>
+                        <button class="update-password-cancel">Cancel</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
