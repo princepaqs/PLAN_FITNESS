@@ -162,5 +162,76 @@ document.getElementById("logout-btn").addEventListener("click", function (event)
     }
 });
 
+// document.getElementById("report").addEventListener("click", function () {
+//     // event.preventDefault(); // Prevent form submission
+//     background.style.display = "flex";
+//     const errorMessageBox = document.getElementById("error-message-box");
+//     const errorTitle = document.getElementById("error-title");
+//     const errorMessageLogin = document.getElementById("error-message-login");
+//     const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
+//     const closeErrorMessageBox = document.getElementById("close-error-message-box");
+
+//     confirmErrorMessageBox.style.display = "none";
+//     closeErrorMessageBox.style.marginLeft = "auto";
+//     if (errorMessageBox && errorMessageLogin && closeErrorMessageBox && confirmErrorMessageBox) {
+//         // Show the logout confirmation modal
+//         errorMessageBox.classList.add("open-error-message-box");
+//         errorTitle.innerHTML = "Report";
+//         errorMessageLogin.innerHTML = "Do you wish to log out?";
+
+//         // Close modal when clicking cancel
+//         closeErrorMessageBox.onclick = function () {
+//             errorMessageBox.classList.remove("open-error-message-box");
+//             background.style.display = "none";
+//         };
+//     } else {
+//         console.error("One or more required elements are missing.");
+//     }
+// });
+
+document.getElementById("report").addEventListener("click", function () {
+    background.style.display = "flex";
+    const errorMessageBox = document.getElementById("error-message-box");
+    const errorTitle = document.getElementById("error-title");
+    const errorMessageLogin = document.getElementById("error-message-login");
+    const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
+    const closeErrorMessageBox = document.getElementById("close-error-message-box");
+
+    confirmErrorMessageBox.style.display = "none";
+    closeErrorMessageBox.style.marginLeft = "auto";
+
+    if (errorMessageBox && errorMessageLogin && closeErrorMessageBox && confirmErrorMessageBox) {
+        // Update modal content for the report
+        errorMessageBox.classList.add("open-error-message-box");
+        errorMessageBox.style.width = "40%";
+        errorTitle.innerHTML = "Report";
+        
+        // Set up the report table inside the modal
+        errorMessageLogin.innerHTML = `
+            <div style="display: flex; justify-content: space-around; text-align: center;">
+                <div>
+                    <p style="font-weight: normal; margin-bottom: 3%">Total Members last Month</p>
+                    <p style="font-weight: normal; color: red; font-style: italic; margin-bottom: 3%">(February)</p>
+                    <p style=" font-size: 500%; font-weight: bold; margin-bottom: 3%">8</p>
+                </div>
+                <div>
+                    <p style="font-weight: normal; margin-bottom: 3%">Total Members this Month</p>
+                    <p style="font-weight: normal; color: red; font-style: italic; margin-bottom: 3%">(March)</p>
+                    <p style=" font-size: 500%; font-weight: bold; margin-bottom: 3%">18</p>
+                </div>
+            </div>
+        `;
+
+        // Close modal when clicking the close button
+        closeErrorMessageBox.onclick = function () {
+            errorMessageBox.classList.remove("open-error-message-box");
+            background.style.display = "none";
+        };
+    } else {
+        console.error("One or more required elements are missing.");
+    }
+});
+
+
 
 

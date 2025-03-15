@@ -165,7 +165,7 @@ const members = [
     },
 ]
 
-const plan = [
+const plans = [
     {
         id: 'BFP-01',
         name: 'Basic Fit Plan',
@@ -462,4 +462,4 @@ const logs = [
     },
 ]
 
-export { trainers, members, cashiers, plan, transactions, logs };
+export { trainers, members, cashiers, plans, transactions, logs };

@@ -682,6 +682,7 @@ button:not(.confirm, .closeLogout, .confirm:hover, .closeLogout:hover) {
     }
 
     .update-profile{
+        display: flex;
         width: 100%;
         margin: 0%;
     }

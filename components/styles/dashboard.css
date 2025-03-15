@@ -228,6 +228,7 @@ button{
     /* background-color: #7cdd84cc; */
     flex-direction: row;
     display: flex;
+    /* position: fixed; */
 }
 
 .header1 {
@@ -887,7 +888,7 @@ td {
     }
 
     .error-message-box {
-        /* font-size: 1.5vw; */
+        font-size: 2.5vw;
         width: 50%;
     }
 }
