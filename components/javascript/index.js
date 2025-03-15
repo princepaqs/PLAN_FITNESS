@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordError = document.getElementById("password-error");
     const errorMessageBox = document.getElementById("error-message-box");
     const errorMessageLogin = document.getElementById("error-message-login");
+    const background = document.getElementById("background");
     const closeErrorMessageBox = document.getElementById("close-error-message-box");
 
     function validateField(input, errorElement, message) {
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("login-btn").addEventListener("click", function (event) {
         event.preventDefault(); // Prevent form submission
+        background.style.display = "flex";
 
         validateField(emailInput, emailError, "Email is required");
         validateField(passwordInput, passwordError, "Password is required");
@@ -63,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Hide the close button
             closeErrorMessageBox.style.display = "none";
 
+
             // Store email in local storage
             localStorage.setItem("email", emailInput.value);
 
@@ -91,5 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Close error message box (only if login is not successful)
     closeErrorMessageBox.onclick = function () {
         errorMessageBox.classList.remove("open-error-message-box");
+        background.style.display = "none";
     };
 });

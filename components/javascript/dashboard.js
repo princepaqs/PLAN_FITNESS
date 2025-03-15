@@ -1,6 +1,7 @@
 import { members, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
+const background = document.getElementById("background");
 
 if (!emailInput) {
     alert("You are not logged in!");
@@ -132,6 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("logout-btn").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
+    background.style.display = "flex";
     
     const errorMessageBox = document.getElementById("error-message-box");
     const errorMessageLogin = document.getElementById("error-message-login");
@@ -146,6 +149,7 @@ document.getElementById("logout-btn").addEventListener("click", function (event)
         // Close modal when clicking cancel
         closeErrorMessageBox.onclick = function () {
             errorMessageBox.classList.remove("open-error-message-box");
+            background.style.display = "none";
         };
 
         // Confirm logout action
