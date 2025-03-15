@@ -130,3 +130,33 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.classList.toggle("hidden"); // Toggles sidebar visibility
     });
 });
+
+document.getElementById("logout-btn").addEventListener("click", function (event) {
+    
+    const errorMessageBox = document.getElementById("error-message-box");
+    const errorMessageLogin = document.getElementById("error-message-login");
+    const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
+    const closeErrorMessageBox = document.getElementById("close-error-message-box");
+
+    if (errorMessageBox && errorMessageLogin && closeErrorMessageBox && confirmErrorMessageBox) {
+        // Show the logout confirmation modal
+        errorMessageBox.classList.add("open-error-message-box");
+        errorMessageLogin.innerHTML = "Do you wish to log out?";
+
+        // Close modal when clicking cancel
+        closeErrorMessageBox.onclick = function () {
+            errorMessageBox.classList.remove("open-error-message-box");
+        };
+
+        // Confirm logout action
+        confirmErrorMessageBox.onclick = function () {
+            // Perform logout (redirect, clear session, etc.)
+            window.location.href = "login.html"; // Adjust according to your logout logic
+        };
+    } else {
+        console.error("One or more required elements are missing.");
+    }
+});
+
+
+
