@@ -1,5 +1,37 @@
-// import { members, trainers, cashiers } from './data.js';
+import { trainers, cashiers } from './data.js';
 
+const emailInput = localStorage.getItem("email");
+const errorMessageBox = document.getElementById("error-message-box");
+const errorTitle = document.getElementById("error-title");
+const errorMessageLogin = document.getElementById("error-message-login");
+const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
+const closeErrorMessageBox = document.getElementById("close-error-message-box");
+
+if (!emailInput) {
+    alert("You are not logged in!");
+} else {
+    // Find user in both trainers and cashiers lists
+    const userList = [...cashiers, ...trainers].find(user => user.email === emailInput);
+
+    if (!userList) {
+        alert("Invalid user!");
+    } else {
+        // Extract first name only
+        const firstName = userList.name.split(" ")[0];
+
+        // Update UI elements
+        document.getElementById('name').innerHTML = userList.name;
+        document.getElementById('email').innerHTML = userList.email;
+
+        document.getElementById('profile-fullname').innerHTML = userList.name;
+        document.getElementById('profile-nickname').innerHTML = userList.nickname;
+        document.getElementById('profile-contact').innerHTML = userList.contact;
+
+        document.getElementById('fullname').value = userList.name;
+        document.getElementById('nickname').value = userList.nickname;
+        document.getElementById('contact').value = userList.contact;
+    }
+}
 
 const dateElement = document.getElementById('date');
 const timeElement = document.getElementById('time');
@@ -14,8 +46,21 @@ setInterval(() => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const updateDetailsButton = document.querySelector(".update-details");
+    const updateDetailsSave = document.querySelector(".update-details-save");
     const updateDetailsCancel = document.querySelector(".update-details-cancel");
     const updateDetailsContent = document.querySelector(".update-details-content");
+
+    updateDetailsSave.addEventListener("click", function () {
+        errorMessageBox.classList.add("open-error-message-box");
+        errorTitle.innerHTML = "Success!";
+        errorMessageLogin.innerHTML = "Admin details updated successfully!";
+        updateDetailsContent.classList.toggle("open"); // Toggles sidebar visibility
+        confirmErrorMessageBox.style.display = "none";
+        closeErrorMessageBox.style.display = "none";
+        setTimeout(() => {
+            errorMessageBox.classList.remove("open-error-message-box");
+        }, 2000);
+    });
 
     updateDetailsButton.addEventListener("click", function () {
         updateDetailsContent.classList.toggle("open"); // Toggles sidebar visibility
@@ -28,8 +73,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const updatePasswordButton = document.querySelector(".update-password");
+    const updatePaswordSave = document.querySelector(".update-password-save");
     const updatePasswordCancel = document.querySelector(".update-password-cancel");
     const updatePasswordContent = document.querySelector(".update-password-content");
+
+    updatePaswordSave.addEventListener("click", function () {
+        confirmErrorMessageBox.style.display = "none";
+        closeErrorMessageBox.style.display = "none";
+        if (!document.getElementById("newPassword").value || !document.getElementById("confirmPassword").value) {
+            errorMessageBox.classList.add("open-error-message-box");
+            errorTitle.innerHTML = "Error!";
+            errorMessageLogin.innerHTML = "Please fill in all fields!";
+            setTimeout(() => {
+                errorMessageBox.classList.remove("open-error-message-box");
+            }, 2000);
+            return false;
+        } else if(document.getElementById("newPassword").value !== document.getElementById("confirmPassword").value) {
+            errorMessageBox.classList.add("open-error-message-box");
+            errorTitle.innerHTML = "Error!";
+            errorMessageLogin.innerHTML = "Passwords do not match!";
+            setTimeout(() => {
+                errorMessageBox.classList.remove("open-error-message-box");
+            }, 2000);
+            return false;
+        } else if(document.getElementById("newPassword").value.length < 8) {
+            errorMessageBox.classList.add("open-error-message-box");
+            errorTitle.innerHTML = "Error!";
+            errorMessageLogin.innerHTML = "Password must be at least 8 characters long!";
+            setTimeout(() => {
+                errorMessageBox.classList.remove("open-error-message-box");
+            }, 2000);
+            return false;
+        } else {
+            errorMessageBox.classList.add("open-error-message-box");
+            errorTitle.innerHTML = "Success!";
+            errorMessageLogin.innerHTML = "Admin password updated successfully!";
+            updatePasswordContent.classList.toggle("open");
+            setTimeout(() => {
+                errorMessageBox.classList.remove("open-error-message-box");
+            }, 2000);
+        }
+    });
 
     updatePasswordButton.addEventListener("click", function () {
         updatePasswordContent.classList.toggle("open"); // Toggles sidebar visibility
@@ -56,11 +140,6 @@ document.querySelectorAll(".toggle-password").forEach(toggle => {
 });
 
 document.getElementById("logout-btn").addEventListener("click", function (event) {
-    
-    const errorMessageBox = document.getElementById("error-message-box");
-    const errorMessageLogin = document.getElementById("error-message-login");
-    const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
-    const closeErrorMessageBox = document.getElementById("close-error-message-box");
 
     if (errorMessageBox && errorMessageLogin && closeErrorMessageBox && confirmErrorMessageBox) {
         // Show the logout confirmation modal

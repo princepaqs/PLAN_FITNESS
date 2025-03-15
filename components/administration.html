@@ -49,11 +49,11 @@
                     <img class="profile-icon-main" src="../assets/images/Icon.png" alt="">
                 </div>
                 <div class="profile-title">Full Name:</div>
-                <div class="profile-fullname">Juan Dela Cruz</div>
+                <div class="profile-fullname" id="profile-fullname">Juan Dela Cruz</div>
                 <div class="profile-title">Nickame:</div>
-                <div class="profile-nickname">Pedro</div>
+                <div class="profile-nickname" id="profile-nickname">Pedro</div>
                 <div class="profile-title">Contact Number:</div>
-                <div class="profile-contact">09123456789</div>
+                <div class="profile-contact" id="profile-contact">09123456789</div>
             </div>
             <div class="update-profile">
                 <button class="update-details open">Update Details</button>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="update-details-buttons">
-                        <button class="update-details-save">Save</button>
+                        <button class="update-details-save" id="update-details-save">Save</button>
                         <button class="update-details-cancel">Cancel</button>
                     </div>
                 </div>
@@ -86,21 +86,21 @@
                             <div class="update-password-form-title">Old Password:</div>
                             <div class="password-wrapper">
                                 <input type="password" class="update-password-form-input" id="oldPassword">
-                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('oldPassword', this)">visibility_off</span>
+                                <span class="toggle-password material-symbols-outlined" id="togglePassword">visibility_off</span>
                             </div>
                         </div>
                         <div class="update-password-form-content">
                             <div class="update-password-form-title">New Password:</div>
                             <div class="password-wrapper">
                                 <input type="password" class="update-password-form-input" id="newPassword">
-                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('newPassword', this)">visibility_off</span>
+                                <span class="toggle-password material-symbols-outlined" id="togglePassword">visibility_off</span>
                             </div>
                         </div>
                         <div class="update-password-form-content">
                             <div class="update-password-form-title">Confirm Password:</div>
                             <div class="password-wrapper">
                                 <input type="password" class="update-password-form-input" id="confirmPassword">
-                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('confirmPassword', this)">visibility_off</span>
+                                <span class="toggle-password material-symbols-outlined" id="togglePassword">visibility_off</span>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
         </section>
     </div>
     <div class="error-message-box" id="error-message-box">
-        <span class="error-title">Logout</span>
+        <span class="error-title" id="error-title">Logout</span>
         <p class="error-message-login" id="error-message-login">Test message.</p>
         <div class="confirmation">
             <button class="confirm" type="button" onclick="confirmErrorMessageBox()" id="confirm-error-message-box">Confirm</button>
