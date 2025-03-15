@@ -26,7 +26,7 @@
         <a href="#">Members</a>
         <a href="#">Trainers</a>                                                                                                                    
         <a href="#">Sales Report</a>
-        <a class="logout" href="login.html">Log out</a>
+        <a class="logout" id="logout-btn">Log out</a>
     </div>
     <div class="content">
         <header class="headers">
@@ -100,7 +100,14 @@
             
         </section>
     </div>
-    
+    <div class="error-message-box" id="error-message-box">
+        <span class="error-title">Logout</span>
+        <p class="error-message-login" id="error-message-login">Test message.</p>
+        <div class="confirmation">
+            <button class="confirm" type="button" onclick="confirmErrorMessageBox()" id="confirm-error-message-box">Confirm</button>
+            <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
+        </div>
+    </div>
 </body>
 
 <script type="module" src="./javascript/dashboard.js"></script>
