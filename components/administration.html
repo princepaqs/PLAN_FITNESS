@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="./styles/dashboard.css">
+    <title>Administration</title>
+    <link rel="stylesheet" href="./styles/administration.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
     <div class="sidebar">
         <div class="user">
-            <img src="../assets/images/Icon.png" alt="logo">
+            <img class="profile-icon" src="../assets/images/Icon1.png" alt="logo">
             <span class="name" id="name">Juan Dela Cruz</span>
             <span class="email" id="email">juandelacruz@gmail.com</span>
+            <span class="menu material-symbols-outlined">menu</span>
         </div>
         <a href="dashboard.html">Dashboard</a>
         <a class="active" href="#">Administration</a>
@@ -25,7 +27,93 @@
         <a href="#">Sales Report</a>
         <a class="logout" href="login.html">Log out</a>
     </div>
-    <div class="content">Test Administration</div>
+    <div class="content">
+        <header class="headers">
+            <div class="header1">
+                <div class="title">
+                    <img class="title-icon" src="../assets/images/Icon.png" alt="">
+                    <img src="../assets/images/IconTitle.png" alt="" class="title-name">
+                    <div class="page-title">Admin Profile</div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="dateTime">
+                    <p class="date" id="date"></p>
+                    <p class="time" id="time"></p>
+                </div>
+            </div>
+        </header>
+        <section class="administration-content">
+            <div class="profile">
+                <div class="profile-image">
+                    <img class="profile-icon-main" src="../assets/images/Icon.png" alt="">
+                </div>
+                <div class="profile-title">Full Name:</div>
+                <div class="profile-fullname">Juan Dela Cruz</div>
+                <div class="profile-title">Nickame:</div>
+                <div class="profile-nickname">Pedro</div>
+                <div class="profile-title">Contact Number:</div>
+                <div class="profile-contact">09123456789</div>
+            </div>
+            <div class="update-profile">
+                <button class="update-details open">Update Details</button>
+                <div class="update-details-content open">
+                    <div class="update-details-title">Update Details</div>
+                    <div class="update-details-form">
+                        <div class="update-details-form-content">
+                            <div class="update-details-form-title">Full Name:</div>
+                            <input type="text" class="update-details-form-input" id="fullname" placeholder="Juan Dela Cruz">
+                        </div>
+                        <div class="update-details-form-content">
+                            <div class="update-details-form-title">Nickname:</div>
+                            <input type="text" class="update-details-form-input" id="nickname" placeholder="Pedro">
+                        </div>
+                        <div class="update-details-form-content">
+                            <div class="update-details-form-title">Contact Number:</div>
+                            <input type="text" class="update-details-form-input" id="contact" placeholder="09123456789">
+                        </div>
+                    </div>
+                    <div class="update-details-buttons">
+                        <button class="update-details-save">Save</button>
+                        <button class="update-details-cancel">Cancel</button>
+                    </div>
+                </div>
+                <button class="update-password">Update Password</button>
+                <div class="update-password-content open">
+                    <div class="update-password-title">Update Password</div>
+                    <div class="update-password-form">
+                        <div class="update-password-form-content">
+                            <div class="update-password-form-title">Old Password:</div>
+                            <div class="password-wrapper">
+                                <input type="password" class="update-password-form-input" id="oldPassword">
+                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('oldPassword', this)">visibility_off</span>
+                            </div>
+                        </div>
+                        <div class="update-password-form-content">
+                            <div class="update-password-form-title">New Password:</div>
+                            <div class="password-wrapper">
+                                <input type="password" class="update-password-form-input" id="newPassword">
+                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('newPassword', this)">visibility_off</span>
+                            </div>
+                        </div>
+                        <div class="update-password-form-content">
+                            <div class="update-password-form-title">Confirm Password:</div>
+                            <div class="password-wrapper">
+                                <input type="password" class="update-password-form-input" id="confirmPassword">
+                                <span class="toggle-password material-symbols-outlined" onclick="togglePassword('confirmPassword', this)">visibility_off</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="update-password-buttons">
+                        <button class="update-password-save">Save</button>
+                        <button class="update-password-cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     
 </body>
+
+<script type="module" src="./javascript/administration.js"></script>
 </html>
