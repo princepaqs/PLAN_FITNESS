@@ -760,6 +760,7 @@ td {
     }
 
     a {
+        width: 100%;
         flex-direction: row;
         font-size: 1.5vh;
         margin-left: 0%;
@@ -779,6 +780,12 @@ td {
         padding-left: 0%;
         padding-right: 0%;
         /* text-align: right;    */
+    }
+    
+    a:hover, a:active {
+        color: black;
+        background-color: white;
+        width: 100%;
     }
 
     .logout {

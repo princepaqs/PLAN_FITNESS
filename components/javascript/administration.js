@@ -46,6 +46,15 @@ setInterval(() => {
 }, 1000);
 
 document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu");
+    const sidebar = document.querySelector(".sidebar");
+
+    menuIcon.addEventListener("click", function () {
+        sidebar.classList.toggle("hidden"); // Toggles sidebar visibility
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
     const updateDetailsButton = document.querySelector(".update-details");
     const updateDetailsSave = document.querySelector(".update-details-save");
     const updateDetailsCancel = document.querySelector(".update-details-cancel");
