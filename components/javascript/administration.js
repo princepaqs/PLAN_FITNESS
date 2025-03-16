@@ -1,4 +1,4 @@
-import { trainers, cashiers } from './data.js';
+import { admin, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
 const errorMessageBox = document.getElementById("error-message-box");
@@ -12,7 +12,7 @@ if (!emailInput) {
     alert("You are not logged in!");
 } else {
     // Find user in both trainers and cashiers lists
-    const userList = [...cashiers, ...trainers].find(user => user.email === emailInput);
+    const userList = [...admin, ...cashiers, ...trainers].find(user => user.email === emailInput);
 
     if (!userList) {
         alert("Invalid user!");

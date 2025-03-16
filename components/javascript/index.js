@@ -1,4 +1,4 @@
-import { trainers, cashiers } from "./data.js";
+import { admin, trainers, cashiers } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         validateField(emailInput, emailError, "Email is required");
         validateField(passwordInput, passwordError, "Password is required");
 
+        const adminList = [...admin ].find(admin => admin.email === emailInput.value && admin.password === passwordInput.value);
         const cashierList = [...cashiers ].find(cashier => cashier.email === emailInput.value && cashier.password === passwordInput.value);
         const trainerList = [...trainers ].find(trainer => trainer.email === emailInput.value && trainer.password === passwordInput.value);
 
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             errorMessageBox.classList.add("open-error-message-box");
             errorMessageLogin.innerHTML = "Please fill in all fields!";
             return false;
-        } else if (cashierList) {
+        } else if (adminList) {
             // Show success message
             errorMessageBox.classList.add("open-error-message-box");
             errorMessageLogin.innerHTML = "You're all set! Logged in successfully.";

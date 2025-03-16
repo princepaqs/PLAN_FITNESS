@@ -1,4 +1,4 @@
-const cashiers = [
+const admin = [
     {
         id: 'C001',
         name: 'John Alvin P. Estrella',
@@ -8,7 +8,21 @@ const cashiers = [
         contact: '09123456789',
         address: 'San Marcos, Maypajo, Caloocan City, NCR',
         dayOff: 'wednesday',
-        nickname: 'alvin',
+        dateHired: '01/01/2025',
+        status: 'active',
+    }
+]
+
+const cashiers = [
+    {
+        id: 'C001',
+        name: 'Prince Louie Paquiado',
+        nickname: 'Prince',
+        email: 'cashier@gmail.com', //alvin.admin@pf.com
+        password: 'cashier',
+        contact: '09123456789',
+        address: 'University of Caloocan City',
+        dayOff: 'wednesday',
         dateHired: '01/01/2025',
         status: 'active',
     }
@@ -462,4 +476,4 @@ const logs = [
     },
 ]
 
-export { trainers, members, cashiers, plans, transactions, logs };
+export { admin, trainers, members, cashiers, plans, transactions, logs };
