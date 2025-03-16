@@ -60,7 +60,7 @@
                                 <th onclick="sortTable(0)">Plan ID <span class="material-symbols-outlined">swap_vert</span></th>
                                 <th onclick="sortTable(1)">Name <span class="material-symbols-outlined">swap_vert</span></th>
                                 <th onclick="sortTable(2, false, false, true)">Validity <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(3)">Sessions <span class="material-symbols-outlined">swap_vert</span></th>
+                                <th onclick="sortTable(3, false, true)">Sessions <span class="material-symbols-outlined">swap_vert</span></th>
                                 <th onclick="sortTable(4, false, true)">Amount <span class="material-symbols-outlined">swap_vert</span></th>
                                 <th>Action</th>
                             </tr>
@@ -80,6 +80,55 @@
             <button class="confirm" type="button" onclick="confirmErrorMessageBox()" id="confirm-error-message-box">Confirm</button>
             <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
         </div>
+    </div>
+
+    <div class="plan-modal" id="plan-modal">
+        <span class="plan-modal-title" id="plan-modal-title">Add Plan</span>
+        <div class="plan-modal-content">
+            <div class="plan-subcontent-1">
+                <div class="plan-id-content">
+                    <label class="planIdTitle">Plan ID</label>
+                    <input type="text" class="planId" id="planId">
+                </div>
+                <div class="plan-name-content">
+                    <label class="planNameTitle">Plan Name</label>
+                    <input type="text" class="planName" id="planName">
+                </div>
+            </div>
+            <div class="plan-subcontent-2">
+                <div class="plan-amount-content">
+                    <label class="planAmountTitle">Amount</label>
+                    <input type="number" class="planAmount" id="planAmount">
+                </div>
+                <div class="plan-validity-content">
+                    <label class="planValidityTitle">Validity (Months)</label>
+                    <input type="number" class="planValidity" id="planValidity">
+                </div>
+                <div class="plan-sessions-content">
+                    <label class="planSessionsTitle"># of Sessions</label>
+                    <!-- <input type="text" class="planSessions"> this should be dropdown -->
+                     <select name="sessions" id="planSessions" class="planSessions">
+                        <option value="N/A">N/A</option>
+                        <option value="3">3</option>
+                        <option value="6">6</option>
+                        <option value="9">9</option>
+                        <option value="12">12</option>
+                        <option value="15">15</option>
+                        <option value="18">18</option>
+                        <option value="36">36</option>
+                     </select>
+                </div>
+            </div>
+        </div>
+        <div class="plan-confirmation">
+            <button class="addPlanModal" type="button" id="addPlanModal">Add</button>
+            <button class="editPlanModal" type="button" id="editPlanModal">Edit</button>
+            <button class="closePlanModal" type="button" id="closePlanModal">Cancel</button>
+        </div>
+    </div>
+
+    <div class="action-modal">
+
     </div>
 </body>
 

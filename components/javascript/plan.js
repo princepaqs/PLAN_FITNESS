@@ -2,6 +2,23 @@ import { plans, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
 const background = document.getElementById("background");
+const errorTitle = document.getElementById("error-title");
+const errorMessageBox = document.getElementById("error-message-box");
+const errorMessageLogin = document.getElementById("error-message-login");
+const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
+const closeErrorMessageBox = document.getElementById("close-error-message-box");
+const addPlanButton = document.querySelector(".addPlan");
+const planModal = document.querySelector(".plan-modal");
+const planModalTitle = document.querySelector(".plan-modal-title");
+// const planId = document.getElementById("planId");
+const planIdInput = document.getElementById("planId");
+const planNameInput = document.getElementById("planName");
+const planAmountInput = document.getElementById("planAmount");
+const planValidityInput = document.getElementById("planValidity");
+const planSessionsInput = document.getElementById("planSessions");
+const planAdd = document.querySelector(".addPlanModal");
+const planEdit = document.querySelector(".editPlanModal");
+const planClose = document.querySelector(".closePlanModal");
 
 if (!emailInput) {
     alert("You are not logged in!");
@@ -41,14 +58,124 @@ function populateTable() {
             <td>${plan.validity}</td>
             <td>${plan.sessions}</td>
             <td>₱ ${plan.amount}.00</td>
-            <td><button style="color: #8C0909; border: 1px solid black; border-radius: 0;">Action</button></td>
+            <td>
+                <div class="custom-dropdown" data-id="${plan.id}">
+                    <button class="dropdown-btn">Action</button>
+                    <ul class="dropdown-menu">
+                        <li data-action="edit" class="editPlan"><span class="material-symbols-outlined">edit</span> Edit</li>
+                        <li data-action="delete" class="deletePlan"><span class="material-symbols-outlined">delete</span> Delete</li>
+                    </ul>
+                </div>
+            </td>
         `;
+
         tableBody.appendChild(row);
     });
+
+    // // Add event listener to all buttons after appending to DOM
+    // document.querySelectorAll(".action-dropdown").forEach((dropdown) => {
+    //     dropdown.addEventListener("change", function () {
+    //         const selectedAction = this.value;
+    //         const planDataId = this.getAttribute("data-id");
+
+    //         if (selectedAction === "edit") {
+    //             console.log(`Editing Plan ID: ${planDataId}`);
+    //             planId.value = `Test ${planDataId}`;
+    //             // Add logic for editing (e.g., open modal, populate fields)
+    //         } else if (selectedAction === "delete") {
+    //             console.log(`Deleting Plan ID: ${planDataId}`);
+    //             if (confirm("Are you sure you want to delete this plan?")) {
+    //                 // Add logic for deletion
+    //             }
+    //         }
+    //         this.value = ""; // Reset dropdown to default after selection
+    //     });
+    // });
 }
+
 
 // Call function to populate the table
 populateTable();
+
+document.addEventListener("DOMContentLoaded", function () {
+    let activeDropdown = null; // Track the currently open dropdown
+
+    document.querySelectorAll(".custom-dropdown").forEach((dropdown) => {
+        const button = dropdown.querySelector(".dropdown-btn");
+        const menu = dropdown.querySelector(".dropdown-menu");
+
+        // Show dropdown on button click
+        button.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            // Close any previously open dropdown
+            if (activeDropdown && activeDropdown !== menu) {
+                activeDropdown.style.display = "none";
+            }
+
+            // Toggle the clicked dropdown
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+            menu.style.zIndex = "2";
+
+            // Update active dropdown
+            activeDropdown = menu.style.display === "block" ? menu : null;
+        });
+
+        // Handle menu item click
+        menu.querySelectorAll("li").forEach((item) => {
+            item.addEventListener("click", function () {
+                let action = this.getAttribute("data-action");
+                let planDataId = dropdown.getAttribute("data-id");
+
+                let existingPlan = plans.find(plan => plan.id === planDataId);
+
+                if (!existingPlan) {
+                    alert("Plan not found.");
+                    return;
+                }
+
+                if (action === "edit") {
+                    planModal.style.display = "flex"; 
+                    background.style.display = "flex";
+                    planAdd.style.display = "none"
+                    planEdit.style.display = "flex";
+                    planModalTitle.innerHTML = "Edit Plan";
+                    planIdInput.value = existingPlan.id;
+                    planNameInput.value = existingPlan.name;
+                    planAmountInput.value = existingPlan.amount;
+                    planValidityInput.value = parseInt(existingPlan.validity.split(" ")); // example value = "12 months"
+                    planSessionsInput.value = existingPlan.sessions; // it is a dropdown
+                    // console.log(`Editing Plan ID1: ${planDataId}`);
+                    // planModalTitle.innerHTML = planId;
+                    // Trigger edit function
+                } else if (action === "delete") {
+                    console.log(`Deleting Plan ID: ${planDataId}`);
+                    // if (confirm("Are you sure you want to delete this plan?")) {
+                    //     // Call delete function here
+                    // }
+                    errorMessageBox.style.zIndex = 300; 
+                    errorMessageBox.classList.add("open-error-message-box");
+                    background.style.display = "flex";
+                    errorTitle.innerHTML = "Delete";
+                    errorMessageLogin.innerHTML = "Are you sure you want to delete this plan?";
+                }
+
+                menu.style.display = "none"; // Close dropdown after selection
+                activeDropdown = null;
+            });
+        });
+    });
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", function () {
+        if (activeDropdown) {
+            activeDropdown.style.display = "none";
+            activeDropdown = null;
+        }
+    });
+});
+
+
 
 window.sortTable = function (columnIndex, isDate = false, isNumeric = false, isDuration = false) {
     const table = document.querySelector(".plan-table tbody");
@@ -61,7 +188,9 @@ window.sortTable = function (columnIndex, isDate = false, isNumeric = false, isD
         if (isDate) {
             return new Date(cellA) - new Date(cellB); // Sort by date
         } else if (isNumeric) {
-            return parseFloat(cellA) - parseFloat(cellB); // Sort numerically
+            if (cellA === "N/A") cellA = "0";
+            if (cellB === "N/A") cellB = "0";
+            return parseInt(cellA) - parseInt(cellB); // Sort numerically
         } else if (isDuration) {
             let numA = parseInt(cellA); // Extract number (e.g., "3 months" -> 3)
             let numB = parseInt(cellB);
@@ -115,15 +244,14 @@ document.getElementById("logout-btn").addEventListener("click", function (event)
     event.preventDefault(); // Prevent form submission
     background.style.display = "flex";
     
-    const errorMessageBox = document.getElementById("error-message-box");
-    const errorMessageLogin = document.getElementById("error-message-login");
-    const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
-    const closeErrorMessageBox = document.getElementById("close-error-message-box");
-    errorMessageBox.style.zIndex = 100;
+    errorMessageBox.style.zIndex = 200;
     if (errorMessageBox && errorMessageLogin && closeErrorMessageBox && confirmErrorMessageBox) {
         // Show the logout confirmation modal
         errorMessageBox.classList.add("open-error-message-box");
+        errorTitle.innerHTML = "Logout";
         errorMessageLogin.innerHTML = "Do you wish to log out?";
+        closeErrorMessageBox.style.display = "block";
+        confirmErrorMessageBox.style.display = "block";
 
         // Close modal when clicking cancel
         closeErrorMessageBox.onclick = function () {
@@ -139,4 +267,135 @@ document.getElementById("logout-btn").addEventListener("click", function (event)
     } else {
         console.error("One or more required elements are missing.");
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const editPlanButton = document.querySelector(".editPlan");
+
+    addPlanButton.addEventListener("click", function () {
+        planModal.style.display = "flex"; 
+        background.style.display = "flex";
+        planEdit.style.display = "none";
+        planModalTitle.innerHTML = "Add Plan";
+        planAdd.style.display = "flex";
+        planIdInput.value = null;
+        planNameInput.value = null;
+        planAmountInput.value = null;
+        planValidityInput.value = null; // example value = "12 months"
+        planSessionsInput.value = null; // it is a dropdown
+    });
+
+    editPlanButton.addEventListener("click", function () {
+        planModal.style.display = "flex"; 
+        background.style.display = "flex";
+        planEdit.style.display = "flex";
+        planModalTitle.innerHTML = "Edit Plan";
+        planAdd.style.display = "none";
+    });
+
+    planAdd.addEventListener("click", function () {
+        // Get input values inside the event listener
+        const planId = document.getElementById("planId").value.trim();
+        const planName = document.getElementById("planName").value.trim();
+        const planAmount = document.getElementById("planAmount").value.trim();
+        const planValidity = document.getElementById("planValidity").value.trim();
+        const planSessions = document.getElementById("planSessions").value.trim();
+
+        if (!planId || !planName || !planAmount || !planValidity || !planSessions) {
+            errorMessageBox.classList.add("open-error-message-box");
+            confirmErrorMessageBox.style.display = "none";
+            closeErrorMessageBox.style.display = "none";
+            errorTitle.innerHTML = "Error";
+            errorMessageLogin.innerHTML = "Please input all fields.";
+            background.style.display = "flex";
+            background.style.zIndex = "299";
+            errorMessageBox.style.zIndex = "300";
+
+            setTimeout(() => {
+                errorMessageBox.classList.remove("open-error-message-box");
+                background.style.zIndex = "200";
+            }, 2000);
+        } else {
+            errorMessageBox.classList.add("open-error-message-box");
+            confirmErrorMessageBox.style.display = "none";
+            closeErrorMessageBox.style.display = "none";
+            errorTitle.innerHTML = "Add Plan";
+            errorMessageLogin.innerHTML = "New plan added successfully!";
+            background.style.display = "flex";
+            background.style.zIndex = "299";
+            errorMessageBox.style.zIndex = "300";
+
+            setTimeout(() => {
+                errorMessageBox.classList.remove("open-error-message-box");
+                background.style.display = "none";
+                background.style.zIndex = "200";
+                planModal.style.display = "none";
+            }, 2000);
+
+            // console.log("Plan Added:", { planId, planName, planAmount, planValidity, planSessions });
+        }
+    });
+
+    planEdit.addEventListener("click", function () {
+        // Get input values inside the event listener
+        const planId = document.getElementById("planId").value.trim();
+        const planName = document.getElementById("planName").value.trim();
+        const planAmount = document.getElementById("planAmount").value.trim();
+        const planValidity = document.getElementById("planValidity").value.trim();
+        const planSessions = document.getElementById("planSessions").value.trim();
+
+        if (!planId || !planName || !planAmount || !planValidity || !planSessions) {
+            errorMessageBox.classList.add("open-error-message-box");
+            confirmErrorMessageBox.style.display = "none";
+            closeErrorMessageBox.style.display = "none";
+            errorTitle.innerHTML = "Error";
+            errorMessageLogin.innerHTML = "Please input all fields.";
+            background.style.display = "flex";
+            background.style.zIndex = "299";
+            errorMessageBox.style.zIndex = "300";
+
+            setTimeout(() => {
+                errorMessageBox.classList.remove("open-error-message-box");
+                background.style.zIndex = "200";
+            }, 2000);
+        } else {
+            errorMessageBox.classList.add("open-error-message-box");
+            confirmErrorMessageBox.style.display = "none";
+            closeErrorMessageBox.style.display = "none";
+            errorTitle.innerHTML = "Edit Plan";
+            errorMessageLogin.innerHTML = "Plan edited successfully!";
+            background.style.display = "flex";
+            background.style.zIndex = "299";
+            errorMessageBox.style.zIndex = "300";
+
+            setTimeout(() => {
+                errorMessageBox.classList.remove("open-error-message-box");
+                background.style.display = "none";
+                background.style.zIndex = "200";
+                planModal.style.display = "none";
+            }, 2000);
+
+            // console.log("Plan Added:", { planId, planName, planAmount, planValidity, planSessions });
+        }
+    });
+
+    planClose.addEventListener("click", function () {
+        planModal.style.display = "none"; 
+        background.style.display = "none";
+    });
+
+    // Close modal when clicking cancel
+    document.getElementById("closePlanModal").onclick = function () {
+        errorMessageBox.classList.remove("open-error-message-box");
+        background.style.zIndex = "200";
+    };
+
+    // Confirm action
+    document.getElementById("confirm-error-message-box").onclick = function () {
+        errorMessageBox.classList.remove("open-error-message-box");
+        background.style.display = "none";
+        background.style.zIndex = "200";
+        planModal.style.display = "none";
+    };
 });

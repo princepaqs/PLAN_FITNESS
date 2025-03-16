@@ -163,7 +163,7 @@ button:not(.update-details, .update-password, .update-details-save, .update-deta
     /* width: 100%; */
     margin-top: 10%;
     padding: 3%;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
     /* font-size: 1vw; */
     align-self: center;

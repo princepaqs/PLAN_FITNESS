@@ -164,7 +164,7 @@ button{
     margin-top: 10%;
     padding: 3%;
     border: none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
     font-size: 1vw;
     align-self: center;
@@ -175,7 +175,7 @@ button{
     justify-content: space-between;
 }
 
-.confirm {
+.confirm, .addPlanModal, .editPlanModal {
     color: #ffffff;
     background-color: #8C0909;
     border-color: black;
@@ -189,12 +189,12 @@ button{
     /* margin-bottom: 10%; */
 }
 
-.confirm:hover {
+.confirm:hover, .addPlanModal:hover, .editPlanModal:hover {
     color: #8C0909;
     background-color: #d9d9d9;
 }
 
-.close {
+.close, .closePlanModal {
     color: #8C0909;
     background-color: #d9d9d9;
     border-color: black;
@@ -208,7 +208,7 @@ button{
     /* margin-bottom: 10%; */
 }
 
-.close:hover {
+.close:hover, .closePlanModal:hover {
     background-color: #8C0909;
     color: white;
 }
@@ -282,6 +282,7 @@ button{
     border-radius: 0;
     border: 1px solid black;
     margin-top: 15%;
+    margin-bottom: 2%;
     margin-left: auto;
     padding: 2%;
 }
@@ -377,3 +378,126 @@ td {
 .plan-table th {
     background: #f8f8f8;
 }
+
+.plan-modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 70%;
+    z-index: 200;
+    background-color: white;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.plan-modal-title {
+    font-size: 5vh;
+    font-weight: bold;
+    color: #8C0909;
+}
+
+.plan-modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly; /* Ensures equal spacing */
+    padding: 20px; /* Adds some spacing inside the modal */
+}
+
+.plan-subcontent-1, .plan-subcontent-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ensures equal spacing between elements */
+    width: 100%;
+    gap: 15%; /* Adjusts the space between child elements */
+}
+
+.plan-id-content, .plan-name-content, 
+.plan-amount-content, .plan-validity-content, .plan-sessions-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Ensures equal width for all inputs */
+}
+
+.plan-id-content input, .plan-name-content input, 
+.plan-amount-content input, .plan-validity-content input, .plan-sessions-content select {
+    width: 100%; /* Ensures inputs take full width */
+    padding: 3%;
+    background-color: #EFEFEF;
+    border: 1px solid black;
+}
+
+.plan-confirmation {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    width: 50%;
+    gap: 10%;
+}
+
+.addPlanModal, .editPlanModal, .closePlanModal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: #EFEFEF;
+    color: #8C0909;
+    border: 1px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    list-style: none;
+    /* padding: 5px 0; */
+    margin: 0;
+    width: 100px;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+}
+
+.dropdown-menu li {
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+.material-symbols-outlined {
+    font-size: 16px;
+}
+
+.editPlan {
+    background-color: #973131;
+    color: white;
+}
+
+.deletePlan {
+    background-color: #8C0909;
+    color: white;
+}
+
+
+
