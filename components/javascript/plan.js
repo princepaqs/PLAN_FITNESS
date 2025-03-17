@@ -18,6 +18,7 @@ const planValidityInput = document.getElementById("planValidity");
 const planSessionsInput = document.getElementById("planSessions");
 const planAdd = document.querySelector(".addPlanModal");
 const planEdit = document.querySelector(".editPlanModal");
+const planDelete = document.querySelector(".deletePlanModal")
 const planClose = document.querySelector(".closePlanModal");
 
 if (!emailInput) {
@@ -315,6 +316,8 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 errorMessageBox.classList.remove("open-error-message-box");
                 background.style.zIndex = "200";
+                confirmErrorMessageBox.style.display = "block";
+                closeErrorMessageBox.style.display = "block";
             }, 2000);
         } else {
             errorMessageBox.classList.add("open-error-message-box");
@@ -331,6 +334,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 background.style.display = "none";
                 background.style.zIndex = "200";
                 planModal.style.display = "none";
+                confirmErrorMessageBox.style.display = "block";
+                closeErrorMessageBox.style.display = "block";
             }, 2000);
 
             // console.log("Plan Added:", { planId, planName, planAmount, planValidity, planSessions });
@@ -358,6 +363,8 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 errorMessageBox.classList.remove("open-error-message-box");
                 background.style.zIndex = "200";
+                confirmErrorMessageBox.style.display = "block";
+                closeErrorMessageBox.style.display = "block";
             }, 2000);
         } else {
             errorMessageBox.classList.add("open-error-message-box");
@@ -374,6 +381,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 background.style.display = "none";
                 background.style.zIndex = "200";
                 planModal.style.display = "none";
+                confirmErrorMessageBox.style.display = "block";
+                closeErrorMessageBox.style.display = "block";
             }, 2000);
 
             // console.log("Plan Added:", { planId, planName, planAmount, planValidity, planSessions });
@@ -384,6 +393,12 @@ document.addEventListener("DOMContentLoaded", function () {
         planModal.style.display = "none"; 
         background.style.display = "none";
     });
+
+    // Close modal when clicking cancel
+    closeErrorMessageBox.onclick = function () {
+        errorMessageBox.classList.remove("open-error-message-box");
+        background.style.display = "none";
+    };
 
     // Close modal when clicking cancel
     document.getElementById("closePlanModal").onclick = function () {

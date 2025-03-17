@@ -483,6 +483,7 @@ td {
 
 .dropdown-menu li:hover {
     background-color: #f0f0f0;
+    color: black;
 }
 
 .material-symbols-outlined {
@@ -499,5 +500,247 @@ td {
     color: white;
 }
 
+@media (max-width: 1279px) {
+    
+    .sidebar {
+        width: 20%;
+    }
+    
+    a {
+        font-size: 1.5vh;
+    }
+
+    .logout {
+        font-size: 2vh;
+    }
+
+    .content {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    .headers {
+        height: 20%;
+    }
+    
+    .title-icon, .title-name {
+        height: 10vh;
+    }
+
+    .page-title {
+        font-size: 3vh;
+    }
+
+    .dateTime {
+        font-size: 2vh;
+        width: 100%;
+    }
+
+    .plan-content {
+        height: 80%;
+    }
+
+    th {
+        top: 10%;
+    }
+
+    .plan-table {
+        font-size: 1.5vh;
+    }
+
+    .dropdown-menu {
+        margin-left: -100%;
+    }
+
+    .plan-modal{
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 20%;
+    }
+
+    a {
+        font-size: 1.2vh;
+    }
+
+    .logout {
+        font-size: 1.8vh;
+    }
+
+    .content {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    .headers {
+        height: 15%;
+    }
+
+    .title-icon, .title-name {
+        height: 8vh;
+    }
+
+    .page-title {
+        font-size: 2.5vh;
+    }
+
+    .dateTime {
+        font-size: 1.8vh;
+        width: 100%;
+    }
+
+    .addPlan {
+        font-size: 1.8vh;
+    }
+
+    .plan-modal {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .sidebar {
+        width: 100%;
+        height: 40%;
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .sidebar a.active {
+        width: 100%;
+    }
+
+    .sidebar.hidden{
+        width: 100%;
+        height: 5%;
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        /* opacity: 0; */
+    }
+
+    .menu.material-symbols-outlined {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Moves the menu icon to the right */
+        cursor: pointer;
+        font-size: 24px; /* Adjust size if needed */
+        color: white; /* Adjust color if needed */
+    }
+
+    /* .sidebar:hover, .sidebar:active {
+        height: 10%;
+    } */
+
+    .user {
+        margin-top: 12%;
+        margin-left: 5%;
+        margin-bottom: 0%;
+        align-items: center;
+    }
+
+    .profile-icon {
+        height: 4vh;
+        width: auto;
+    }
+
+    .name {
+        font-size: 2vh;
+    }
+
+    .email {
+        font-size: 1.5vh;
+        margin-bottom: 5%;
+    }
+
+    a {
+        width: 100%;
+        flex-direction: row;
+        font-size: 1.5vh;
+        margin-left: 0%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    a:not(logout) {
+        margin-left: 0%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        /* text-align: right;    */
+    }
+
+    a:hover, a:active {
+        color: black;
+        background-color: white;
+        width: 100%;
+    }
+
+    .logout {
+        margin-top: 5%;
+        font-size: 1.5vh;
+    }
+
+    .logout:hover {
+        padding-left: 0%;
+        width: 100%;
+    }
+
+    .title-icon, .title-name {
+        height: 5vh;
+    }
+
+    .page-title {
+        font-size: 2vh;
+    }
+
+    .dateTime {
+        display: flex;
+        align-items: end;
+        /* justify-content: space-between; */
+        width: 70%;
+        /* margin-top: 1%; */
+        margin-left: auto;
+        padding: 1%;
+        font-size: 50%;
+    }
+
+    .content {
+        margin-left: 0%;
+        padding: 1%;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .addPlan {
+        width: 50%;
+    }
+
+    th {
+        top: 5%;
+    }
+
+    .error-message-box {
+        width: 80%;
+    }
+}
 
 
