@@ -74,14 +74,14 @@ a {
 }
 
 a:hover, a:active {
-    color: black;
+    color: #8C0909;
     background-color: white;
     width: 80%;
 }
 
 .sidebar a.active {
     background-color: white;
-    color: black;
+    color: #8C0909;
     width: 80%;
 }
 
@@ -95,7 +95,7 @@ a:hover, a:active {
 }
 
 .logout:hover {
-    color: black;
+    color: #8C0909;
     background-color: white;
     width: 80%; /* Keep width consistent */
     padding-left: 20%;
@@ -626,7 +626,7 @@ button:not(.confirm, .closeLogout, .confirm:hover, .closeLogout:hover) {
     }
 
     a:hover, a:active {
-        color: black;
+        color: #8C0909;
         background-color: white;
         width: 100%;
     }
