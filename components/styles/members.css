@@ -1,0 +1,604 @@
+/* members.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background-color: #f2f2f2;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #8C0909;
+    color: white;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.menu.material-symbols-outlined {
+    display: none;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.profile-icon {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    width: 20%;
+    height: auto;
+    margin-bottom: 1%;
+}
+
+.name {
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.email {
+    font-size: .8vw;
+    margin-bottom: 10%;
+}
+
+a {
+    color: white;
+    width: 100%;
+    text-decoration: none;
+    font-size: small;
+    margin-left: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 50%;
+    text-align: left;
+    display: flex;
+    font-weight: bold;
+}
+
+a:hover, a:active {
+    color: #800000;
+    background-color: white;
+    width: 80%;
+}
+
+.sidebar a.active {
+    background-color: white;
+    color: #800000;
+    width: 80%;
+}
+
+.logout {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout:hover {
+    color: #8C0909;
+    background-color: white;
+    width: 80%; /* Keep width consistent */
+    padding-left: 22%;
+    white-space: nowrap;
+    text-align: center; /* Ensure text stays centered */
+}
+
+
+.content {
+    margin-left: 20%;
+    padding: 1%;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+}
+
+.headers {
+    height: auto;
+    display: flex;
+}
+
+.header1 {
+    height: 100%;
+    width: 40%;
+    flex-direction: row;
+}
+
+.title-icon {
+    height: 15vh;
+    width: auto;
+}
+
+.title-name {
+    height: 15vh;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between; /* Space out the items */
+    align-items: center; /* Vertically center the items */
+    width: 100%;
+}
+
+.page-title {
+    margin-top: 0;  /* Remove margin-top to align properly */
+    font-size: 5vh;
+    font-weight: 600;
+    color: #8C0909;
+}
+
+.add-button {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    background-color: #8C0909;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.add-button:hover {
+    background-color: #600606; /* Darker shade on hover */
+}
+.header2 {
+    height: 100%;
+    width: 60%;
+    flex-direction: row;
+}
+
+.dateTime {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: auto;
+    padding: 1%;
+}
+
+.active-members {
+    border-radius: 5px;
+    margin-top: 1%;
+    width: 100%;
+    padding: 1%;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    font-size: 14px;
+}
+
+
+.table-header {
+    padding-bottom: 2%;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.member-search {
+    padding: 10px;
+    width: 30%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    outline: none;
+}
+
+.table-container {
+    width: 100%;
+    border-spacing: 5%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: start;
+    
+}
+
+tr {
+    background-color: white;
+    top: 0%;
+    position: sticky;
+}
+
+th {
+    background-color: white;
+    top: 0%;
+    position: sticky;
+    text-align: start;
+}
+
+td {
+    padding-top: 1%;
+    white-space: nowrap;
+}
+
+
+/* Style the dropdown */
+.action-dropdown {
+    padding: 2px;
+    font-size: small;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    color: #973131;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Colors for each option */
+.btn-view {
+    background-color: #D9534F;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #973131;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #8C0909;
+    color: white;
+}
+
+
+
+/* General Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 500px;
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h2 {
+    color: #800000;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Form Grid Layout */
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Full-width field for Date */
+.form-group.full {
+    grid-column: span 2;
+}
+
+/* Labels */
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Read-only input style */
+input[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    color: gray;
+}
+
+/* Buttons Container */
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Add Button */
+.add-btn {
+    background-color: #800000;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Button Hover Effects */
+.add-btn:hover {
+    background-color: #600000;
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background-color: #f2f2f2;
+    color: #800000;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cancel-btn:hover {
+    background-color: #ccc;
+}
+
+/* Center Modal Properly */
+.modal1 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+}
+
+/* Ensure Modal is Properly Centered */
+.modal-content1 {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 20%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    text-align: center;
+}
+
+
+/* Modal Title */
+.modal-title1 {
+    color: #800000;
+    font-size: larger;
+    font-weight: bold;
+    text-align: start;
+}
+
+.modal-desc {
+    padding: 20px;
+    font-weight: 500;
+    font-size: small;
+}
+
+
+/* Center Modal Properly */
+.modal2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+}
+
+/* Ensure Modal is Properly Centered */
+.modal-content2 {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Modal Title */
+.modal-title {
+    color: #800000;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Grid Layout for Details */
+.member-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+    gap: 20px;
+    padding-bottom: 5px;
+}
+
+/* Input Fields */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f8f8f8;
+    font-size: 12px;
+}
+
+/* Ensure Footer is at the Bottom-Right */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+    margin-top: auto; /* Pushes the footer to the bottom */
+    padding-top: 15px; /* Adds spacing above the button */
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.save-btn {
+    background-color: #800000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.save-btn:hover {
+    background: #600606;
+    color: white;
+}
+
+
+/* Close Button */
+.close-btn {
+    background-color: #f2f2f2;
+    color: #800000;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.close-btn:hover {
+    background-color: #ccc;
+}
+
+
+/* Modal Background Overlay */
+.modal3 {
+    display: none; /* Ensures modal is hidden by default */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+}
+
+
+/* Modal Box */
+.modal-content3 {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Header */
+.modal-content3 h3 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Modal Text */
+.modal-content3 p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
