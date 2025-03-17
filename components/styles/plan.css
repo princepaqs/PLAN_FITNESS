@@ -110,7 +110,7 @@ a:hover, a:active {
     height: 100%;
     top: 0;
     left: 0;
-    /* z-index: 1; Make sure it stays on top */
+    z-index: 50; /*Make sure it stays on top*/
     background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
 }
 
@@ -159,13 +159,14 @@ a:hover, a:active {
     /* justify-content: center; */
 }
 
-button:not(.update-details, .update-password, .update-details-save, .update-details-cancel, .update-password-save, .update-password-cancel) {
-    /* width: 100%; */
+button{
+    width: 100%;
     margin-top: 10%;
     padding: 3%;
+    border: none;
     /* border-radius: 5px; */
     cursor: pointer;
-    /* font-size: 1vw; */
+    font-size: 1vw;
     align-self: center;
 }
 
@@ -174,7 +175,7 @@ button:not(.update-details, .update-password, .update-details-save, .update-deta
     justify-content: space-between;
 }
 
-.confirm {
+.confirm, .addPlanModal, .editPlanModal {
     color: #ffffff;
     background-color: #8C0909;
     border-color: black;
@@ -188,12 +189,12 @@ button:not(.update-details, .update-password, .update-details-save, .update-deta
     /* margin-bottom: 10%; */
 }
 
-.confirm:hover {
+.confirm:hover, .addPlanModal:hover, .editPlanModal:hover {
     color: #8C0909;
     background-color: #d9d9d9;
 }
 
-.closeLogout {
+.close, .closePlanModal {
     color: #8C0909;
     background-color: #d9d9d9;
     border-color: black;
@@ -207,23 +208,24 @@ button:not(.update-details, .update-password, .update-details-save, .update-deta
     /* margin-bottom: 10%; */
 }
 
-.closeLogout:hover {
+.close:hover, .closePlanModal:hover {
     background-color: #8C0909;
     color: white;
 }
 
-    /* THIS IS THE CSS FOR THE ADMINISTRATION */
+    /* THIS IS THE CSS FOR THE PLAN */
 
 .content {
     margin-left: 20%;
     padding: 1%;
     width: 80%;
     height: 100%;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .headers {
-    height: auto;
+    height: 25%;
     /* background-color: #7cdd84cc; */
     flex-direction: row;
     display: flex;
@@ -231,7 +233,7 @@ button:not(.update-details, .update-password, .update-details-save, .update-deta
 
 .header1 {
     height: 100%;
-    width: 40%;
+    width: 50%;
     flex-direction: row;
     /* background-color: #dd7c7ccc; */
 }
@@ -255,7 +257,7 @@ button:not(.update-details, .update-password, .update-details-save, .update-deta
 .header2 {
     /* background-color: aquamarine; */
     height: 100%;
-    width: 60%;
+    width: 50%;
     flex-direction: row;
 }
 
@@ -269,178 +271,237 @@ button:not(.update-details, .update-password, .update-details-save, .update-deta
     padding: 1%;
 }
 
-.administration-content {
-    height: 75%;
-    width: 100%;
-    flex-direction: row;
-    display: flex;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
-    width: 50%;
-    padding: 2%;
-    height: 100%;
-}
-
-.profile-image {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-icon-main {
-    width: 50%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    border-style: solid;
-    border-width: 1px;
-}
-
-.profile-title {
-    margin-top: 5%;
-    font-size: 2vh;
-    font-weight: bold;
-    color: #8C0909;
-}
-
-.profile-fullname, .profile-nickname, .profile-contact {
-    margin-bottom: 5%;
-    font-size: 3vh;
-    font-weight: bold;
-}
-
-button:not(.confirm, .closeLogout, .confirm:hover, .closeLogout:hover) {
-    font-size: 2vh;
-    font-weight: bold;
-    color: white;
-    background-color: #8C0909;
+.addPlan {
     width: 30%;
-    padding: 1%;
-    /* border: none; */
-}
-
-.update-profile {
     display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    /* box-shadow: 5px 5px 10px 2px rgb(138, 138, 138); */
-    width: 100%;
-    padding: 2%;
-    margin-top: -9%;
-    margin-left: 2%;
-    height: 120%;
-}
-
-.open.update-details-content {
-    display: none;
-}
-
-.update-details-content, .update-password-content {
-    margin-top: -6%;
-    padding: 2%;
-    padding-left: 6%;
-    padding-right: 6%;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: -32%;
-    box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
-}
-
-.update-password-content {
-    margin-top: -6%;
-}
-
-.update-details-title, .update-password-title {
-    font-size: 2vh;
+    justify-content: center;
+    background-color: #8C0909;
+    color: white;
+    font-size: 2.5vh;
     font-weight: bold;
-    text-align: left;
-    align-self: flex-start;
-    display: flex;
-    flex-direction: row;
-    /* color: #8C0909; */
+    border-radius: 0;
+    border: 1px solid black;
+    margin-top: 15%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    padding: 2%;
 }
 
-.update-details-form, .update-password-form {
-    color: #8C0909;
-    font-size: 1.8vh;
-    font-weight: bold;
-    flex-direction: column;
-    margin-left: 20%;
-}
-
-.update-details-form-title, .update-password-form-title {
-    margin-top: 2%;
-}
-
-.update-details-form-input, .update-password-form-input {
-    width: 70%;
+.plan-content {
+    width: 100%;
     /* margin-top: 2%; */
+    padding-left: 2%;
+    padding-right: 2%;
+    /* padding: 2%; */
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
+    /* background-color: rgb(255, 0, 0); */
+}
+
+.table-header {
+    padding: 2%;
+    background-color: white;
+    position: sticky;
+    z-index: 30;
+}
+
+.plan-search, .table-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.plan-search {
+    /* padding-right: 30px; Make room for the icon */
+    position: sticky;
+    top: 0;
+    background-color: white;
     padding: 1%;
-    font-size: 2vh;
-    display: flex;
+    width: 30%;
+    z-index: 100;
 }
 
-.update-details-buttons, .update-password-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    margin-top: 5%;
+.search-icon {
+    position: absolute;
+    right: 10px;  /* Position the icon inside the input, on the right */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the icon */
+    pointer-events: none; /* Make the icon unclickable */
 }
 
-.update-details-save, .update-details-cancel, .update-password-save, .update-password-cancel {
-    margin-left: 2%;
-    font-size: 1.5vh;
+.table-container {
+    width: 100%;
+    height: 50%;
+    /* border-spacing: 5%; */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    background-color: white;
+    top: 13%;
+    position: sticky;
+}
+
+td {
     padding: 1%;
+    white-space: nowrap;
 }
 
-.update-details-cancel, .update-password-cancel {
-    background-color: #ececec;
+.plan-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.plan-table thead {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10; /* Ensures it stays above the scrolling content */
+}
+
+.plan-table th, .plan-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.plan-table th {
+    background: #f8f8f8;
+}
+
+.plan-modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 70%;
+    z-index: 200;
+    background-color: white;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.plan-modal-title {
+    font-size: 5vh;
+    font-weight: bold;
     color: #8C0909;
 }
 
-.update-password {
-    margin-top: 35%;
-    /* width: 15%; */
-    /* position: fixed; */
+.plan-modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly; /* Ensures equal spacing */
+    padding: 20px; /* Adds some spacing inside the modal */
 }
 
-.open.update-password-content {
-    display: none;
+.plan-subcontent-1, .plan-subcontent-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ensures equal spacing between elements */
+    width: 100%;
+    gap: 15%; /* Adjusts the space between child elements */
 }
 
-.password-wrapper {
+.plan-id-content, .plan-name-content, 
+.plan-amount-content, .plan-validity-content, .plan-sessions-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Ensures equal width for all inputs */
+}
+
+.plan-id-content input, .plan-name-content input, 
+.plan-amount-content input, .plan-validity-content input, .plan-sessions-content select {
+    width: 100%; /* Ensures inputs take full width */
+    padding: 3%;
+    background-color: #EFEFEF;
+    border: 1px solid black;
+}
+
+.plan-confirmation {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    width: 50%;
+    gap: 10%;
+}
+
+.addPlanModal, .editPlanModal, .closePlanModal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-dropdown {
     position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: #EFEFEF;
+    color: #8C0909;
+    border: 1px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    width: 70%;
 }
 
-.update-password-form-input {
-    width: 100%;
-    padding: 10px;
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    list-style: none;
+    /* padding: 5px 0; */
+    margin: 0;
+    width: 100px;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+}
+
+.dropdown-menu li {
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.material-symbols-outlined {
     font-size: 16px;
 }
 
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
+.editPlan {
+    background-color: #973131;
+    color: white;
+}
+
+.deletePlan {
+    background-color: #8C0909;
+    color: white;
 }
 
 @media (max-width: 1279px) {
-
+    
     .sidebar {
         width: 20%;
     }
@@ -459,7 +520,7 @@ button:not(.confirm, .closeLogout, .confirm:hover, .closeLogout:hover) {
     }
 
     .headers {
-        height: 15%;
+        height: 20%;
     }
     
     .title-icon, .title-name {
@@ -470,25 +531,29 @@ button:not(.confirm, .closeLogout, .confirm:hover, .closeLogout:hover) {
         font-size: 3vh;
     }
 
-    .page-profile-content {
-        font-size: 2vh;
-    }
-
-    .usericon {
-        height: 5vh;
-    }
-
-    .username {
-        font-size: 2vh;
-    }
-
     .dateTime {
         font-size: 2vh;
         width: 100%;
     }
 
-    .administration-content {
-        height: 65%;
+    .plan-content {
+        height: 80%;
+    }
+
+    th {
+        top: 10%;
+    }
+
+    .plan-table {
+        font-size: 1.5vh;
+    }
+
+    .dropdown-menu {
+        margin-left: -100%;
+    }
+
+    .plan-modal{
+        width: 80%;
     }
 }
 
@@ -522,25 +587,22 @@ button:not(.confirm, .closeLogout, .confirm:hover, .closeLogout:hover) {
         font-size: 2.5vh;
     }
 
-    .page-profile-content {
-        font-size: 1.8vh;
-    }
-
-    .usericon {
-        height: 4vh;
-    }
-
-    .username {
-        font-size: 1.8vh;
-    }
-
     .dateTime {
         font-size: 1.8vh;
         width: 100%;
     }
+
+    .addPlan {
+        font-size: 1.8vh;
+    }
+
+    .plan-modal {
+        font-size: 80%;
+    }
 }
 
 @media (max-width: 425px) {
+
     .sidebar {
         width: 100%;
         height: 40%;
@@ -665,30 +727,20 @@ button:not(.confirm, .closeLogout, .confirm:hover, .closeLogout:hover) {
         padding: 1%;
         width: 100%;
         height: 100%;
-        overflow: auto;
-    }
-    
-    .administration-content
-    {
-        height: 100%;
-        width: 100%;
-        flex-direction: column;
-        display: flex;
-        align-items: center;
+        overflow-y: auto;
     }
 
-    .profile{
-        width: 100%;
+    .addPlan {
+        width: 50%;
     }
 
-    .update-profile{
-        display: flex;
-        width: 100%;
-        margin: 0%;
+    th {
+        top: 5%;
     }
 
     .error-message-box {
-        /* font-size: 1.5vw; */
-        width: 50%;
+        width: 80%;
     }
 }
+
+

@@ -1,4 +1,4 @@
-import { trainers, cashiers } from './data.js';
+import { admin, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
 const errorMessageBox = document.getElementById("error-message-box");
@@ -6,12 +6,13 @@ const errorTitle = document.getElementById("error-title");
 const errorMessageLogin = document.getElementById("error-message-login");
 const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
 const closeErrorMessageBox = document.getElementById("close-error-message-box");
+const background = document.getElementById("background");
 
 if (!emailInput) {
     alert("You are not logged in!");
 } else {
     // Find user in both trainers and cashiers lists
-    const userList = [...cashiers, ...trainers].find(user => user.email === emailInput);
+    const userList = [...admin, ...cashiers, ...trainers].find(user => user.email === emailInput);
 
     if (!userList) {
         alert("Invalid user!");
@@ -45,10 +46,21 @@ setInterval(() => {
 }, 1000);
 
 document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu");
+    const sidebar = document.querySelector(".sidebar");
+
+    menuIcon.addEventListener("click", function () {
+        sidebar.classList.toggle("hidden"); // Toggles sidebar visibility
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
     const updateDetailsButton = document.querySelector(".update-details");
     const updateDetailsSave = document.querySelector(".update-details-save");
     const updateDetailsCancel = document.querySelector(".update-details-cancel");
     const updateDetailsContent = document.querySelector(".update-details-content");
+
+    
 
     updateDetailsSave.addEventListener("click", function () {
         errorMessageBox.classList.add("open-error-message-box");
@@ -57,8 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
         updateDetailsContent.classList.toggle("open"); // Toggles sidebar visibility
         confirmErrorMessageBox.style.display = "none";
         closeErrorMessageBox.style.display = "none";
+        background.style.display = "flex";
         setTimeout(() => {
             errorMessageBox.classList.remove("open-error-message-box");
+            background.style.display = "none";
         }, 2000);
     });
 
@@ -80,12 +94,14 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePaswordSave.addEventListener("click", function () {
         confirmErrorMessageBox.style.display = "none";
         closeErrorMessageBox.style.display = "none";
+        background.style.display = "flex";
         if (!document.getElementById("newPassword").value || !document.getElementById("confirmPassword").value) {
             errorMessageBox.classList.add("open-error-message-box");
             errorTitle.innerHTML = "Error!";
             errorMessageLogin.innerHTML = "Please fill in all fields!";
             setTimeout(() => {
                 errorMessageBox.classList.remove("open-error-message-box");
+                background.style.display = "none";
             }, 2000);
             return false;
         } else if(document.getElementById("newPassword").value !== document.getElementById("confirmPassword").value) {
@@ -94,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
             errorMessageLogin.innerHTML = "Passwords do not match!";
             setTimeout(() => {
                 errorMessageBox.classList.remove("open-error-message-box");
+                background.style.display = "none";
             }, 2000);
             return false;
         } else if(document.getElementById("newPassword").value.length < 8) {
@@ -102,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
             errorMessageLogin.innerHTML = "Password must be at least 8 characters long!";
             setTimeout(() => {
                 errorMessageBox.classList.remove("open-error-message-box");
+                background.style.display = "none";
             }, 2000);
             return false;
         } else {
@@ -111,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updatePasswordContent.classList.toggle("open");
             setTimeout(() => {
                 errorMessageBox.classList.remove("open-error-message-box");
+                background.style.display = "none";
             }, 2000);
         }
     });
@@ -141,6 +160,7 @@ document.querySelectorAll(".toggle-password").forEach(toggle => {
 
 document.getElementById("logout-btn").addEventListener("click", function (event) {
 
+    background.style.display = "flex";
     if (errorMessageBox && errorMessageLogin && closeErrorMessageBox && confirmErrorMessageBox) {
         // Show the logout confirmation modal
         errorMessageBox.classList.add("open-error-message-box");
@@ -149,6 +169,7 @@ document.getElementById("logout-btn").addEventListener("click", function (event)
         // Close modal when clicking cancel
         closeErrorMessageBox.onclick = function () {
             errorMessageBox.classList.remove("open-error-message-box");
+            background.style.display = "none";
         };
 
         // Confirm logout action
