@@ -1,4 +1,4 @@
-import { trainers, cashiers } from "./data.js";
+import { admin, trainers, cashiers } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");
@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordError = document.getElementById("password-error");
     const errorMessageBox = document.getElementById("error-message-box");
     const errorMessageLogin = document.getElementById("error-message-login");
+    const background = document.getElementById("background");
     const closeErrorMessageBox = document.getElementById("close-error-message-box");
 
     function validateField(input, errorElement, message) {
@@ -29,10 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("login-btn").addEventListener("click", function (event) {
         event.preventDefault(); // Prevent form submission
+        background.style.display = "flex";
 
         validateField(emailInput, emailError, "Email is required");
         validateField(passwordInput, passwordError, "Password is required");
 
+        const adminList = [...admin ].find(admin => admin.email === emailInput.value && admin.password === passwordInput.value);
         const cashierList = [...cashiers ].find(cashier => cashier.email === emailInput.value && cashier.password === passwordInput.value);
         const trainerList = [...trainers ].find(trainer => trainer.email === emailInput.value && trainer.password === passwordInput.value);
 
@@ -40,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             errorMessageBox.classList.add("open-error-message-box");
             errorMessageLogin.innerHTML = "Please fill in all fields!";
             return false;
-        } else if (cashierList) {
+        } else if (adminList) {
             // Show success message
             errorMessageBox.classList.add("open-error-message-box");
             errorMessageLogin.innerHTML = "You're all set! Logged in successfully.";
@@ -62,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Hide the close button
             closeErrorMessageBox.style.display = "none";
+
 
             // Store email in local storage
             localStorage.setItem("email", emailInput.value);
@@ -91,5 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Close error message box (only if login is not successful)
     closeErrorMessageBox.onclick = function () {
         errorMessageBox.classList.remove("open-error-message-box");
+        background.style.display = "none";
     };
 });

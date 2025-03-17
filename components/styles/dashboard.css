@@ -74,14 +74,14 @@ a {
 }
 
 a:hover, a:active {
-    color: black;
+    color: #8C0909;
     background-color: white;
     width: 80%;
 }
 
 .sidebar a.active {
     background-color: white;
-    color: black;
+    color: #8C0909;
     width: 80%;
 }
 
@@ -95,12 +95,23 @@ a:hover, a:active {
 }
 
 .logout:hover {
-    color: black;
+    color: #8C0909;
     background-color: white;
     width: 80%; /* Keep width consistent */
     padding-left: 20%;
     white-space: nowrap;
     text-align: center; /* Ensure text stays centered */
+}
+
+.background {
+    display: none;
+    position: fixed; /* Positioning the background */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* z-index: 1; Make sure it stays on top */
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
 }
 
 .error-message-box {
@@ -153,7 +164,7 @@ button{
     margin-top: 10%;
     padding: 3%;
     border: none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
     font-size: 1vw;
     align-self: center;
@@ -217,6 +228,7 @@ button{
     /* background-color: #7cdd84cc; */
     flex-direction: row;
     display: flex;
+    /* position: fixed; */
 }
 
 .header1 {
@@ -749,6 +761,7 @@ td {
     }
 
     a {
+        width: 100%;
         flex-direction: row;
         font-size: 1.5vh;
         margin-left: 0%;
@@ -768,6 +781,12 @@ td {
         padding-left: 0%;
         padding-right: 0%;
         /* text-align: right;    */
+    }
+    
+    a:hover, a:active {
+        color: #8C0909;
+        background-color: white;
+        width: 100%;
     }
 
     .logout {
@@ -869,7 +888,7 @@ td {
     }
 
     .error-message-box {
-        /* font-size: 1.5vw; */
+        font-size: 2.5vw;
         width: 50%;
     }
 }

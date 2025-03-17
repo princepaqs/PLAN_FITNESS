@@ -141,10 +141,21 @@ button {
     margin-top: 10%;
     padding: 3%;
     border: none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
     font-size: 1vw;
     align-self: center;
+}
+
+.background {
+    display: none;
+    position: fixed; /* Positioning the background */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* z-index: 1; Make sure it stays on top */
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
 }
 
 .error-message-box {
