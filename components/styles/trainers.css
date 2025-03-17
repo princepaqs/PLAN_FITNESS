@@ -63,7 +63,7 @@ a {
     color: white;
     width: 100%;
     text-decoration: none;
-    font-size: small;
+    font-size: medium;
     margin-left: 20%;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -221,6 +221,7 @@ tr {
     background-color: white;
     top: 0%;
     position: sticky;
+    border-bottom: 1px solid lightgray;
 }
 
 th {
@@ -233,6 +234,7 @@ th {
 td {
     padding-top: 1%;
     white-space: nowrap;
+    padding-bottom: 5px
 }
 
 
@@ -254,7 +256,7 @@ td {
     color: white;
 }
 
-.btn-view {
+.btn-sched {
     background-color: #333;
     color: white;
 }
@@ -623,7 +625,7 @@ input[readonly] {
 
 
 .schedule {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
