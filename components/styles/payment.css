@@ -8,6 +8,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: "Poppins", sans-serif;
+    background-color: #f2f2f2;
 }
 
     /* THIS IS THE SIDEBAR CSS */
@@ -62,7 +63,7 @@ a {
     color: white;
     width: 100%;
     text-decoration: none;
-    font-size: medium;
+    font-size: small;
     margin-left: 20%;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -157,16 +158,6 @@ a:hover, a:active {
     margin-top: 10%;
     margin-bottom: 10%;
     /* justify-content: center; */
-}
-
-button:not(.update-details, .update-password, .update-details-save, .update-details-cancel, .update-password-save, .update-password-cancel) {
-    /* width: 100%; */
-    margin-top: 10%;
-    padding: 3%;
-    /* border-radius: 5px; */
-    cursor: pointer;
-    /* font-size: 1vw; */
-    align-self: center;
 }
 
 .confirmation {
@@ -265,4 +256,19 @@ button:not(.update-details, .update-password, .update-details-save, .update-deta
     width: 50%;
     margin-left: auto;
     padding: 1%;
+}
+
+.payment-content {
+    background-color: white;
+    box-shadow: 1vh 1vh 1vh black;
+}
+
+.start-new-plan {
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+.continue-payment {
+    background-color: #8C0909;
+    color: white;
 }

@@ -433,7 +433,7 @@ const transactions = [
         month: 'Feb',
         datePaid: 'Feb-24-2025',
         plan: 'BFP-01',
-        status: 'Active'
+        status: 'Inactive'
     },
 ]
 
