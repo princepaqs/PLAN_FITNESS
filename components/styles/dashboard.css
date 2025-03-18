@@ -264,6 +264,7 @@ button{
     padding: 2%;
     /* margin: 2%; */
     width: 98%;
+    background-color: white;
 }
 
 .page-profile-content {
@@ -310,6 +311,7 @@ button{
     /* height: 100%; */
     box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
     padding: 2%;
+    background-color: white;
 }
 
 .report-title {
@@ -353,6 +355,7 @@ button{
     width: 20%;
     padding: 2%;
     box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
+    background-color: white;
     /* background-color: aquamarine; */
 }
 
@@ -442,10 +445,9 @@ td {
     white-space: nowrap;
 }
 
-/* .member-table, tr, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-} */
+.member-table {
+    background-color: white;
+}
 
 @media (max-width: 1279px) {
 
@@ -542,6 +544,7 @@ td {
 
     .table-header {
         padding-bottom: 1%;
+        
     }
 
     .members-title, .members-search, .table-header {

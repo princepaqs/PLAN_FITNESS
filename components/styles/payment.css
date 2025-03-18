@@ -212,7 +212,7 @@ a:hover, a:active {
 }
 
 .headers {
-    height: auto;
+    height: 25%;
     /* background-color: #7cdd84cc; */
     flex-direction: row;
     display: flex;
@@ -260,15 +260,71 @@ a:hover, a:active {
 
 .payment-content {
     background-color: white;
-    box-shadow: 1vh 1vh 1vh black;
+    box-shadow: 1vh 1vh 1vh rgb(85, 85, 85);
+    padding: 2%;
+    height: 75%;
+}
+
+.payment-content-title {
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.plan-search {
+    padding: .7%;
+    width: 25%;
+    margin: 2%;
+    margin-left: 0%;
+    border: 1px solid black;
+}
+
+.payment-subcontent-1, .payment-subcontent-2, .payment-subcontent-3, .payment-subcontent-4 {
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+
+.payment-confirmation {
+    display: flex;
+    flex-direction: row;
+     justify-content: end; /*change this to space-between when using the start-new-plan */
+    align-items: end;
+    text-align: center;
+    /* background-color: aqua; */
+    margin-top: 3%;
+}
+
+.payment-member-id-content, .payment-member-name-content, .payment-plan-id-content, .payment-plan-name-content, .payment-plan-validity-content, .payment-plan-date-start-content, .payment-plan-date-end-content, .payment-plan-price-content, .payment-trainer-name-content, .payment-trainer-schedule-content, .payment-trainer-sessions-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: left; */
+    width: 25%;
+    padding: 1%;
+    /* height: 100%; */
+}
+
+.member-id, .member-name, .plan-id, .plan-name, .plan-validity, .plan-date-start, .plan-date-end, .plan-price, .trainer-name, .trainer-schedule, .trainer-sessions {
+    padding: 2%;
 }
 
 .start-new-plan {
     background-color: rgb(20, 20, 20);
     color: white;
+    justify-content: start;
+    display: none;
+    padding: 2%;
 }
 
 .continue-payment {
     background-color: #8C0909;
     color: white;
+}
+
+.start-new-plan, .continue-payment, .cancel-payment {
+    padding: 1%;
+    width: 15%;
+    margin: 1%;
 }

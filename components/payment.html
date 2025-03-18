@@ -87,9 +87,9 @@
                     <label for="plan-date-end" class="plan-date-end-title">Plan Expiry</label>
                     <input type="date" class="plan-date-end" disabled>
                 </div>
-                <div class="payment-plan-validity-content">
-                    <label for="plan-validity" class="plan-validity-title">Price</label>
-                    <input type="number" class="plan-validity" disabled>
+                <div class="payment-plan-price-content">
+                    <label for="plan-price" class="plan-price-title">Price</label>
+                    <input type="number" class="plan-price" disabled>
                 </div>
             </div>
             <div class="payment-subcontent-4">
@@ -99,13 +99,13 @@
                         <!-- <option value=""></option> put the plan ids here--> 
                     </select>
                 </div>
-                <div class="payment-plan-name-content">
-                    <label for="plan-name" class="plan-name-title">Schedule (w/ Trainer Plan)</label>
-                    <input type="text" class="plan-name" disabled>
+                <div class="payment-trainer-schedule-content">
+                    <label for="trainer-schedule" class="trainer-schedule-title">Schedule (w/ Trainer Plan)</label>
+                    <input type="text" class="trainer-schedule" disabled>
                 </div>
-                <div class="payment-plan-validity-content">
-                    <label for="plan-validity" class="plan-validity-title">Sessions (w/ Trainer Plan)</label>
-                    <input type="number" class="plan-validity" disabled>
+                <div class="payment-trainer-sessions-content">
+                    <label for="trainer-sessions" class="trainer-sessions-title">Sessions (w/ Trainer Plan)</label>
+                    <input type="number" class="trainer-sessions" disabled>
                 </div>
             </div>
             <div class="payment-confirmation">
@@ -124,52 +124,6 @@
             <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
         </div>
     </div>
-
-    <div class="plan-modal" id="plan-modal">
-        <span class="plan-modal-title" id="plan-modal-title">Add Plan</span>
-        <div class="plan-modal-content">
-            <div class="plan-subcontent-1">
-                <div class="plan-id-content">
-                    <label class="planIdTitle">Plan ID</label>
-                    <input type="text" class="planId" id="planId">
-                </div>
-                <div class="plan-name-content">
-                    <label class="planNameTitle">Plan Name</label>
-                    <input type="text" class="planName" id="planName">
-                </div>
-            </div>
-            <div class="plan-subcontent-2">
-                <div class="plan-amount-content">
-                    <label class="planAmountTitle">Amount</label>
-                    <input type="number" class="planAmount" id="planAmount">
-                </div>
-                <div class="plan-validity-content">
-                    <label class="planValidityTitle">Validity (Months)</label>
-                    <input type="number" class="planValidity" id="planValidity">
-                </div>
-                <div class="plan-sessions-content">
-                    <label class="planSessionsTitle"># of Sessions</label>
-                    <!-- <input type="text" class="planSessions"> this should be dropdown -->
-                     <select name="sessions" id="planSessions" class="planSessions">
-                        <option value="N/A">N/A</option>
-                        <option value="3">3</option>
-                        <option value="6">6</option>
-                        <option value="9">9</option>
-                        <option value="12">12</option>
-                        <option value="15">15</option>
-                        <option value="18">18</option>
-                        <option value="36">36</option>
-                     </select>
-                </div>
-            </div>
-        </div>
-        <div class="plan-confirmation">
-            <button class="addPlanModal" type="button" id="addPlanModal">Add</button>
-            <button class="editPlanModal" type="button" id="editPlanModal">Edit</button>
-            <button class="closePlanModal" type="button" id="closePlanModal">Cancel</button>
-        </div>
-    </div>
-
     <div class="action-modal">
 
     </div>

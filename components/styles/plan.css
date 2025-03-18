@@ -297,7 +297,7 @@ button{
     position: relative;
     overflow-y: auto;
     box-shadow: 5px 5px 10px 2px rgb(138, 138, 138);
-    /* background-color: rgb(255, 0, 0); */
+    background-color: white;
 }
 
 .table-header {
