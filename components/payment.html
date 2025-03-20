@@ -26,6 +26,7 @@
         <a href="members.html">Members</a>
         <a href="trainers.html">Trainers</a>                                                                                                                    
         <a href="sales.html">Sales Report</a>
+        <a href="administration.html">Administration</a>
         <a class="logout" id="logout-btn">Log out</a>
     </div>
     <div class="content">
@@ -46,30 +47,72 @@
             </div>
         </header>
         <section class="payment-content">
-            <div class="payments">
-                <!-- <div class="table-header">
-                    <div class="search-wrapper">
-                        <input type="search" name="search" id="search" class="plan-search" placeholder="Search" oninput="searchTable()">
-                        <span class="material-symbols-outlined search-icon">search</span>
-                    </div>
-                </div>
-                <div class="table-container">
-                    <table class="plan-table">
-                        <thead>
-                            <tr>
-                                <th onclick="sortTable(0)">Plan ID <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(1)">Name <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(2, false, false, true)">Validity <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(3, false, true)">Sessions <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(4, false, true)">Amount <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody class="plan-lists"></tbody>
-                    </table>
-                </div> -->
+            <div class="payment-content-title">Point of Sales</div>
+            <div class="search-wrapper">
+                <input type="search" name="search" id="search" class="plan-search" placeholder="Search" oninput="searchTable()">
+                <!-- <span class="material-symbols-outlined search-icon">search</span> -->
             </div>
-            
+            <div class="payment-subcontent-1">
+                <div class="payment-member-id-content">
+                    <label for="member-id" class="member-id-title">Member ID</label>
+                    <input type="text" class="member-id" disabled>
+                </div>
+                <div class="payment-member-name-content">
+                    <label for="member-name" class="member-name-title">Member Name</label>
+                    <input type="text" class="member-name" disabled>
+                </div>
+            </div>
+            <div class="payment-subcontent-2">
+                <div class="payment-plan-id-content">
+                    <label for="plan-id" class="plan-id-title">Plan ID</label>
+                    <select name="plan-id" class="plan-id" id="plan-id" disabled>
+                        <!-- <option value=""></option> put the plan ids here--> 
+                    </select>
+                </div>
+                <div class="payment-plan-name-content">
+                    <label for="plan-name" class="plan-name-title">Plan Name</label>
+                    <input type="text" class="plan-name" disabled>
+                </div>
+                <div class="payment-plan-validity-content">
+                    <label for="plan-validity" class="plan-validity-title">Plan Validity</label>
+                    <input type="number" class="plan-validity" disabled>
+                </div>
+            </div>
+            <div class="payment-subcontent-3">
+                <div class="payment-plan-date-start-content">
+                    <label for="plan-date-start" class="plan-date-start-title">Plan Date Start</label>
+                    <input type="date" class="plan-date-start" disabled>
+                </div>
+                <div class="payment-plan-date-end-content">
+                    <label for="plan-date-end" class="plan-date-end-title">Plan Expiry</label>
+                    <input type="date" class="plan-date-end" disabled>
+                </div>
+                <div class="payment-plan-price-content">
+                    <label for="plan-price" class="plan-price-title">Price</label>
+                    <input type="number" class="plan-price" disabled>
+                </div>
+            </div>
+            <div class="payment-subcontent-4">
+                <div class="payment-trainer-name-content">
+                    <label for="trainer-name" class="trainer-name-title">Trainer Name (w/ Trainer Plan)</label>
+                    <select name="trainer-name" class="trainer-name" id="trainer-name" disabled>
+                        <!-- <option value=""></option> put the plan ids here--> 
+                    </select>
+                </div>
+                <div class="payment-trainer-schedule-content">
+                    <label for="trainer-schedule" class="trainer-schedule-title">Schedule (w/ Trainer Plan)</label>
+                    <input type="text" class="trainer-schedule" disabled>
+                </div>
+                <div class="payment-trainer-sessions-content">
+                    <label for="trainer-sessions" class="trainer-sessions-title">Sessions (w/ Trainer Plan)</label>
+                    <input type="number" class="trainer-sessions" disabled>
+                </div>
+            </div>
+            <div class="payment-confirmation">
+                <button class="start-new-plan" type="button" id="start-new-plan">Start New Plan</button>
+                <button class="continue-payment" type="button" id="continue-payment">Continue</button>
+                <button class="cancel-payment" type="button" id="cancel-payment">Clear</button>
+            </div>
         </section>
     </div>
     <div class="background" id="background"></div>
@@ -81,52 +124,6 @@
             <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
         </div>
     </div>
-
-    <div class="plan-modal" id="plan-modal">
-        <span class="plan-modal-title" id="plan-modal-title">Add Plan</span>
-        <div class="plan-modal-content">
-            <div class="plan-subcontent-1">
-                <div class="plan-id-content">
-                    <label class="planIdTitle">Plan ID</label>
-                    <input type="text" class="planId" id="planId">
-                </div>
-                <div class="plan-name-content">
-                    <label class="planNameTitle">Plan Name</label>
-                    <input type="text" class="planName" id="planName">
-                </div>
-            </div>
-            <div class="plan-subcontent-2">
-                <div class="plan-amount-content">
-                    <label class="planAmountTitle">Amount</label>
-                    <input type="number" class="planAmount" id="planAmount">
-                </div>
-                <div class="plan-validity-content">
-                    <label class="planValidityTitle">Validity (Months)</label>
-                    <input type="number" class="planValidity" id="planValidity">
-                </div>
-                <div class="plan-sessions-content">
-                    <label class="planSessionsTitle"># of Sessions</label>
-                    <!-- <input type="text" class="planSessions"> this should be dropdown -->
-                     <select name="sessions" id="planSessions" class="planSessions">
-                        <option value="N/A">N/A</option>
-                        <option value="3">3</option>
-                        <option value="6">6</option>
-                        <option value="9">9</option>
-                        <option value="12">12</option>
-                        <option value="15">15</option>
-                        <option value="18">18</option>
-                        <option value="36">36</option>
-                     </select>
-                </div>
-            </div>
-        </div>
-        <div class="plan-confirmation">
-            <button class="addPlanModal" type="button" id="addPlanModal">Add</button>
-            <button class="editPlanModal" type="button" id="editPlanModal">Edit</button>
-            <button class="closePlanModal" type="button" id="closePlanModal">Cancel</button>
-        </div>
-    </div>
-
     <div class="action-modal">
 
     </div>
