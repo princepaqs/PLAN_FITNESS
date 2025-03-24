@@ -1,6 +1,6 @@
-// trainers.js
+// members.js
 
-import { trainers } from './data.js';
+import { transactions } from './data.js';
 
 
 const dateElement = document.getElementById('date');
@@ -16,26 +16,20 @@ setInterval(() => {
 
 
 
-const tableBody = document.querySelector(".active-trainers-lists");
+const tableBody = document.querySelector(".active-members-lists");
 
 function populateTable() {
     tableBody.innerHTML = "";
-    trainers.forEach(member => {
+    transactions.forEach(member => {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${member.id}</td>
+            <td>${member.transId}</td>
+            <td>${member.user}</td>
             <td>${member.name}</td>
-            <td>${member.contact}</td>
-            <td>${member.status}</td>
-            <td>
-                <select class="action-dropdown" data-id="${member.id}">
-                    <option value="" selected disabled>Action</option>
-                    <option class="btn-view" value="view">View</option>
-                    <option class="btn-sched" value="sched">Sched</option>
-                    <option class="btn-edit" value="edit">Edit</option>
-                    <option class="btn-delete" value="delete">Delete</option>
-                </select>
-            </td>
+            <td>${member.planId}</td>
+            <td>${member.month}</td>
+            <td>${member.amount}</td>
+            <td>${member.datePaid}</td>
         `;
         tableBody.appendChild(row);
     });
@@ -48,88 +42,102 @@ let memberToDelete = null;
 function attachEventListeners() {
     document.querySelectorAll(".action-dropdown").forEach(dropdown => {
         dropdown.addEventListener("change", function () {
-            const trainerId = this.getAttribute("data-id");
+            const memberId = this.getAttribute("data-id");
             const selectedAction = this.value;
             this.selectedIndex = 0;
 
             if (selectedAction === "view") {
-                openViewModal(trainerId);
-            } else if (selectedAction === "sched") {
-                openScheduleModal(trainerId);
-            }  else if (selectedAction === "edit") {
-                openEditModal(trainerId);
+                openViewModal(memberId);
+            } else if (selectedAction === "edit") {
+                openEditModal(memberId);
             } else if (selectedAction === "delete") {
-                openDeleteConfirmationModal(trainerId);
+                openDeleteConfirmationModal(memberId);
             }
         });
     });
 }
 
-function openViewModal(trainerId) {
-    const trainer = trainers.find(m => m.id === trainerId);
-    if (!trainer) return;
+function openViewModal(memberId) {
+    const member = members.find(m => m.id === memberId);
+    if (!member) return;
 
-    document.getElementById("viewTrainerID").value = trainer.id;
-    document.getElementById("viewTrainerName").value = trainer.name;
-    document.getElementById("viewTrainerNickname").value = trainer.nickname;
-    document.getElementById("viewTrainerContact").value = trainer.contact;
-    document.getElementById("viewTrainerAddress").value = trainer.address;
-    document.getElementById("viewTrainerDateHired").value = trainer.dateHired;
-    document.getElementById("viewTrainerEmail").value = trainer.email;
-    document.getElementById("viewTrainerStatus").value = trainer.status;
-    
+    document.getElementById("viewMemberID").value = member.id;
+    document.getElementById("viewMemberName").value = member.name;
+    document.getElementById("viewMemberJoined").value = member.joinDate;
+    document.getElementById("viewMemberContact").value = member.contact;
+    document.getElementById("viewMemberEmail").value = member.email;
+    document.getElementById("viewMemberStatus").value = member.status;
+    document.getElementById("viewMemberPlan").value = member.plan;
+    document.getElementById("viewMemberPlanStart").value = member.planStart;
+    document.getElementById("viewMemberExpiry").value = member.endDate;
+    document.getElementById("viewMemberTrainer").value = member.trainer;
+    document.getElementById("viewMemberSchedule").value = member.schedule;
+    document.getElementById("viewMemberSessions").value = member.sessions;
 
-    document.getElementById("viewTrainerModal").style.display = "block";
+    document.getElementById("viewMemberModal").style.display = "block";
 }
 
-function openEditModal(trainerId) {
-    const trainer = trainers.find(m => m.id === trainerId);
-    if (!trainer) return;
+function openEditModal(memberId) {
+    const member = members.find(m => m.id === memberId);
+    if (!member) return;
 
-    console.log("Trainer Data:", trainer); // Debugging
+    // Populate the edit modal with current data
+    document.getElementById("editMemberID").value = member.id;
+    document.getElementById("editMemberName").value = member.name;
+    document.getElementById("editMemberJoined").value = member.joinDate;
+    document.getElementById("editMemberContact").value = member.contact;
+    document.getElementById("editMemberEmail").value = member.email;
+    document.getElementById("editMemberStatus").value = member.status;
+    document.getElementById("editMemberPlan").value = member.plan;
+    document.getElementById("editMemberPlanStart").value = member.planStart;
+    document.getElementById("editMemberExpiry").value = member.endDate;
+    document.getElementById("editMemberTrainer").value = member.trainer;
+    document.getElementById("editMemberSchedule").value = member.schedule;
+    document.getElementById("editMemberSessions").value = member.sessions;
 
-    document.getElementById("editTrainerID").value = trainer.id;
-    document.getElementById("editTrainerName").value = trainer.name;
-    document.getElementById("editTrainerNickname").value = trainer.nickname;
-    document.getElementById("editTrainerAddress").value = trainer.address;
-    document.getElementById("editTrainerContact").value = trainer.contact;
-    document.getElementById("editTrainerEmail").value = trainer.email;
-    document.getElementById("editTrainerStatus").value = trainer.status;
+    document.getElementById("editMemberModal").style.display = "block";
 
-    document.getElementById("editTrainerDateHired").value = trainer.dateHired
-
-
-    document.getElementById("editTrainerModal").style.display = "block";
     document.getElementById("editModal").style.display = "none";
 
+    // Handle the save button
     document.getElementById("saveEdit").onclick = function () {
-        trainer.name = document.getElementById("editTrainerName").value;
-        trainer.dateHired = document.getElementById("editTrainerDateHired").value; // FIXED
-        trainer.contact = document.getElementById("editTrainerContact").value;
-        trainer.email = document.getElementById("editTrainerEmail").value;
-        trainer.status = document.getElementById("editTrainerStatus").value;
+        member.name = document.getElementById("editMemberName").value;
+        member.joinDate = document.getElementById("editMemberJoined").value;
+        member.contact = document.getElementById("editMemberContact").value;
+        member.email = document.getElementById("editMemberEmail").value;
+        member.status = document.getElementById("editMemberStatus").value;
+        member.plan = document.getElementById("editMemberPlan").value;
+        member.planStart = document.getElementById("editMemberPlanStart").value;
+        member.endDate = document.getElementById("editMemberExpiry").value; // FIXED
+        member.trainer = document.getElementById("editMemberTrainer").value;
+        member.schedule = document.getElementById("editMemberSchedule").value;
+        member.sessions = document.getElementById("editMemberSessions").value;
 
-        localStorage.setItem("trainers", JSON.stringify(trainers));
+        // Save changes to localStorage (if applicable)
+        localStorage.setItem("members", JSON.stringify(members)); // FIXED
 
-        document.getElementById("editTrainerModal").style.display = "none";
+        // Close the modal
+        document.getElementById("editMemberModal").style.display = "none";
+        // Show success modal
         const editModal = document.getElementById("editModal");
         editModal.style.display = "block";
 
+        // Hide the success modal after 2 seconds
         setTimeout(() => {
             editModal.style.display = "none";
         }, 2000);
 
+
+        // Refresh the table
         populateTable();
     };
 }
-
-
 document.getElementById("closeViewModal").addEventListener("click", () => {
-    document.getElementById("viewTrainerModal").style.display = "none";
+    document.getElementById("viewMemberModal").style.display = "none";
 });
 
 document.getElementById("closeEditModal").addEventListener("click", () => {
-    document.getElementById("editTrainerModal").style.display = "none";
+    document.getElementById("editMemberModal").style.display = "none";
 });
 
 populateTable();
@@ -284,8 +292,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function openDeleteConfirmationModal(trainerId) {
-    memberToDelete = trainerId;
+function openDeleteConfirmationModal(memberId) {
+    memberToDelete = memberId;
     document.getElementById("deleteConfirmationModal").style.display = "block";
 }
 
@@ -303,15 +311,15 @@ document.getElementById("cancelDelete").addEventListener("click", function () {
     document.getElementById("deleteConfirmationModal").style.display = "none";
 });
 
-function deleteMember(trainerId) {
+function deleteMember(memberId) {
     // Remove the member from the array
-    const index = trainers.findIndex(m => m.id === trainerId);
+    const index = members.findIndex(m => m.id === memberId);
     if (index !== -1) {
-        trainers.splice(index, 1);
+        members.splice(index, 1);
     }
 
-    // Save updated trainers list to localStorage (if applicable)
-    localStorage.setItem("trainers", JSON.stringify(trainers));
+    // Save updated members list to localStorage (if applicable)
+    localStorage.setItem("members", JSON.stringify(members));
 
     // Refresh the table
     populateTable();
@@ -324,31 +332,3 @@ function deleteMember(trainerId) {
         document.getElementById("deleteSuccessModal").style.display = "none";
     }, 2000);
 }
-
-
-// Function to open the schedule modal
-function openScheduleModal(trainerId) {
-    const modal = document.getElementById("scheduleModal");
-    modal.style.display = "flex";
-
-    // Update trainer details in modal
-    const trainer = trainers.find(t => t.id === trainerId);
-    if (trainer) {
-        document.getElementById("modalTrainerInfo").innerText = 
-            `Trainer ID: ${trainer.id}  Trainer Name: ${trainer.name}`;
-    }
-}
-
-// Close Modal when clicking the close button
-document.getElementById("closeModalsched").addEventListener("click", function () {
-    document.getElementById("scheduleModal").style.display = "none";
-});
-
-// Close Modal when clicking outside the modal content
-window.addEventListener("click", function (event) {
-    const modal = document.getElementById("scheduleModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
-

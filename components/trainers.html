@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
     <div class="sidebar">
@@ -273,19 +274,23 @@
 
 
 
-<div id="scheduleModal"  class="schedule">
+<div id="scheduleModal" class="schedule">
     <div class="schedule-content">
-        <h2>Schedule</h2>
         <div class="schedule-header">
+            <h2>Schedule</h2>
+            <button class="schedule-edit-btn">Edit Schedule</button>
+        </div>
+        <div class="trainer-info">
             <p><strong>Trainer ID:</strong> T002</p>
             <p><strong>Trainer Name:</strong> Lexus Lex</p>
         </div>
-        <button class="schedule-edit-btn">Edit Schedule</button>
+
         <div class="schedule-calendar">
             <button class="prev-month">&lt;</button>
             <h3>March 2025</h3>
             <button class="next-month">&gt;</button>
         </div>
+
         <table class="schedule-table">
             <thead>
                 <tr>
@@ -300,42 +305,381 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Time Slot 1 -->
                 <tr>
-                    <td>10 AM - 12 NN</td>
+                    <td class="flex-col">
+                        <span>10 AM - 12 NN</span>
+                        <span>2 PM - 4 PM</span>
+                        <span>6 PM - 8 PM</span>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="available">Available</td>
+                    <td class="available">
+                        <div>
+                            <span>1</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
+                <!-- Time Slot 2 -->
                 <tr>
-                    <td>2 PM - 4 PM</td>
-                    <td class="unavailable">Unavail.</td>
-                    <td class="available">Available</td>
-                    <td class="available">Available</td>
-                    <td class="available">Available</td>
-                    <td class="unavailable">Unavail.</td>
-                    <td class="unavailable">Unavail.</td>
-                    <td class="available">Available</td>
+                    <td class="flex-col">
+                        <span>10 AM - 12 NN</span>
+                        <span>2 PM - 4 PM</span>
+                        <span>6 PM - 8 PM</span>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>2</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>3</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>4</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>5</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>6</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>7</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>8</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
+                <!-- Time Slot 3 -->
                 <tr>
-                    <td>6 PM - 8 PM</td>
-                    <td class="unavailable">Unavail.</td>
-                    <td class="available">Available</td>
-                    <td class="available">Available</td>
-                    <td class="available">Available</td>
-                    <td class="available">Available</td>
-                    <td class="available">Available</td>
-                    <td class="available">Available</td>
+                    <td class="flex-col">
+                        <span>10 AM - 12 NN</span>
+                        <span>2 PM - 4 PM</span>
+                        <span>6 PM - 8 PM</span>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>9</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>10</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>11</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>12</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>13</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>14</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>15</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Time Slot 4 -->
+                <tr>
+                    <td class="flex-col">
+                        <span>10 AM - 12 NN</span>
+                        <span>2 PM - 4 PM</span>
+                        <span>6 PM - 8 PM</span>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>16</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>17</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>18</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>19</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>20</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>21</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>22</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Time Slot for 23 - 31 (remaining days) -->
+                <tr>
+                    <td class="flex-col">
+                        <span>10 AM - 12 NN</span>
+                        <span>2 PM - 4 PM</span>
+                        <span>6 PM - 8 PM</span>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>23</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>24</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>25</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>26</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>27</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>28</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>29</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Time Slot for 30 and 31 -->
+                <tr>
+                    <td class="flex-col">
+                        <span>10 AM - 12 NN</span>
+                        <span>2 PM - 4 PM</span>
+                        <span>6 PM - 8 PM</span>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>30</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="available">
+                        <div>
+                            <span>31</span>
+                            <div class="available-times">
+                                <span>available</span>
+                                <span>available</span>
+                                <span>available</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
+
         <button class="schedule-close-btn" id="closeModalsched">Close</button>
     </div>
 </div>
-
     
 </body>
 

@@ -1,6 +1,6 @@
 // trainers.js
 
-import { trainers } from './data.js';
+import { cashiers } from './data.js';
 
 
 const dateElement = document.getElementById('date');
@@ -20,18 +20,18 @@ const tableBody = document.querySelector(".active-trainers-lists");
 
 function populateTable() {
     tableBody.innerHTML = "";
-    trainers.forEach(member => {
+    cashiers.forEach(member => {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${member.id}</td>
             <td>${member.name}</td>
+            <td>${member.dayOff}</td>
             <td>${member.contact}</td>
             <td>${member.status}</td>
             <td>
                 <select class="action-dropdown" data-id="${member.id}">
                     <option value="" selected disabled>Action</option>
                     <option class="btn-view" value="view">View</option>
-                    <option class="btn-sched" value="sched">Sched</option>
                     <option class="btn-edit" value="edit">Edit</option>
                     <option class="btn-delete" value="delete">Delete</option>
                 </select>
@@ -351,4 +351,3 @@ window.addEventListener("click", function (event) {
         modal.style.display = "none";
     }
 });
-
