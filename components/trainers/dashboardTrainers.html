@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/dashboardTrainers.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -47,52 +47,64 @@
                     <p class="date" id="date"></p>
                     <p class="time" id="time"></p>
                 </div>
-                <!-- <div class="report" id="report">
-                    <div class="report-title">Report</div>
-                    <div class="report-content">
-                        <div class="report-members-content">
-                            <p class="total-new-members">Total New Members this Month</p>
-                            <span class="members">10</span>
-                            <p class="total-members-increase">+125% from last month</p>
-                        </div>
-                        <div class="report-sales-content">
-                            <div class="total-sales">Total Sales this Month</div>
-                            <div class="sales">₱125,766</div>
-                            <div class="total-sales-increase">+50% from last month</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </header>
         <section class="dashboard-content">
-            <!-- <div class="trainers">
-                <div class="trainer-title">Trainers</div>
-                <ul class="trainer-members" id="trainerList">
-                    Trainers will be dynamically inserted here
-                </ul>
+            <div class="schedule">
+                <div class="schedule-title" style="background-color: white; font-size: 3vh; padding: 1%; box-shadow: 10px 10px 10px rgb(138, 138, 138);"><strong>Schedule for the Next 7 Days</strong></div>
+                <table class="schedule-data">
+                    <thead>
+                        <th>Date</th>
+                        <th id="day1"></th>
+                        <th id="day2"></th>
+                        <th id="day3"></th>
+                        <th id="day4"></th>
+                        <th id="day5"></th>
+                        <th id="day6"></th>
+                        <th id="day7"></th>
+                    </thead>
+                    <tr>
+                        <th>Time/Day</th>
+                        <th id="weekday1"></th>
+                        <th id="weekday2"></th>
+                        <th id="weekday3"></th>
+                        <th id="weekday4"></th>
+                        <th id="weekday5"></th>
+                        <th id="weekday6"></th>
+                        <th id="weekday7"></th>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM<br>-<br>12:00 NN</td>
+                        <td>Nathaniel Scott</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: red;">Available</td>
+                        <td>Isabella Hughes</td>
+                        <td style="color: red;">Available</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                    </tr>
+                    <tr>
+                        <td>02:00 PM<br>-<br>04:00 PM</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td>Ava Fernandez</td>
+                        <td>Nathaniel Scott</td>
+                        <td style="color: red;">Available</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                    </tr>
+                    <tr>
+                        <td>06:00 PM<br>-<br>08:00 PM</td>
+                        <td style="color: red;">Available</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: red;">Available</td>
+                        <td>Ethan Wallace</td>
+                        <td style="color: red;">Available</td>
+                        <td>Ethan Wallace</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                    </tr>
+                </table>
             </div>
-            <div class="active-members">
-                <div class="table-header">
-                    <div class="members-title">Active Members</div>
-                    <div class="search-wrapper">
-                        <input type="search" name="search" id="search" class="member-search" placeholder="Search" oninput="searchTable()">
-                        <span class="material-symbols-outlined search-icon">search</span>
-                    </div>
-                </div>
-                <div class="table-container">
-                    <table class="member-table">
-                        <thead>
-                            <tr>
-                                <th>Member ID</th>
-                                <th onclick="sortTable(1)">Name <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(2, true)">Plan Date Start <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(3, true)">Plan Date Expiry <span class="material-symbols-outlined">swap_vert</span></th>
-                            </tr>
-                        </thead>
-                        <tbody class="active-members-lists"></tbody>
-                    </table>
-                </div>
-            </div> -->
             
         </section>
     </div>

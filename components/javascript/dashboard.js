@@ -215,6 +215,28 @@ if(role === 'admin'){
             console.error("One or more required elements are missing.");
         }
     });
+} else if (role === "trainer") {
+    document.addEventListener("DOMContentLoaded", function () {
+        const today = new Date();
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const months = [
+            "January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        for (let i = 0; i < 7; i++) {
+            let futureDate = new Date();
+            futureDate.setDate(today.getDate() + i);
+
+            let month = months[futureDate.getMonth()]; // Get full month name
+            let day = futureDate.getDate();
+            let formattedDate = `${month} ${day}`;
+            let weekday = weekdays[futureDate.getDay()];
+
+            document.getElementById(`day${i + 1}`).innerText = formattedDate;
+            document.getElementById(`weekday${i + 1}`).innerText = weekday;
+        }
+    });
 }
 
 
