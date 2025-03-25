@@ -1,6 +1,6 @@
 // trainers.js
 
-import { trainers } from './data.js';
+import { cashiers } from './data.js';
 
 const role = localStorage.getItem('role');
 const dateElement = document.getElementById('date');
@@ -20,18 +20,18 @@ const tableBody = document.querySelector(".active-trainers-lists");
 
 function populateTable() {
     tableBody.innerHTML = "";
-    trainers.forEach(member => {
+    cashiers.forEach(member => {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${member.id}</td>
             <td>${member.name}</td>
+            <td>${member.dayOff}</td>
             <td>${member.contact}</td>
             <td>${member.status}</td>
             <td>
                 <select class="action-dropdown" data-id="${member.id}">
                     <option value="" selected disabled>Action</option>
                     <option class="btn-view" value="view">View</option>
-                    <option class="btn-sched" value="sched">Sched</option>
                     <option class="btn-edit" value="edit">Edit</option>
                     <option class="btn-delete" value="delete">Delete</option>
                 </select>
@@ -66,7 +66,7 @@ function attachEventListeners() {
 }
 
 function openViewModal(trainerId) {
-    const trainer = trainers.find(m => m.id === trainerId);
+    const trainer = cashiers.find(m => m.id === trainerId);
     if (!trainer) return;
 
     document.getElementById("viewTrainerID").value = trainer.id;
@@ -83,7 +83,7 @@ function openViewModal(trainerId) {
 }
 
 function openEditModal(trainerId) {
-    const trainer = trainers.find(m => m.id === trainerId);
+    const trainer = cashiers.find(m => m.id === trainerId);
     if (!trainer) return;
 
     console.log("Trainer Data:", trainer); // Debugging
@@ -109,7 +109,7 @@ function openEditModal(trainerId) {
         trainer.email = document.getElementById("editTrainerEmail").value;
         trainer.status = document.getElementById("editTrainerStatus").value;
 
-        localStorage.setItem("trainers", JSON.stringify(trainers));
+        localStorage.setItem("cashiers", JSON.stringify(cashiers));
 
         document.getElementById("editTrainerModal").style.display = "none";
         const editModal = document.getElementById("editModal");
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tableBody = document.querySelector(".active-trainers-lists");
     const successModal = document.getElementById("successModal");
 
-    let trainers = [];
+    let cashiers = [];
 
     // Open Modal
     openModalBtn.addEventListener("click", function () {
@@ -221,9 +221,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Auto-generate Member ID
     function generateMemberID() {
-        let lastMember = trainers[trainers.length - 1]; 
-        let lastID = lastMember ? parseInt(lastMember.id.replace("T", "")) : 18; 
-        document.getElementById("trainerID").value = `PF${lastID + 1}`;
+        let lastMember = cashiers[cashiers.length - 1]; 
+        let lastID = lastMember ? parseInt(lastMember.id.replace("C", "")) : 18; 
+        document.getElementById("trainerID").value = `C${lastID + 1}`;
     }
 
     // Reset Form
@@ -238,12 +238,13 @@ document.addEventListener("DOMContentLoaded", function () {
         let newMember = {
             id: document.getElementById("trainerID").value,
             name: document.getElementById("trainerName").value,
+            dayOff: document.getElementById("dayOff").value,
             contact: document.getElementById("contact").value,
             email: document.getElementById("email").value,
-            status: "Active",
+            status: document.getElementById("status").value,
         };
 
-        trainers.push(newMember);
+        cashiers.push(newMember);
         
         // Update table with new member
         addMemberToTable(newMember);
@@ -262,15 +263,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Function to add a new row to the table
-    function addMemberToTable(trainer) {
+    function addMemberToTable(cashiers) {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${trainer.id}</td>
-            <td>${trainer.name}</td>
-            <td>${trainer.contact}</td>
-            <td>${trainer.status}</td>
+            <td>${cashiers.id}</td>
+            <td>${cashiers.name}</td>
+            <td>${cashiers.dayOff}</td>
+            <td>${cashiers.contact}</td>
+            <td>${cashiers.status}</td>
             <td>
-                <select class="action-dropdown" data-id="${trainer.id}">
+                <select class="action-dropdown" data-id="${cashiers.id}">
                     <option value="" selected disabled>Action</option>
                     <option class="btn-view" value="view">View</option>
                     <option class="btn-edit" value="edit">Edit</option>
@@ -281,7 +283,6 @@ document.addEventListener("DOMContentLoaded", function () {
         tableBody.appendChild(row);
     }
 });
-
 
 
 function openDeleteConfirmationModal(trainerId) {
@@ -305,13 +306,13 @@ document.getElementById("cancelDelete").addEventListener("click", function () {
 
 function deleteMember(trainerId) {
     // Remove the member from the array
-    const index = trainers.findIndex(m => m.id === trainerId);
+    const index = cashiers.findIndex(m => m.id === trainerId);
     if (index !== -1) {
-        trainers.splice(index, 1);
+        cashiers.splice(index, 1);
     }
 
     // Save updated trainers list to localStorage (if applicable)
-    localStorage.setItem("trainers", JSON.stringify(trainers));
+    localStorage.setItem("cashiers", JSON.stringify(cashiers));
 
     // Refresh the table
     populateTable();
@@ -332,7 +333,7 @@ function openScheduleModal(trainerId) {
     modal.style.display = "flex";
 
     // Update trainer details in modal
-    const trainer = trainers.find(t => t.id === trainerId);
+    const trainer = cashiers.find(t => t.id === trainerId);
     if (trainer) {
         document.getElementById("modalTrainerInfo").innerText = 
             `Trainer ID: ${trainer.id}  Trainer Name: ${trainer.name}`;
@@ -352,73 +353,3 @@ window.addEventListener("click", function (event) {
     }
 });
 
-const editBtn = document.querySelector(".schedule-edit-btn");
-const editConfirmationModal = document.getElementById("editConfirmationModal");
-const editSuccessModal = document.getElementById("editSuccessModal");
-const confirmEditBtn = document.getElementById("confirmEdit");
-const cancelEditBtn = document.getElementById("cancelEdit");
-
-let isEditing = false; // Track if in edit mode
-
-// Open Edit Mode
-editBtn.addEventListener("click", function () {
-    if (isEditing) {
-        // If already editing, show confirmation modal
-        editConfirmationModal.style.display = "block";
-    } else {
-        isEditing = true;
-        editBtn.textContent = "Save Schedule";
-
-        document.querySelectorAll(".available-times span").forEach(span => {
-            if (!span.querySelector("i")) {
-                let icon = document.createElement("i");
-                icon.textContent = span.classList.contains("unavailable") ? " ✗" : " ✓";
-                span.innerHTML = `${span.textContent}`; // Add ↔ icon
-                span.appendChild(icon);
-            }
-        });
-    }
-});
-
-// Toggle "available" ↔ "unavailable" when in edit mode
-document.querySelectorAll(".available-times span").forEach(span => {
-    span.addEventListener("click", function () {
-        if (!isEditing) return; // Only allow toggling when in edit mode
-
-        let icon = span.querySelector("i") || document.createElement("i");
-
-        if (span.classList.contains("unavailable")) {
-            span.classList.remove("unavailable");
-            span.innerHTML = `available <i>✓</i>`;
-        } else {
-            span.classList.add("unavailable");
-            span.innerHTML = `unavailable <i>✗</i>`;
-        }
-    });
-});
-
-// Confirm Save
-confirmEditBtn.addEventListener("click", function () {
-    editConfirmationModal.style.display = "none"; // Close confirmation modal
-    editSuccessModal.style.display = "block"; // Show success modal
-
-    setTimeout(() => {
-        editSuccessModal.style.display = "none"; // Hide success modal after 2 seconds
-    }, 2000);
-
-    isEditing = false;
-    editBtn.textContent = "Edit Schedule";
-    removeIcons(); // Remove icons after saving
-});
-
-// Cancel Edit
-cancelEditBtn.addEventListener("click", function () {
-    editConfirmationModal.style.display = "none"; // Close confirmation modal
-});
-
-// Remove icons after saving
-function removeIcons() {
-    document.querySelectorAll(".available-times span").forEach(span => {
-        span.textContent = span.classList.contains("unavailable") ? "unavailable" : "available";
-    });
-}

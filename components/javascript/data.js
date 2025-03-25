@@ -27,6 +27,19 @@ const cashiers = [
         dateHired: '01/01/2025',
         status: 'active',
         role: 'cashier'
+    },
+    {
+        id: 'C002',
+        name: 'Prince Louie Paquiado',
+        nickname: 'Prince',
+        email: 'cashier@gmail.com', //alvin.admin@pf.com
+        password: 'cashier',
+        contact: '09123456789',
+        address: 'University of Caloocan City',
+        dayOff: 'wednesday',
+        dateHired: '01/01/2025',
+        status: 'active',
+        role: 'cashier'
     }
 ]
 
@@ -320,127 +333,17 @@ const plans = [
 ]
 
 const transactions = [
-    {
-        id: 'TR002',
-        name: 'Mia Anderson',
-        joinDate: 'Feb-05-2025',
-        endDate: 'May-05-2025',
-        month: 'Feb',
-        datePaid: 'Feb-13-2025',
-        plan: 'EGP-03',
-        status: 'Active'
-    },
-    {
-        id: 'TR003',
-        name: 'Noa Ramirez',
-        joinDate: 'Feb-07-2025',
-        endDate: 'Sep-07-2025',
-        month: 'Feb',
-        datePaid: 'Feb-14-2025',
-        plan: 'SWP-06',
-        status: 'Active'
-    },
-    {
-        id: 'TR004',
-        name: 'Emma Thompson',
-        joinDate: 'Feb-09-2025',
-        endDate: 'Apr-09-2025',
-        month: 'Feb',
-        datePaid: 'Feb-15-2025',
-        plan: 'SFP-01',
-        status: 'Active'
-    },
-    {
-        id: 'TR005',
-        name: 'Lucas Gonzales',
-        joinDate: 'Feb-11-2025',
-        endDate: 'Feb-11-2026',
-        month: 'Feb',
-        datePaid: 'Feb-16-2025',
-        plan: 'BFP-03',
-        status: 'Active'
-    },
-    {
-        id: 'TR006',
-        name: 'Sophia Carter',
-        joinDate: 'Feb-13-2025',
-        endDate: 'Aug-13-2025',
-        month: 'Feb',
-        datePaid: 'Feb-17-2025',
-        plan: 'CFM-12',
-        status: 'Active'
-    },
-    {
-        id: 'TR007',
-        name: 'Benjamin Ortiz',
-        joinDate: 'Feb-14-2025',
-        endDate: 'Nov-14-2025',
-        month: 'Feb',
-        datePaid: 'Feb-18-2025',
-        plan: 'BTP-01',
-        status: 'Active'
-    },
-    {
-        id: 'TR008',
-        name: 'Olivia Brooks',
-        joinDate: 'Feb-17-2025',
-        endDate: 'Jun-17-2025',
-        month: 'Feb',
-        datePaid: 'Feb-19-2025',
-        plan: 'PTP-06',
-        status: 'Active'
-    },
-    {
-        id: 'TR009',
-        name: 'Daniel Moreno',
-        joinDate: 'Feb-19-2025',
-        endDate: 'Mar-19-2025',
-        month: 'Feb',
-        datePaid: 'Feb-20-2025',
-        plan: 'TSP-03',
-        status: 'Active'
-    },
-    {
-        id: 'TR010',
-        name: 'Isabella Hughes',
-        joinDate: 'Feb-23-2025',
-        endDate: 'Jul-21-2025',
-        month: 'Feb',
-        datePaid: 'Feb-21-2025',
-        plan: 'TAM-12',
-        status: 'Active'
-    },
-    {
-        id: 'TR011',
-        name: 'Ethan Wallace',
-        joinDate: 'Feb-23-2025',
-        endDate: 'Dec-23-2025',
-        month: 'Feb',
-        datePaid: 'Feb-22-2025',
-        plan: 'ETP-06',
-        status: 'Active'
-    },
-    {
-        id: 'TR012',
-        name: 'Ava Fernandez',
-        joinDate: 'Feb-26-2025',
-        endDate: 'May-26-2025',
-        month: 'Feb',
-        datePaid: 'Feb-23-2025',
-        plan: 'PTP-12',
-        status: 'Active'
-    },
-    {
-        id: 'TR013',
-        name: 'Nathaniel Scott',
-        joinDate: 'Feb-28-2025',
-        endDate: 'Oct-28-2025',
-        month: 'Feb',
-        datePaid: 'Feb-24-2025',
-        plan: 'BFP-01',
-        status: 'Inactive'
-    },
-]
+    { transId: "TR002", user: "Juan", name: "Mia Anderson", planId: "BFP-01", month: "Feb", amount: "₱989", datePaid: "02-03-2025" },
+    { transId: "TR003", user: "Prince", name: "Noah Ramirez", planId: "EGP-03", month: "Feb", amount: "₱2,789", datePaid: "02-03-2025" },
+    { transId: "TR004", user: "Juan", name: "Emma Thompson", planId: "SWP-06", month: "Feb", amount: "₱5,499", datePaid: "02-03-2025" },
+    { transId: "TR005", user: "Prince", name: "Lucas Gonzales", planId: "SFP-01", month: "Feb", amount: "₱1,099", datePaid: "02-03-2025" },
+    { transId: "TR006", user: "Juan", name: "Sophia Carter", planId: "BFP-03", month: "Feb", amount: "₱2,599", datePaid: "02-03-2025" },
+    { transId: "TR007", user: "Juan", name: "Benjamin Ortiz", planId: "CFM-12", month: "Feb", amount: "₱9,999", datePaid: "02-03-2025" },
+    { transId: "TR008", user: "Juan", name: "Olivia Brooks", planId: "BTP-01", month: "Feb", amount: "₱1,289", datePaid: "02-03-2025" },
+    { transId: "TR009", user: "Juan", name: "Daniel Moreno", planId: "PTP-06", month: "Feb", amount: "₱5,899", datePaid: "02-03-2025" },
+    { transId: "TR010", user: "Prince", name: "Isabella Hughes", planId: "TSP-03", month: "Feb", amount: "₱3,199", datePaid: "02-03-2025" },
+    { transId: "TR011", user: "Juan", name: "Ethan Wallace", planId: "TAM-12", month: "Feb", amount: "₱10,499", datePaid: "02-03-2025" }
+  ];
 
 const logs = [
     {
@@ -528,5 +431,6 @@ const logs = [
         description: `Processed TR012's payment for BFP-01`,
     },
 ]
+
 
 export { admin, trainers, members, cashiers, plans, transactions, logs };
