@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboardTrainers.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user">
+            <img class="profile-icon" src="../../assets/images/Icon1.png" alt="logo">
+            <span class="name" id="name">Juan Dela Cruz</span>
+            <span class="email" id="email">juandelacruz@gmail.com</span>
+            <span class="menu material-symbols-outlined">menu</span>
+
+        </div>
+        <a class="active" href="#">Dashboard</a>
+        <a href="trainerProfile.html">Trainer Profile</a>
+        <a href="schedule.html">Schedule</a>
+        <a class="logout" id="logout-btn">Log out</a>
+    </div>
+    <div class="content">
+        <header class="headers">
+            <div class="header1">
+                <div class="title">
+                    <img class="title-icon" src="../../assets/images/Icon.png" alt="">
+                    <img src="../../assets/images/IconTitle.png" alt="" class="title-name">
+                    <div class="page-title">Dashboard</div>
+                </div>
+                
+                <div class="page-profile">
+                    <div>
+                        <span class="page-profile-content">Welcome Back, <span class="username" id="username">name</span></span>
+                    </div>
+                    <div>
+                        <img src="../../assets/images/Icon.png" alt="" class="usericon">
+                    </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="dateTime">
+                    <p class="date" id="date"></p>
+                    <p class="time" id="time"></p>
+                </div>
+            </div>
+        </header>
+        <section class="dashboard-content">
+            <div class="schedule">
+                <div class="schedule-title" style="background-color: white; font-size: 3vh; padding: 1%; box-shadow: 10px 10px 10px rgb(138, 138, 138);"><strong>Schedule for the Next 7 Days</strong></div>
+                <table class="schedule-data">
+                    <thead>
+                        <th>Date</th>
+                        <th id="day1"></th>
+                        <th id="day2"></th>
+                        <th id="day3"></th>
+                        <th id="day4"></th>
+                        <th id="day5"></th>
+                        <th id="day6"></th>
+                        <th id="day7"></th>
+                    </thead>
+                    <tr>
+                        <th>Time/Day</th>
+                        <th id="weekday1"></th>
+                        <th id="weekday2"></th>
+                        <th id="weekday3"></th>
+                        <th id="weekday4"></th>
+                        <th id="weekday5"></th>
+                        <th id="weekday6"></th>
+                        <th id="weekday7"></th>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM<br>-<br>12:00 NN</td>
+                        <td>Nathaniel Scott</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: red;">Available</td>
+                        <td>Isabella Hughes</td>
+                        <td style="color: red;">Available</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                    </tr>
+                    <tr>
+                        <td>02:00 PM<br>-<br>04:00 PM</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td>Ava Fernandez</td>
+                        <td>Nathaniel Scott</td>
+                        <td style="color: red;">Available</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                    </tr>
+                    <tr>
+                        <td>06:00 PM<br>-<br>08:00 PM</td>
+                        <td style="color: red;">Available</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                        <td style="color: red;">Available</td>
+                        <td>Ethan Wallace</td>
+                        <td style="color: red;">Available</td>
+                        <td>Ethan Wallace</td>
+                        <td style="color: #8C0909;">Unavalable</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </section>
+    </div>
+    <div class="background" id="background"></div>
+    <div class="error-message-box" id="error-message-box">
+        <span class="error-title" id="error-title">Logout</span>
+        <p class="error-message-login" id="error-message-login">Test message.</p>
+        <div class="confirmation">
+            <button class="confirm" type="button" onclick="confirmErrorMessageBox()" id="confirm-error-message-box">Confirm</button>
+            <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
+        </div>
+    </div>
+</body>
+
+<script type="module" src="../javascript/dashboard.js"></script>
+</html>

@@ -10,6 +10,7 @@ const admin = [
         dayOff: 'wednesday',
         dateHired: '01/01/2025',
         status: 'active',
+        role: 'admin'
     }
 ]
 
@@ -25,6 +26,7 @@ const cashiers = [
         dayOff: 'wednesday',
         dateHired: '01/01/2025',
         status: 'active',
+        role: 'cashier'
     }
 ]
 
@@ -41,6 +43,7 @@ const trainers = [
         profile: '../../assets/images/Icon.png',
         address: '123 Main St, Quezon City, Philippines',
         dateHired: '01/01/2025',
+        role: 'trainer'
     },
     {
         id: 'T002',
@@ -53,6 +56,7 @@ const trainers = [
         profile: '../../assets/images/Icon.png',
         address: '456 Elm St, Makati City, Philippines',
         dateHired: '01/01/2025',
+        role: 'trainer'
     },
     {
         id: 'T003',
@@ -65,6 +69,7 @@ const trainers = [
         profile: '../../assets/images/Icon.png',
         address: '789 Oak St, Pasig City, Philippines',
         dateHired: '01/01/2025',
+        role: 'trainer'
     }
 ];
 
@@ -93,8 +98,8 @@ const members = [
         joinDate: '2025-03-10',
         planStart: '2025-03-10',
         endDate: '2025-09-10',
-        plan: 'EGP-01',
-        trainer: 'Alice Smith',
+        plan: 'EGP-03',
+        trainer: 'Prince Paquiado',
         schedule: 'TTH 7:00 AM - 9:00 AM',
         sessions: '2',
         status: 'Active'
@@ -107,8 +112,8 @@ const members = [
         joinDate: '2025-03-08',
         planStart: '2025-03-08',
         endDate: '2025-09-08',
-        plan: 'EGP-02',
-        trainer: 'Bob Brown',
+        plan: 'EGP-03',
+        trainer: 'Prince Paquiado',
         schedule: 'MWF 6:00 PM - 8:00 PM',
         sessions: '2',
         status: 'Active'
@@ -122,7 +127,7 @@ const members = [
         planStart: '2025-03-01',
         endDate: '2025-09-01',
         plan: 'EGP-03',
-        trainer: 'Catherine Jones',
+        trainer: 'Prince Paquiado',
         schedule: 'TTH 9:00 AM - 11:00 AM',
         sessions: '2',
         status: 'Active'
@@ -135,8 +140,8 @@ const members = [
         joinDate: '2025-02-25',
         planStart: '2025-02-25',
         endDate: '2025-08-25',
-        plan: 'EGP-01',
-        trainer: 'David Wilson',
+        plan: 'EGP-03',
+        trainer: 'Lexus Guevara',
         schedule: 'MWF 5:00 PM - 7:00 PM',
         sessions: '2',
         status: 'Active'
@@ -149,8 +154,8 @@ const members = [
         joinDate: '2025-02-20',
         planStart: '2025-02-20',
         endDate: '2025-08-20',
-        plan: 'EGP-02',
-        trainer: 'Emma Davis',
+        plan: 'EGP-03',
+        trainer: 'Lexus Guevara',
         schedule: 'TTH 8:00 AM - 10:00 AM',
         sessions: '2',
         status: 'Active'
@@ -164,7 +169,7 @@ const members = [
         planStart: '2025-02-15',
         endDate: '2025-08-15',
         plan: 'EGP-03',
-        trainer: 'Frank Taylor',
+        trainer: 'Lexus Guevara',
         schedule: 'MWF 7:00 AM - 9:00 AM',
         sessions: '2',
         status: 'Active'
@@ -177,8 +182,8 @@ const members = [
         joinDate: '2025-02-10',
         planStart: '2025-02-10',
         endDate: '2025-08-10',
-        plan: 'EGP-01',
-        trainer: 'Grace Miller',
+        plan: 'EGP-03',
+        trainer: 'Lexus Guevara',
         schedule: 'TTH 6:00 PM - 8:00 PM',
         sessions: '2',
         status: 'Active'
@@ -191,8 +196,8 @@ const members = [
         joinDate: '2025-02-05',
         planStart: '2025-02-05',
         endDate: '2025-08-05',
-        plan: 'EGP-02',
-        trainer: 'Henry Anderson',
+        plan: 'EGP-03',
+        trainer: 'Lexus Guevara',
         schedule: 'MWF 9:00 AM - 11:00 AM',
         sessions: '2',
         status: 'Active'
@@ -206,7 +211,7 @@ const members = [
         planStart: '2025-01-31',
         endDate: '2025-07-31',
         plan: 'EGP-03',
-        trainer: 'Isabella Garcia',
+        trainer: 'Lexus Guevara',
         schedule: 'TTH 10:00 AM - 12:00 PM',
         sessions: '2',
         status: 'Active'
@@ -219,8 +224,8 @@ const members = [
         joinDate: '2025-01-25',
         planStart: '2025-01-25',
         endDate: '2025-07-25',
-        plan: 'EGP-01',
-        trainer: 'Jack Martinez',
+        plan: 'BFP-01',
+        trainer: 'Nicole Frances Meneses',
         schedule: 'MWF 4:00 PM - 6:00 PM',
         sessions: '2',
         status: 'Active'

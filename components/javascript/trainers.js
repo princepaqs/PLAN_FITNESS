@@ -2,7 +2,7 @@
 
 import { trainers } from './data.js';
 
-
+const role = localStorage.getItem('role');
 const dateElement = document.getElementById('date');
 const timeElement = document.getElementById('time');
 

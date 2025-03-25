@@ -1,6 +1,7 @@
 import { admin, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
+const role = localStorage.getItem('role');
 const errorMessageBox = document.getElementById("error-message-box");
 const errorTitle = document.getElementById("error-title");
 const errorMessageLogin = document.getElementById("error-message-login");
@@ -65,7 +66,15 @@ document.addEventListener("DOMContentLoaded", function () {
     updateDetailsSave.addEventListener("click", function () {
         errorMessageBox.classList.add("open-error-message-box");
         errorTitle.innerHTML = "Success!";
-        errorMessageLogin.innerHTML = "Admin details updated successfully!";
+        const role = localStorage.getItem('role');
+        if(role === 'admin'){
+            errorMessageLogin.innerHTML = "Admin details updated successfully!";
+        } else if (role === 'cashier') {
+            errorMessageLogin.innerHTML = "Cashier details updated successfully!";
+        } else {
+            errorMessageLogin.innerHTML = "Trainer details updated successfully!";
+        }
+        
         updateDetailsContent.classList.toggle("open"); // Toggles sidebar visibility
         confirmErrorMessageBox.style.display = "none";
         closeErrorMessageBox.style.display = "none";
@@ -125,7 +134,14 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             errorMessageBox.classList.add("open-error-message-box");
             errorTitle.innerHTML = "Success!";
-            errorMessageLogin.innerHTML = "Admin password updated successfully!";
+            const role = localStorage.getItem('role');
+            if(role === 'admin'){
+                errorMessageLogin.innerHTML = "Admin password updated successfully!";
+            } else if (role === 'cashier') {
+                errorMessageLogin.innerHTML = "Cashier password updated successfully!";
+            } else {
+                errorMessageLogin.innerHTML = "Trainer password updated successfully!";
+            }
             updatePasswordContent.classList.toggle("open");
             setTimeout(() => {
                 errorMessageBox.classList.remove("open-error-message-box");
@@ -175,7 +191,13 @@ document.getElementById("logout-btn").addEventListener("click", function (event)
         // Confirm logout action
         confirmErrorMessageBox.onclick = function () {
             // Perform logout (redirect, clear session, etc.)
-            window.location.href = "login.html"; // Adjust according to your logout logic
+            if(role === 'admin'){
+                window.location.href = "login.html"; // Adjust according to your logout logic
+            } else if (role === 'cashier') {
+                window.location.href = "../login.html"; // Adjust according to your logout logic
+            } else {
+                window.location.href = "../login.html"; // Adjust according to your logout logic
+            }
         };
     } else {
         console.error("One or more required elements are missing.");
