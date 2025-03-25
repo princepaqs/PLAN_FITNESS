@@ -111,7 +111,7 @@ a:hover, a:active {
     height: 100%;
     top: 0;
     left: 0;
-    /* z-index: 1; Make sure it stays on top */
+    z-index: 2; 
     background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
 }
 
@@ -156,7 +156,7 @@ a:hover, a:active {
     font-size: 100%;
     text-align: center;
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
     /* justify-content: center; */
 }
 
@@ -176,6 +176,7 @@ a:hover, a:active {
     width: 40%; 
     justify-self: center;
     display: block;
+    padding: 2%;
     /* margin-bottom: 10%; */
 }
 
@@ -195,6 +196,7 @@ a:hover, a:active {
     width: 40%; 
     justify-self: center;
     display: block;
+    padding: 2%;
     /* margin-bottom: 10%; */
 }
 
@@ -271,17 +273,19 @@ a:hover, a:active {
 }
 
 .plan-search {
-    padding: .7%;
-    width: 25%;
+    width: 70%;
+    padding: 2%;
     margin: 2%;
-    margin-left: 0%;
     border: 1px solid black;
+}
+
+.payment-subcontent-1 {
+    margin-top: 3%;
 }
 
 .payment-subcontent-1, .payment-subcontent-2, .payment-subcontent-3, .payment-subcontent-4 {
     display: flex;
     flex-direction: row;
-    
     justify-content: space-between;
     /* width: 100%; */
     /* height: 100%; */
@@ -290,12 +294,28 @@ a:hover, a:active {
 .payment-confirmation {
     display: flex;
     flex-direction: row;
-     justify-content: end; /*change this to space-between when using the start-new-plan */
-    align-items: end;
-    text-align: center;
+    width: 100%;
+    /* background-color: #8C0909; */
+     /* justify-content: end; change this to space-between when using the start-new-plan */
+    /* align-items: end; */
+    /* text-align: center; */
     /* background-color: aqua; */
     margin-top: 3%;
 }
+
+.left-confirmation, .right-confirmation {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.right-confirmation {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+
 
 .payment-member-id-content, .payment-member-name-content, .payment-plan-id-content, .payment-plan-name-content, .payment-plan-validity-content, .payment-plan-date-start-content, .payment-plan-date-end-content, .payment-plan-price-content, .payment-trainer-name-content, .payment-trainer-schedule-content, .payment-trainer-sessions-content {
     display: flex;
@@ -313,8 +333,10 @@ a:hover, a:active {
 .start-new-plan {
     background-color: rgb(20, 20, 20);
     color: white;
-    justify-content: start;
     display: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     padding: 2%;
 }
 
@@ -324,7 +346,368 @@ a:hover, a:active {
 }
 
 .start-new-plan, .continue-payment, .cancel-payment {
-    padding: 1%;
-    width: 15%;
+    padding: 1.5%;
+    width: 30%;
     margin: 1%;
+}
+
+.search-wrapper {
+    display: block;
+    position: absolute;
+    width: 25%;
+    height: auto;
+    z-index: 2;
+}
+
+.suggestion-dropdown {
+    display: none;
+    background-color: #8C0909;
+    flex-direction: row;
+}
+
+.suggestion-item {
+    background-color: #f2f2f2;
+    /* position: absolute; */
+    display: flex;
+    width: 100%;
+    margin-left: 2%;
+    padding: 1%;
+    cursor: pointer;
+    box-shadow: 1vh 1vh 1vh rgb(187, 187, 187);
+}
+
+.suggestion-item:hover, .suggestion-dropdown:hover {
+    background-color: #8C0909;
+    color: white;
+    /* z-index: 1000; */
+}
+
+.payment-modal {
+    background-color: #ffffff;
+    width: 40%;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1vh 1vh 1vh rgb(187, 187, 187);
+    padding: 2%;
+    flex-direction: column;
+    z-index: 300;
+}
+
+.payment-modal-title {
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.payment-modal-content {
+    font-size: 100%;
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.payment-modal-confirmation {
+    display: flex;
+    width: 100%;
+    align-items: end;
+    justify-content: end;
+}
+
+.payment-confirm, .payment-cancel {
+    width: 15%;
+    padding: 1%;
+    margin: 1%;
+    border: 1px solid black;
+}
+
+.payment-confirm {
+    background-color: #8C0909;
+    color: white;
+}
+
+.payment-cancel {
+    background-color: #d9d9d9;
+}
+
+@media (max-width: 1279px) {
+    .sidebar {
+        width: 20%;
+    }
+    
+    a {
+        font-size: 1.5vh;
+    }
+
+    .logout {
+        font-size: 2vh;
+    }
+
+    .content {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    .headers {
+        height: 15%;
+    }
+    
+    .title-icon, .title-name {
+        height: 10vh;
+    }
+
+    .page-title {
+        font-size: 3vh;
+    }
+
+    .dateTime {
+        font-size: 2vh;
+        width: 100%;
+    }
+
+    .payment-content {
+        height: 85%;
+    }
+
+    .search-wrapper {
+        width: 30%;
+    }
+
+    .payment-subcontent-1 {
+        margin-top: 5%;
+    }
+
+    .payment-modal {
+        width: 70%;
+    }
+
+    .payment-modal-content {
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 20%;
+    }
+
+    a {
+        font-size: 1.2vh;
+    }
+
+    .logout {
+        font-size: 1.8vh;
+    }
+
+    .content {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    .headers {
+        height: 15%;
+    }
+
+    .title-icon, .title-name {
+        height: 8vh;
+    }
+
+    .page-title {
+        font-size: 2.5vh;
+    }
+
+    .page-profile-content {
+        font-size: 1.8vh;
+    }
+
+    .usericon {
+        height: 4vh;
+    }
+
+    .username {
+        font-size: 1.8vh;
+    }
+
+    .dateTime {
+        font-size: 1.8vh;
+        width: 100%;
+    }
+
+    .start-new-plan, .continue-payment, .cancel-payment {
+        padding: 1.5%;
+        width: 40%;
+        margin: 1%;
+    }
+
+    .error-message-box {
+        width: 40%;
+    }
+}
+
+@media (max-width: 425px) {
+    .sidebar {
+        width: 100%;
+        height: 40%;
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .sidebar a.active {
+        width: 100%;
+    }
+
+    .sidebar.hidden{
+        width: 100%;
+        height: 5%;
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        /* opacity: 0; */
+    }
+
+    .menu.material-symbols-outlined {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Moves the menu icon to the right */
+        cursor: pointer;
+        font-size: 24px; /* Adjust size if needed */
+        color: white; /* Adjust color if needed */
+    }
+
+    /* .sidebar:hover, .sidebar:active {
+        height: 10%;
+    } */
+
+    .user {
+        margin-top: 12%;
+        margin-left: 5%;
+        margin-bottom: 0%;
+        align-items: center;
+    }
+
+    .profile-icon {
+        height: 4vh;
+        width: auto;
+    }
+
+    .name {
+        font-size: 2vh;
+    }
+
+    .email {
+        font-size: 1.5vh;
+        margin-bottom: 5%;
+    }
+
+    a {
+        width: 100%;
+        flex-direction: row;
+        font-size: 1.5vh;
+        margin-left: 0%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    a:not(logout) {
+        margin-left: 0%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        /* text-align: right;    */
+    }
+
+    a:hover, a:active {
+        color: #8C0909;
+        background-color: white;
+        width: 100%;
+    }
+
+    .logout {
+        margin-top: 5%;
+        font-size: 1.5vh;
+    }
+
+    .logout:hover {
+        padding-left: 0%;
+        width: 100%;
+    }
+
+    .title-icon, .title-name {
+        height: 5vh;
+    }
+
+    .page-title {
+        font-size: 2vh;
+    }
+
+    .dateTime {
+        display: flex;
+        align-items: end;
+        /* justify-content: space-between; */
+        width: 70%;
+        /* margin-top: 1%; */
+        margin-left: auto;
+        padding: 1%;
+        font-size: 50%;
+    }
+
+    .content {
+        margin-left: 0%;
+        padding: 1%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+    
+    .payment-content
+    {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        /* align-items: center; */
+        font-size: 1vh;
+    }
+
+    .search-wrapper {
+        width: 30%;
+        position: sticky;
+    }
+
+    .payment-subcontent-1 {
+        margin-top: 5%;
+    }
+
+    .payment-modal {
+        width: 70%;
+    }
+
+    .payment-modal-content {
+        margin-left: 15%;
+    }
+
+    .start-new-plan, .continue-payment, .cancel-payment {
+        padding: 1.5%;
+        width: 50%;
+        margin: 1%;
+    }
 }
