@@ -20,7 +20,7 @@
 
         </div>
         <a href="dashboard.html">Dashboard</a>
-        <a href="administration.html">Administration</a>
+        <a href="adminProfile.html">Admin Profile</a>
         <a href="plan.html">Plan</a>
         <a class="active" href="#">Payment</a>
         <a href="members.html">Members</a>
@@ -49,71 +49,96 @@
         <section class="payment-content">
             <div class="payment-content-title">Point of Sales</div>
             <div class="search-wrapper">
-                <input type="search" name="search" id="search" class="plan-search" placeholder="Search" oninput="searchTable()">
-                <!-- <span class="material-symbols-outlined search-icon">search</span> -->
+                <input type="search" name="search" id="search" class="plan-search" placeholder="Search Member" oninput="searchTable()">
+                <div id="suggestionBox" class="suggestion-dropdown"></div>
             </div>
+            
             <div class="payment-subcontent-1">
                 <div class="payment-member-id-content">
                     <label for="member-id" class="member-id-title">Member ID</label>
-                    <input type="text" class="member-id" disabled>
+                    <input type="text" id="member-id" class="member-id" disabled>
                 </div>
                 <div class="payment-member-name-content">
                     <label for="member-name" class="member-name-title">Member Name</label>
-                    <input type="text" class="member-name" disabled>
+                    <input type="text" id="member-name" class="member-name" disabled>
                 </div>
             </div>
+        
             <div class="payment-subcontent-2">
                 <div class="payment-plan-id-content">
                     <label for="plan-id" class="plan-id-title">Plan ID</label>
-                    <select name="plan-id" class="plan-id" id="plan-id" disabled>
-                        <!-- <option value=""></option> put the plan ids here--> 
+                    <select id="plan-id" name="plan-id" class="plan-id" disabled>
+                        <option value="">- -</option>
+                        <option value="BFP-01">BFP-01</option>
+                        <option value="EGP-03">EGP-03</option>
+                        <option value="SWP-06">SWP-06</option>
+                        <option value="SFP-01">SFP-01</option>
+                        <option value="BFP-03">BFP-03</option>
+                        <option value="CFM-12">CFM-12</option>
+                        <option value="BTP-01">BTP-01</option>
+                        <option value="PTP-06">PTP-06</option>
+                        <option value="TSP-03">TSP-03</option>
+                        <option value="TAM-12">TAM-12</option>
+                        <option value="ETP-06">ETP-06</option>
+                        <option value="PTP-12">PTP-12</option>
                     </select>
                 </div>
                 <div class="payment-plan-name-content">
                     <label for="plan-name" class="plan-name-title">Plan Name</label>
-                    <input type="text" class="plan-name" disabled>
+                    <input type="text" id="plan-name" class="plan-name" disabled>
                 </div>
                 <div class="payment-plan-validity-content">
                     <label for="plan-validity" class="plan-validity-title">Plan Validity</label>
-                    <input type="number" class="plan-validity" disabled>
+                    <input type="text" id="plan-validity" class="plan-validity" disabled>
                 </div>
             </div>
+        
             <div class="payment-subcontent-3">
                 <div class="payment-plan-date-start-content">
                     <label for="plan-date-start" class="plan-date-start-title">Plan Date Start</label>
-                    <input type="date" class="plan-date-start" disabled>
+                    <input type="date" id="plan-date-start" class="plan-date-start" disabled>
                 </div>
                 <div class="payment-plan-date-end-content">
                     <label for="plan-date-end" class="plan-date-end-title">Plan Expiry</label>
-                    <input type="date" class="plan-date-end" disabled>
+                    <input type="date" id="plan-date-end" class="plan-date-end" disabled>
                 </div>
                 <div class="payment-plan-price-content">
                     <label for="plan-price" class="plan-price-title">Price</label>
-                    <input type="number" class="plan-price" disabled>
+                    <input type="number" id="plan-price" class="plan-price" disabled>
                 </div>
             </div>
+        
             <div class="payment-subcontent-4">
                 <div class="payment-trainer-name-content">
                     <label for="trainer-name" class="trainer-name-title">Trainer Name (w/ Trainer Plan)</label>
-                    <select name="trainer-name" class="trainer-name" id="trainer-name" disabled>
-                        <!-- <option value=""></option> put the plan ids here--> 
+                    <select id="trainer-name" name="trainer-name" class="trainer-name" disabled>
+                        <option value="">- -</option>
+                        <option value="Lexus Guevara">Lexus Guevara</option>
+                        <option value="Prince Paquiado">Prince Paquiado</option>
+                        <option value="Nicole Frances Meneses">Nicole Frances Meneses</option>
                     </select>
                 </div>
                 <div class="payment-trainer-schedule-content">
                     <label for="trainer-schedule" class="trainer-schedule-title">Schedule (w/ Trainer Plan)</label>
-                    <input type="text" class="trainer-schedule" disabled>
+                    <input type="text" id="trainer-schedule" class="trainer-schedule" disabled>
                 </div>
                 <div class="payment-trainer-sessions-content">
                     <label for="trainer-sessions" class="trainer-sessions-title">Sessions (w/ Trainer Plan)</label>
-                    <input type="number" class="trainer-sessions" disabled>
+                    <input type="number" id="trainer-sessions" class="trainer-sessions" disabled>
                 </div>
             </div>
+        
             <div class="payment-confirmation">
-                <button class="start-new-plan" type="button" id="start-new-plan">Start New Plan</button>
-                <button class="continue-payment" type="button" id="continue-payment">Continue</button>
-                <button class="cancel-payment" type="button" id="cancel-payment">Clear</button>
+                <div class="left-confirmation">
+                    <button type="button" id="start-new-plan" class="start-new-plan">Start New Plan</button>
+                </div>
+                <div class="right-confirmation">
+                    <button type="button" id="continue-payment" class="continue-payment" disabled>Continue</button>
+                    <button type="button" id="cancel-payment" class="cancel-payment">Clear</button>
+                </div>
             </div>
         </section>
+        
     </div>
     <div class="background" id="background"></div>
     <div class="error-message-box" id="error-message-box">
@@ -121,11 +146,18 @@
         <p class="error-message-login" id="error-message-login">Test message.</p>
         <div class="confirmation">
             <button class="confirm" type="button" onclick="confirmErrorMessageBox()" id="confirm-error-message-box">Confirm</button>
-            <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
+            <button class="closeLogout" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
         </div>
     </div>
-    <div class="action-modal">
-
+    <div class="payment-modal" id="payment-modal">
+        <div class="payment-modal-title">Payment</div>
+        <div class="payment-modal-content" id="payment-modal-content">
+           <!-- <p>Member ID:<br>Member Name<br>Member Name<br>Member Name<br>Member Name</p> -->
+        </div>
+        <div class="payment-modal-confirmation">
+            <button class="payment-confirm" id="payment-confirm">Confirm</button>
+            <button class="payment-cancel" id="payment-cancel">Back</button>
+        </div>
     </div>
 </body>
 
