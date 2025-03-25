@@ -642,7 +642,7 @@ a:hover, a:active {
     }
 
     .logout {
-        margin-top: 5%;
+        margin-top: 3%;
         font-size: 1.5vh;
     }
 
@@ -671,6 +671,7 @@ a:hover, a:active {
     }
 
     .content {
+        /* margin-top: 2%; */
         margin-left: 0%;
         padding: 1%;
         width: 100%;
@@ -689,7 +690,7 @@ a:hover, a:active {
     }
 
     .search-wrapper {
-        width: 30%;
+        width: 50%;
         position: sticky;
     }
 
@@ -699,15 +700,27 @@ a:hover, a:active {
 
     .payment-modal {
         width: 70%;
+        font-size: 1vh;
+    }
+    .payment-modal-title {
+        font-size: 2vh;
     }
 
     .payment-modal-content {
         margin-left: 15%;
     }
 
+    .payment-confirm, .payment-cancel {
+        width: 30%;
+    }
+
     .start-new-plan, .continue-payment, .cancel-payment {
         padding: 1.5%;
         width: 50%;
         margin: 1%;
+    }
+
+    .error-message-box {
+        width: 40%;
     }
 }
