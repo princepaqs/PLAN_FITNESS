@@ -1,6 +1,7 @@
 import { admin, members, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
+const role = localStorage.getItem('role');
 const background = document.getElementById("background");
 
 if (!emailInput) {
@@ -72,7 +73,7 @@ function populateTable() {
             <td>${member.joinDate}</td>
             <td>${member.endDate}</td>
         `;
-        tableBody.appendChild(row);
+        // tableBody.appendChild(row);
     });
 }
 
@@ -155,7 +156,14 @@ document.getElementById("logout-btn").addEventListener("click", function (event)
         // Confirm logout action
         confirmErrorMessageBox.onclick = function () {
             // Perform logout (redirect, clear session, etc.)
-            window.location.href = "login.html"; // Adjust according to your logout logic
+            if(role === 'admin'){
+                window.location.href = "login.html"; // Adjust according to your logout logic
+            } else if (role === 'cashier') {
+                window.location.href = "../login.html"; // Adjust according to your logout logic
+            } else {
+                window.location.href = "../login.html"; // Adjust according to your logout logic
+            }
+            // window.location.href = "login.html"; // Adjust according to your logout logic
         };
     } else {
         console.error("One or more required elements are missing.");

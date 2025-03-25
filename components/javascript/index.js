@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Redirect after 2 seconds
             setTimeout(() => {
-                window.location.href = "dashboardTrainers.html";
+                window.location.href = "./trainers/dashboardTrainers.html";
             }, 2000);
         } else {
             errorMessageBox.classList.add("open-error-message-box");
