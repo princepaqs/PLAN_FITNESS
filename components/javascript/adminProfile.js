@@ -1,6 +1,7 @@
 import { admin, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
+const role = localStorage.getItem('role');
 const errorMessageBox = document.getElementById("error-message-box");
 const errorTitle = document.getElementById("error-title");
 const errorMessageLogin = document.getElementById("error-message-login");
@@ -19,7 +20,6 @@ if (!emailInput) {
     } else {
         // Extract first name only
         const firstName = userList.name.split(" ")[0];
-        localStorage.setItem('role', userList.role);
 
         // Update UI elements
         document.getElementById('name').innerHTML = userList.name;

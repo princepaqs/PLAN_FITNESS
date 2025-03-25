@@ -1,6 +1,7 @@
 import { admin, plans, trainers, cashiers } from './data.js';
 
 const emailInput = localStorage.getItem("email");
+const role = localStorage.getItem('role');
 const background = document.getElementById("background");
 const errorTitle = document.getElementById("error-title");
 const errorMessageBox = document.getElementById("error-message-box");

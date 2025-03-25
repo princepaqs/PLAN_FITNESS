@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Store email in local storage
             localStorage.setItem("email", emailInput.value);
+            localStorage.setItem('role', adminList.role);
 
             // Redirect after 2 seconds
             setTimeout(() => {
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Store email in local storage
             localStorage.setItem("email", emailInput.value);
+            localStorage.setItem('role', trainerList.role);
 
             // Redirect after 2 seconds
             setTimeout(() => {
