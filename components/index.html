@@ -4,31 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAN FITNESS</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/landingpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="title">
-                <img src="../assets/images/Icon.png" alt="logo" class="logo">
-                <div class="text">
-                    <span>PLAN</span>
-                    <span>FITNESS</span>
-                </div>
-            </div>
-            <div class="subtitle">
-                <h2>Plan your workouts, push your limits,</h2>
-                <h2>and achieve the results you deserve.</h2>
-            </div>
-        </div>
-        <div class="login-container">
-            <a href="login.html" class="href">Login</a>
-        </div>
-    </div>
-</body>
 
-<script src="./javascript/index.js"></script>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img class="logo" src="/assets/images/Icon.png" alt="logo">
+        <div class="nav-links">
+            <a href="#about">About us</a>
+            <a href="#location">Our Location</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <img src="/assets/images/landingBG.png" class="hero-bg" alt="Gym Background">
+        <div class="hero-overlay">
+            <h2>Plan your workouts, <br> Push your limits, and <br> achieve the results you deserve</h2>
+            <img src="/assets/images/logoBG.png" class="hero-logo" alt="Plan Fitness Logo">
+        </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About us</h2>
+        <p>At <span class="bold">Plan Fitness</span>, we keep your gym experience simple and stress-free. Enjoy hassle-free sign-ups and a supportive environment for all fitness levels.</p>
+        <p class="highlight">Join us and make fitness a part of your lifestyle!</p>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-container">
+            <img src="/assets/images/trainer1.png" alt="Gym Image 1">
+            <img src="/assets/images/trainer1.png" alt="Gym Image 2">
+            <img src="/assets/images/trainer1.png" alt="Gym Image 3">
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <h2>Where we located</h2>
+        <p>Monumento, Caloocan City</p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.881639079019!2d120.98575982734587!3d14.655140954596682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b4297d5a8913%3A0x6fc2e33404f594f1!2sCaloocan%20City%20Manila!5e0!3m2!1sen!2sph!4v1742914567247!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <img class="footer-logo" src="/assets/images/logoBG.png" alt="logo">
+        <div class="footer-links">
+            <a href="#">About us</a>
+            <a href="#">Our Location</a>
+        </div>
+    </footer>
+
+</body>
 </html>

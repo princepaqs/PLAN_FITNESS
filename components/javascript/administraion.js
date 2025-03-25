@@ -2,7 +2,7 @@
 
 import { cashiers } from './data.js';
 
-
+const role = localStorage.getItem('role');
 const dateElement = document.getElementById('date');
 const timeElement = document.getElementById('time');
 
@@ -66,7 +66,7 @@ function attachEventListeners() {
 }
 
 function openViewModal(trainerId) {
-    const trainer = trainers.find(m => m.id === trainerId);
+    const trainer = cashiers.find(m => m.id === trainerId);
     if (!trainer) return;
 
     document.getElementById("viewTrainerID").value = trainer.id;
@@ -83,7 +83,7 @@ function openViewModal(trainerId) {
 }
 
 function openEditModal(trainerId) {
-    const trainer = trainers.find(m => m.id === trainerId);
+    const trainer = cashiers.find(m => m.id === trainerId);
     if (!trainer) return;
 
     console.log("Trainer Data:", trainer); // Debugging
@@ -109,7 +109,7 @@ function openEditModal(trainerId) {
         trainer.email = document.getElementById("editTrainerEmail").value;
         trainer.status = document.getElementById("editTrainerStatus").value;
 
-        localStorage.setItem("trainers", JSON.stringify(trainers));
+        localStorage.setItem("cashiers", JSON.stringify(cashiers));
 
         document.getElementById("editTrainerModal").style.display = "none";
         const editModal = document.getElementById("editModal");
@@ -194,8 +194,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const openModalBtn = document.getElementById("openModalBtn");
     const cancelBtn = document.querySelector(".cancel-btn");
     const form = document.getElementById("addMemberForm");
-    const tableBody = document.querySelector(".active-members-lists");
+    const tableBody = document.querySelector(".active-trainers-lists");
     const successModal = document.getElementById("successModal");
+
+    let cashiers = [];
 
     // Open Modal
     openModalBtn.addEventListener("click", function () {
@@ -219,9 +221,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Auto-generate Member ID
     function generateMemberID() {
-        let lastMember = members[members.length - 1]; 
-        let lastID = lastMember ? parseInt(lastMember.id.replace("PF", "")) : 18; 
-        document.getElementById("memberID").value = `PF${lastID + 1}`;
+        let lastMember = cashiers[cashiers.length - 1]; 
+        let lastID = lastMember ? parseInt(lastMember.id.replace("C", "")) : 18; 
+        document.getElementById("trainerID").value = `C${lastID + 1}`;
     }
 
     // Reset Form
@@ -234,17 +236,16 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         let newMember = {
-            id: document.getElementById("memberID").value,
-            name: document.getElementById("memberName").value,
+            id: document.getElementById("trainerID").value,
+            name: document.getElementById("trainerName").value,
+            dayOff: document.getElementById("dayOff").value,
             contact: document.getElementById("contact").value,
             email: document.getElementById("email").value,
-            endDate: document.getElementById("dateOfJoin").value,
-            status: "Active"
+            status: document.getElementById("status").value,
         };
 
-        members.push(newMember);
-        // alert("New member successfully added!"); // Show success message
-
+        cashiers.push(newMember);
+        
         // Update table with new member
         addMemberToTable(newMember);
 
@@ -262,16 +263,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Function to add a new row to the table
-    function addMemberToTable(member) {
+    function addMemberToTable(cashiers) {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${member.id}</td>
-            <td>${member.name}</td>
-            <td>${member.plan}</td>
-            <td>${member.endDate}</td>
-            <td>${member.status}</td>
+            <td>${cashiers.id}</td>
+            <td>${cashiers.name}</td>
+            <td>${cashiers.dayOff}</td>
+            <td>${cashiers.contact}</td>
+            <td>${cashiers.status}</td>
             <td>
-                <select class="action-dropdown" data-id="${member.id}">
+                <select class="action-dropdown" data-id="${cashiers.id}">
                     <option value="" selected disabled>Action</option>
                     <option class="btn-view" value="view">View</option>
                     <option class="btn-edit" value="edit">Edit</option>
@@ -305,13 +306,13 @@ document.getElementById("cancelDelete").addEventListener("click", function () {
 
 function deleteMember(trainerId) {
     // Remove the member from the array
-    const index = trainers.findIndex(m => m.id === trainerId);
+    const index = cashiers.findIndex(m => m.id === trainerId);
     if (index !== -1) {
-        trainers.splice(index, 1);
+        cashiers.splice(index, 1);
     }
 
     // Save updated trainers list to localStorage (if applicable)
-    localStorage.setItem("trainers", JSON.stringify(trainers));
+    localStorage.setItem("cashiers", JSON.stringify(cashiers));
 
     // Refresh the table
     populateTable();
@@ -332,7 +333,7 @@ function openScheduleModal(trainerId) {
     modal.style.display = "flex";
 
     // Update trainer details in modal
-    const trainer = trainers.find(t => t.id === trainerId);
+    const trainer = cashiers.find(t => t.id === trainerId);
     if (trainer) {
         document.getElementById("modalTrainerInfo").innerText = 
             `Trainer ID: ${trainer.id}  Trainer Name: ${trainer.name}`;
@@ -351,3 +352,4 @@ window.addEventListener("click", function (event) {
         modal.style.display = "none";
     }
 });
+

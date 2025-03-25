@@ -27,6 +27,19 @@ const cashiers = [
         dateHired: '01/01/2025',
         status: 'active',
         role: 'cashier'
+    },
+    {
+        id: 'C002',
+        name: 'Prince Louie Paquiado',
+        nickname: 'Prince',
+        email: 'cashier@gmail.com', //alvin.admin@pf.com
+        password: 'cashier',
+        contact: '09123456789',
+        address: 'University of Caloocan City',
+        dayOff: 'wednesday',
+        dateHired: '01/01/2025',
+        status: 'active',
+        role: 'cashier'
     }
 ]
 

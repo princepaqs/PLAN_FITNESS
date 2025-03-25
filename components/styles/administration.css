@@ -624,6 +624,8 @@ input[readonly] {
 }
 
 
+/* Modal */
+/* Modal */
 .schedule {
     display: none;
     justify-content: center;
@@ -634,17 +636,20 @@ input[readonly] {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
 }
 
+/* Modal content */
 .schedule-content {
     background: white;
     padding: 20px;
     border-radius: 10px;
     width: 80%;
-    max-width: 900px;
+    max-width: 1200px;
     text-align: center;
 }
 
+/* Header section */
 .schedule-header {
     display: flex;
     justify-content: space-between;
@@ -652,6 +657,16 @@ input[readonly] {
     margin-bottom: 10px;
 }
 
+/* Trainer info */
+.trainer-info {
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Calendar navigation */
 .schedule-calendar {
     display: flex;
     justify-content: center;
@@ -667,12 +682,15 @@ input[readonly] {
     cursor: pointer;
 }
 
+/* Schedule table */
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.schedule-table th, .schedule-table td {
+.schedule-table th,
+.schedule-table td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
@@ -683,25 +701,61 @@ input[readonly] {
     font-weight: bold;
 }
 
+/* Available slot styling */
 .available {
     color: red;
     font-weight: bold;
 }
 
-.unavailable {
-    color: gray;
-    font-weight: bold;
+.available div {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 5px;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
-.schedule-edit-btn, .schedule-close-btn {
+.available-times {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.available-times span {
+    font-size: 12px;
+    color: green;
+}
+
+/* Buttons */
+.schedule-edit-btn{
     background: darkred;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 50px;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 50px;
+    border-radius: 5px;
 }
 
 .schedule-close-btn {
+    background: darkred;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px 50px;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.schedule-close-btn {
+    
     background: gray;
 }
+

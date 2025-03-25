@@ -194,8 +194,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const openModalBtn = document.getElementById("openModalBtn");
     const cancelBtn = document.querySelector(".cancel-btn");
     const form = document.getElementById("addMemberForm");
-    const tableBody = document.querySelector(".active-members-lists");
+    const tableBody = document.querySelector(".active-trainers-lists");
     const successModal = document.getElementById("successModal");
+
+    let trainers = [];
 
     // Open Modal
     openModalBtn.addEventListener("click", function () {
@@ -219,9 +221,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Auto-generate Member ID
     function generateMemberID() {
-        let lastMember = members[members.length - 1]; 
-        let lastID = lastMember ? parseInt(lastMember.id.replace("PF", "")) : 18; 
-        document.getElementById("memberID").value = `PF${lastID + 1}`;
+        let lastMember = trainers[trainers.length - 1]; 
+        let lastID = lastMember ? parseInt(lastMember.id.replace("T", "")) : 18; 
+        document.getElementById("trainerID").value = `PF${lastID + 1}`;
     }
 
     // Reset Form
@@ -234,17 +236,15 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         let newMember = {
-            id: document.getElementById("memberID").value,
-            name: document.getElementById("memberName").value,
+            id: document.getElementById("trainerID").value,
+            name: document.getElementById("trainerName").value,
             contact: document.getElementById("contact").value,
             email: document.getElementById("email").value,
-            endDate: document.getElementById("dateOfJoin").value,
-            status: "Active"
+            status: "Active",
         };
 
-        members.push(newMember);
-        // alert("New member successfully added!"); // Show success message
-
+        trainers.push(newMember);
+        
         // Update table with new member
         addMemberToTable(newMember);
 
@@ -262,16 +262,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Function to add a new row to the table
-    function addMemberToTable(member) {
+    function addMemberToTable(trainer) {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${member.id}</td>
-            <td>${member.name}</td>
-            <td>${member.plan}</td>
-            <td>${member.endDate}</td>
-            <td>${member.status}</td>
+            <td>${trainer.id}</td>
+            <td>${trainer.name}</td>
+            <td>${trainer.contact}</td>
+            <td>${trainer.status}</td>
             <td>
-                <select class="action-dropdown" data-id="${member.id}">
+                <select class="action-dropdown" data-id="${trainer.id}">
                     <option value="" selected disabled>Action</option>
                     <option class="btn-view" value="view">View</option>
                     <option class="btn-edit" value="edit">Edit</option>
