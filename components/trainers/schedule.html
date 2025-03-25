@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
-    <link rel="stylesheet" href="../styles/plan.css">
+    <link rel="stylesheet" href="../styles/schedule.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -38,31 +38,92 @@
                     <p class="date" id="date"></p>
                     <p class="time" id="time"></p>
                 </div>
-                <button class="addPlan">Edit Plan</button>
+                <button class="addPlan">Edit Schedule</button>
             </div>
         </header>
         <section class="plan-content">
-            <div class="plans">
-                <div class="table-header">
-                    <div class="search-wrapper">
-                        <input type="search" name="search" id="search" class="plan-search" placeholder="Search" oninput="searchTable()">
-                        <!-- <span class="material-symbols-outlined search-icon">search</span> -->
-                    </div>
+            <div class="schedule">
+                <div class="schedule-month">
+                    <div class="previous-month">&lt;</div>
+                    <div class="month">March</div>
+                    <div class="next-month">&gt;</div>
                 </div>
-                <div class="table-container">
-                    <table class="plan-table">
-                        <thead>
-                            <tr>
-                                <th onclick="sortTable(0)">Plan ID <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(1)">Name <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(2, false, false, true)">Validity <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(3, false, true)">Sessions <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th onclick="sortTable(4, false, true)">Amount <span class="material-symbols-outlined">swap_vert</span></th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody class="plan-lists"></tbody>
-                    </table>
+                <table>
+                    <thead>
+                        <th>Time/Day</th>
+                        <th id="weekday1">Sunday</th>
+                        <th id="weekday2">Monday</th>
+                        <th id="weekday3">Tuesday</th>
+                        <th id="weekday4">Wednesday</th>
+                        <th id="weekday5">Thursday</th>
+                        <th id="weekday6">Friday</th>
+                        <th id="weekday7">Saturday</th>
+                    </thead>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">1</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">2</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">3</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">4</strong><p style="color: #8C0909;">Isabella Hughes</p><p style="color: #8C0909;">Nathaniel Scott</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">5</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">6</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">2</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">8</strong><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Olivia Brooks</p><p style="color: black;">Unavailable</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">9</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">10</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">11</strong><p style="color: #8C0909;">Isabella Hughes</p><p style="color: #8C0909;">Nathaniel Scott</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">12</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">13</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">14</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">15</strong><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Olivia Brooks</p><p style="color: black;">Unavailable</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">16</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">17</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">18</strong><p style="color: #8C0909;">Isabella Hughes</p><p style="color: #8C0909;">Nathaniel Scott</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">19</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">20</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">21</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">22</strong><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Olivia Brooks</p><p style="color: black;">Unavailable</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">23</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">24</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">25</strong><p style="color: #8C0909;">Isabella Hughes</p><p style="color: #8C0909;">Nathaniel Scott</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">26</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">27</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">28</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">29</strong><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Olivia Brooks</p><p style="color: black;">Unavailable</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">30</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">31</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="schedule-confirmation">
+                    <button class="confirm-schedule" type="button" id="confirm-schedule">Confirm</button>
+                    <button class="close-schedule" type="button" id="close-schedule">Cancel</button>
                 </div>
             </div>
             
@@ -76,55 +137,6 @@
             <button class="confirm" type="button" onclick="confirmErrorMessageBox()" id="confirm-error-message-box">Confirm</button>
             <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
         </div>
-    </div>
-
-    <div class="plan-modal" id="plan-modal">
-        <span class="plan-modal-title" id="plan-modal-title">Add Plan</span>
-        <div class="plan-modal-content">
-            <div class="plan-subcontent-1">
-                <div class="plan-id-content">
-                    <label class="planIdTitle">Plan ID</label>
-                    <input type="text" class="planId" id="planId">
-                </div>
-                <div class="plan-name-content">
-                    <label class="planNameTitle">Plan Name</label>
-                    <input type="text" class="planName" id="planName">
-                </div>
-            </div>
-            <div class="plan-subcontent-2">
-                <div class="plan-amount-content">
-                    <label class="planAmountTitle">Amount</label>
-                    <input type="number" class="planAmount" id="planAmount">
-                </div>
-                <div class="plan-validity-content">
-                    <label class="planValidityTitle">Validity (Months)</label>
-                    <input type="number" class="planValidity" id="planValidity">
-                </div>
-                <div class="plan-sessions-content">
-                    <label class="planSessionsTitle"># of Sessions</label>
-                    <!-- <input type="text" class="planSessions"> this should be dropdown -->
-                     <select name="sessions" id="planSessions" class="planSessions">
-                        <option value="N/A">N/A</option>
-                        <option value="3">3</option>
-                        <option value="6">6</option>
-                        <option value="9">9</option>
-                        <option value="12">12</option>
-                        <option value="15">15</option>
-                        <option value="18">18</option>
-                        <option value="36">36</option>
-                     </select>
-                </div>
-            </div>
-        </div>
-        <div class="plan-confirmation">
-            <button class="addPlanModal" type="button" id="addPlanModal">Add</button>
-            <button class="editPlanModal" type="button" id="editPlanModal">Edit</button>
-            <button class="closePlanModal" type="button" id="closePlanModal">Cancel</button>
-        </div>
-    </div>
-
-    <div class="action-modal">
-
     </div>
 </body>
 
