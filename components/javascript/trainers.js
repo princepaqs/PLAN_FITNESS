@@ -283,6 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 function openDeleteConfirmationModal(trainerId) {
     memberToDelete = trainerId;
     document.getElementById("deleteConfirmationModal").style.display = "block";
@@ -351,3 +352,73 @@ window.addEventListener("click", function (event) {
     }
 });
 
+const editBtn = document.querySelector(".schedule-edit-btn");
+const editConfirmationModal = document.getElementById("editConfirmationModal");
+const editSuccessModal = document.getElementById("editSuccessModal");
+const confirmEditBtn = document.getElementById("confirmEdit");
+const cancelEditBtn = document.getElementById("cancelEdit");
+
+let isEditing = false; // Track if in edit mode
+
+// Open Edit Mode
+editBtn.addEventListener("click", function () {
+    if (isEditing) {
+        // If already editing, show confirmation modal
+        editConfirmationModal.style.display = "block";
+    } else {
+        isEditing = true;
+        editBtn.textContent = "Save Schedule";
+
+        document.querySelectorAll(".available-times span").forEach(span => {
+            if (!span.querySelector("i")) {
+                let icon = document.createElement("i");
+                icon.textContent = span.classList.contains("unavailable") ? " ✗" : " ✓";
+                span.innerHTML = `${span.textContent}`; // Add ↔ icon
+                span.appendChild(icon);
+            }
+        });
+    }
+});
+
+// Toggle "available" ↔ "unavailable" when in edit mode
+document.querySelectorAll(".available-times span").forEach(span => {
+    span.addEventListener("click", function () {
+        if (!isEditing) return; // Only allow toggling when in edit mode
+
+        let icon = span.querySelector("i") || document.createElement("i");
+
+        if (span.classList.contains("unavailable")) {
+            span.classList.remove("unavailable");
+            span.innerHTML = `available <i>✓</i>`;
+        } else {
+            span.classList.add("unavailable");
+            span.innerHTML = `unavailable <i>✗</i>`;
+        }
+    });
+});
+
+// Confirm Save
+confirmEditBtn.addEventListener("click", function () {
+    editConfirmationModal.style.display = "none"; // Close confirmation modal
+    editSuccessModal.style.display = "block"; // Show success modal
+
+    setTimeout(() => {
+        editSuccessModal.style.display = "none"; // Hide success modal after 2 seconds
+    }, 2000);
+
+    isEditing = false;
+    editBtn.textContent = "Edit Schedule";
+    removeIcons(); // Remove icons after saving
+});
+
+// Cancel Edit
+cancelEditBtn.addEventListener("click", function () {
+    editConfirmationModal.style.display = "none"; // Close confirmation modal
+});
+
+// Remove icons after saving
+function removeIcons() {
+    document.querySelectorAll(".available-times span").forEach(span => {
+        span.textContent = span.classList.contains("unavailable") ? "unavailable" : "available";
+    });
+}

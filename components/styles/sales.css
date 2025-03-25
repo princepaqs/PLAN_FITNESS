@@ -149,7 +149,6 @@ a:hover, a:active {
     gap: 20px;
     background: white;
     padding: 20px;
-    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -168,7 +167,6 @@ input[type="date"] {
     padding: 5px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 .total-section {
@@ -202,7 +200,6 @@ input[type="date"] {
     background-color: #8C0909;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
 }
@@ -226,7 +223,6 @@ input[type="date"] {
 }
 
 .active-members {
-    border-radius: 5px;
     margin-top: 1%;
     width: 100%;
     padding: 1%;
@@ -249,7 +245,6 @@ input[type="date"] {
 .member-search {
     padding: 10px;
     width: 30%;
-    border-radius: 5px;
     background-color: #f2f2f2;
     outline: none;
 }
@@ -290,8 +285,6 @@ td {
 .action-dropdown {
     padding: 2px;
     font-size: small;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     background-color: #D9D9D9;
     color: #973131;
     cursor: pointer;
@@ -334,7 +327,6 @@ td {
 .modal-content {
     background: white;
     padding: 30px;
-    border-radius: 8px;
     width: 500px;
     text-align: left;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -375,7 +367,6 @@ input {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     font-size: 14px;
     outline: none;
 }
@@ -402,7 +393,6 @@ input[readonly] {
     padding: 10px 25px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
     font-size: 12px;
     font-weight: 600;
 }
@@ -419,7 +409,6 @@ input[readonly] {
     padding: 10px 15px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
     font-size: 12px;
     font-weight: 600;
 }
@@ -446,7 +435,6 @@ input[readonly] {
 .modal-content1 {
     background: white;
     padding: 10px;
-    border-radius: 5px;
     width: 20%;
     max-width: 800px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -492,7 +480,6 @@ input[readonly] {
 .modal-content2 {
     background: white;
     padding: 20px;
-    border-radius: 10px;
     width: 90%;
     max-width: 800px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -537,7 +524,6 @@ input[readonly] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     background: #f8f8f8;
     font-size: 12px;
 }
@@ -563,7 +549,6 @@ input[readonly] {
     padding: 10px 15px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
     font-size: 12px;
     font-weight: 600;
 }
@@ -581,7 +566,6 @@ input[readonly] {
     padding: 10px 15px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
     font-size: 12px;
     font-weight: 600;
 }
@@ -612,7 +596,6 @@ input[readonly] {
     background: white;
     padding: 20px;
     width: 350px;
-    border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease-in-out;

@@ -333,16 +333,16 @@ const plans = [
 ]
 
 const transactions = [
-    { transId: "TR002", user: "Juan", name: "Mia Anderson", planId: "BFP-01", month: "Feb", amount: "₱989", datePaid: "Feb-13-2025" },
-    { transId: "TR003", user: "Prince", name: "Noah Ramirez", planId: "EGP-03", month: "Feb", amount: "₱2,789", datePaid: "Feb-14-2025" },
-    { transId: "TR004", user: "Juan", name: "Emma Thompson", planId: "SWP-06", month: "Feb", amount: "₱5,499", datePaid: "Feb-15-2025" },
-    { transId: "TR005", user: "Prince", name: "Lucas Gonzales", planId: "SFP-01", month: "Feb", amount: "₱1,099", datePaid: "Feb-16-2025" },
-    { transId: "TR006", user: "Juan", name: "Sophia Carter", planId: "BFP-03", month: "Feb", amount: "₱2,599", datePaid: "Feb-17-2025" },
-    { transId: "TR007", user: "Juan", name: "Benjamin Ortiz", planId: "CFM-12", month: "Feb", amount: "₱9,999", datePaid: "Feb-18-2025" },
-    { transId: "TR008", user: "Juan", name: "Olivia Brooks", planId: "BTP-01", month: "Feb", amount: "₱1,289", datePaid: "Feb-19-2025" },
-    { transId: "TR009", user: "Juan", name: "Daniel Moreno", planId: "PTP-06", month: "Feb", amount: "₱5,899", datePaid: "Feb-20-2025" },
-    { transId: "TR010", user: "Prince", name: "Isabella Hughes", planId: "TSP-03", month: "Feb", amount: "₱3,199", datePaid: "Feb-21-2025" },
-    { transId: "TR011", user: "Juan", name: "Ethan Wallace", planId: "TAM-12", month: "Feb", amount: "₱10,499", datePaid: "Feb-22-2025" }
+    { transId: "TR002", user: "Juan", name: "Mia Anderson", planId: "BFP-01", month: "Feb", amount: "₱989", datePaid: "02-03-2025" },
+    { transId: "TR003", user: "Prince", name: "Noah Ramirez", planId: "EGP-03", month: "Feb", amount: "₱2,789", datePaid: "02-03-2025" },
+    { transId: "TR004", user: "Juan", name: "Emma Thompson", planId: "SWP-06", month: "Feb", amount: "₱5,499", datePaid: "02-03-2025" },
+    { transId: "TR005", user: "Prince", name: "Lucas Gonzales", planId: "SFP-01", month: "Feb", amount: "₱1,099", datePaid: "02-03-2025" },
+    { transId: "TR006", user: "Juan", name: "Sophia Carter", planId: "BFP-03", month: "Feb", amount: "₱2,599", datePaid: "02-03-2025" },
+    { transId: "TR007", user: "Juan", name: "Benjamin Ortiz", planId: "CFM-12", month: "Feb", amount: "₱9,999", datePaid: "02-03-2025" },
+    { transId: "TR008", user: "Juan", name: "Olivia Brooks", planId: "BTP-01", month: "Feb", amount: "₱1,289", datePaid: "02-03-2025" },
+    { transId: "TR009", user: "Juan", name: "Daniel Moreno", planId: "PTP-06", month: "Feb", amount: "₱5,899", datePaid: "02-03-2025" },
+    { transId: "TR010", user: "Prince", name: "Isabella Hughes", planId: "TSP-03", month: "Feb", amount: "₱3,199", datePaid: "02-03-2025" },
+    { transId: "TR011", user: "Juan", name: "Ethan Wallace", planId: "TAM-12", month: "Feb", amount: "₱10,499", datePaid: "02-03-2025" }
   ];
 
 const logs = [
