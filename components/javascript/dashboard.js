@@ -4,6 +4,11 @@ const emailInput = localStorage.getItem("email");
 const role = localStorage.getItem('role');
 console.log(role);
 const background = document.getElementById("background");
+const errorTitle = document.getElementById("error-title");
+const errorMessageBox = document.getElementById("error-message-box");
+const errorMessageLogin = document.getElementById("error-message-login");
+const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
+const closeErrorMessageBox = document.getElementById("close-error-message-box");
 
 if (!emailInput) {
     alert("You are not logged in!");
@@ -103,13 +108,119 @@ if(role === 'admin'){
             // Append the profile image and name to the trainer item
             trainerItem.appendChild(trainerProfile);
             trainerItem.appendChild(trainerName);
+
+            // Add click event listener
+            trainerItem.addEventListener('click', () => {
+                // alert(`Trainer: ${trainer.name}`);
+                errorMessageBox.classList.add("open-error-message-box");
+                errorMessageBox.style.width = '70%';
+                errorMessageLogin.style.marginTop = '0'
+                errorMessageBox.style.height = '95%';
+                confirmErrorMessageBox.style.display = "none";
+                closeErrorMessageBox.style.display = "none";
+                errorTitle.innerHTML = "Schedule";
+                errorMessageLogin.innerHTML =`
+                <div class="schedule-month">
+                    <div class="previous-month">&lt;</div>
+                    <div class="month">March</div>
+                    <div class="next-month">&gt;</div>
+                </div>
+                <table class="schedule-table">
+                    <thead>
+                        <th>Time/Day</th>
+                        <th id="weekday1">Sunday</th>
+                        <th id="weekday2">Monday</th>
+                        <th id="weekday3">Tuesday</th>
+                        <th id="weekday4">Wednesday</th>
+                        <th id="weekday5">Thursday</th>
+                        <th id="weekday6">Friday</th>
+                        <th id="weekday7">Saturday</th>
+                    </thead>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">1</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">2</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">3</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">4</strong><p style="color: #8C0909;">Isabella Hughes</p><p style="color: #8C0909;">Nathaniel Scott</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">5</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">6</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">2</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">8</strong><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Olivia Brooks</p><p style="color: black;">Unavailable</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">9</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">10</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">11</strong><p style="color: #8C0909;">Isabella Hughes</p><p style="color: #8C0909;">Nathaniel Scott</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">12</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">13</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">14</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">15</strong><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Olivia Brooks</p><p style="color: black;">Unavailable</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">16</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">17</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">18</strong><p style="color: #8C0909;">Isabella Hughes</p><p style="color: #8C0909;">Nathaniel Scott</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">19</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">20</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">21</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">22</strong><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Olivia Brooks</p><p style="color: black;">Unavailable</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">23</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">24</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">25</strong><p style="color: #8C0909;">Isabella Hughes</p><p style="color: #8C0909;">Nathaniel Scott</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">26</strong><p style="color: red;">Available</p><p style="color: red;">Available</p><p style="color: red;">Available</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">27</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Ethan Wallace</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">28</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">29</strong><p style="color: black;">Unavailable</p><p style="color: #8C0909;">Olivia Brooks</p><p style="color: black;">Unavailable</p></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM-12:00 NN<br>02:00 PM-04:00 PM<br>06:00 PM-08:00 PM</td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">30</strong><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p><p style="color: black;">Unavailable</p></td>
+                        <td><strong style="color: #8C0909; display: flex; align-items: left;">31</strong><p style="color: red;">Available</p><p style="color: #8C0909;">Ava Fernandez</p><p style="color: red;">Available</p></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="schedule-confirmation">
+                    <button class="close-schedule" type="button" id="close-schedule">Close</button>
+                </div>
+                `;
+                background.style.display = "flex";
+                background.style.zIndex = "299";
+                errorMessageBox.style.zIndex = "300";
+
+                document.getElementById("close-schedule").addEventListener("click", closeSchedule);
+
+    function closeSchedule() {
+        errorMessageBox.classList.remove("open-error-message-box");
+        background.style.display = "none";
+    }
+            });
     
             // Append the trainer item to the list
             trainerList.appendChild(trainerItem);
         });
     }
-    window.onload = loadTrainers;
 
+    window.onload = loadTrainers;
+    
     const tableBody = document.querySelector(".active-members-lists");
 
 
