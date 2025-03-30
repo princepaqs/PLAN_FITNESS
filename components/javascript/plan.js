@@ -37,7 +37,7 @@ setInterval(() => {
     timeElement.innerHTML = currentDateTime.toLocaleTimeString('en-US', timeOptions);
 }, 1000);
 
-if(role === 'admin'){
+if(role === 'admin' || role === 'cashier'){
     console.log("Test")
     const addPlanButton = document.querySelector(".addPlan");
     const planModal = document.querySelector(".plan-modal");

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user">
+            <img class="profile-icon" src="../../assets/images/Icon1.png" alt="logo">
+            <span class="name" id="name">Juan Dela Cruz</span>
+            <span class="email" id="email">juandelacruz@gmail.com</span>
+            <span class="menu material-symbols-outlined">menu</span>
+
+        </div>
+        <a class="active" href="#">Dashboard</a>
+        <a href="cashierProfile.html">Cashier Profile</a>
+        <a href="plan.html">Plan</a>
+        <a href="payment.html">Payment</a>
+        <a href="members.html">Members</a>
+        <a href="trainers.html">Trainers</a>                                                                                                                    
+        <a href="sales.html">Sales Report</a>
+        <a class="logout" id="logout-btn">Log out</a>
+    </div>
+    <div class="content">
+        <header class="headers">
+            <div class="header1">
+                <div class="title">
+                    <img class="title-icon" src="../../assets/images/Icon.png" alt="">
+                    <img src="../../assets/images/IconTitle.png" alt="" class="title-name">
+                    <div class="page-title">Dashboard</div>
+                </div>
+                
+                <div class="page-profile">
+                    <div>
+                        <span class="page-profile-content">Welcome Back, <span class="username" id="username">name</span></span>
+                    </div>
+                    <div>
+                        <img src="../assets/images/Icon.png" alt="" class="usericon">
+                    </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="dateTime">
+                    <p class="date" id="date"></p>
+                    <p class="time" id="time"></p>
+                </div>
+                <div class="report" id="report">
+                    <div class="report-title">Report</div>
+                    <div class="report-content">
+                        <div class="report-members-content">
+                            <p class="total-new-members">Total New Members this Month</p>
+                            <span class="members">10</span>
+                            <p class="total-members-increase">+125% from last month</p>
+                        </div>
+                        <div class="report-sales-content">
+                            <div class="total-sales">Total Sales this Month</div>
+                            <div class="sales">₱125,766</div>
+                            <div class="total-sales-increase">+50% from last month</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="dashboard-content">
+            <div class="trainers">
+                <div class="trainer-title">Trainers</div>
+                <ul class="trainer-members" id="trainerList">
+                    <!-- Trainers will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div class="active-members">
+                <div class="table-header">
+                    <div class="members-title">Active Members</div>
+                    <div class="search-wrapper">
+                        <input type="search" name="search" id="search" class="member-search" placeholder="Search" oninput="searchTable()">
+                        <!-- <span class="material-symbols-outlined search-icon">search</span> -->
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="member-table">
+                        <thead>
+                            <tr>
+                                <th>Member ID</th>
+                                <th onclick="sortTable(1)">Name <span class="material-symbols-outlined">swap_vert</span></th>
+                                <th onclick="sortTable(2, true)">Plan Date Start <span class="material-symbols-outlined">swap_vert</span></th>
+                                <th onclick="sortTable(3, true)">Plan Date Expiry <span class="material-symbols-outlined">swap_vert</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="active-members-lists"></tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+    <div class="background" id="background"></div>
+    <div class="error-message-box" id="error-message-box">
+        <span class="error-title" id="error-title">Logout</span>
+        <p class="error-message-login" id="error-message-login">Test message.</p>
+        <div class="confirmation">
+            <button class="confirm" type="button" onclick="confirmErrorMessageBox()" id="confirm-error-message-box">Confirm</button>
+            <button class="close" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
+        </div>
+    </div>
+</body>
+
+<script type="module" src="../javascript/dashboard.js"></script>
+</html>

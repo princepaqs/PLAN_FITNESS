@@ -193,8 +193,6 @@ document.getElementById("logout-btn").addEventListener("click", function (event)
             // Perform logout (redirect, clear session, etc.)
             if(role === 'admin'){
                 window.location.href = "login.html"; // Adjust according to your logout logic
-            } else if (role === 'cashier') {
-                window.location.href = "../login.html"; // Adjust according to your logout logic
             } else {
                 window.location.href = "../login.html"; // Adjust according to your logout logic
             }

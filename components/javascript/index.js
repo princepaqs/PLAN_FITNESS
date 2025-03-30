@@ -59,6 +59,22 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 window.location.href = "dashboard.html";
             }, 2000);
+        } else if (cashierList) {
+            // Show success message
+            errorMessageBox.classList.add("open-error-message-box");
+            errorMessageLogin.innerHTML = "You're all set! Logged in successfully.";
+
+            // Hide the close button
+            closeErrorMessageBox.style.display = "none";
+
+            // Store email in local storage
+            localStorage.setItem("email", emailInput.value);
+            localStorage.setItem('role', cashierList.role);
+
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = "./cashiers/dashboard.html";
+            }, 2000);
         } else if (trainerList) {
             // Show success message
             errorMessageBox.classList.add("open-error-message-box");

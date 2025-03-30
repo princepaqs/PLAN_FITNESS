@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="../styles/payment.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user">
+            <img class="profile-icon" src="../../assets/images/Icon1.png" alt="logo">
+            <span class="name" id="name">Juan Dela Cruz</span>
+            <span class="email" id="email">juandelacruz@gmail.com</span>
+            <span class="menu material-symbols-outlined">menu</span>
+
+        </div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="cashierProfile.html">Cashier Profile</a>
+        <a href="plan.html">Plan</a>
+        <a class="active" href="#">Payment</a>
+        <a href="members.html">Members</a>
+        <a href="trainers.html">Trainers</a>                                                                                                                    
+        <a href="sales.html">Sales Report</a>
+        <a class="logout" id="logout-btn">Log out</a>
+    </div>
+    <div class="content">
+        <header class="headers">
+            <div class="header1">
+                <div class="title">
+                    <img class="title-icon" src="../../assets/images/Icon.png" alt="">
+                    <img src="../../assets/images/IconTitle.png" alt="" class="title-name">
+                    <div class="page-title">Payment</div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="dateTime">
+                    <p class="date" id="date"></p>
+                    <p class="time" id="time"></p>
+                </div>
+                <!-- <button class="addPlan">Add Plan</button> -->
+            </div>
+        </header>
+        <section class="payment-content">
+            <div class="payment-content-title">Point of Sales</div>
+            <div class="search-wrapper">
+                <input type="search" name="search" id="search" class="plan-search" placeholder="Search Member" oninput="searchTable()">
+                <div id="suggestionBox" class="suggestion-dropdown"></div>
+            </div>
+            
+            <div class="payment-subcontent-1">
+                <div class="payment-member-id-content">
+                    <label for="member-id" class="member-id-title">Member ID</label>
+                    <input type="text" id="member-id" class="member-id" disabled>
+                </div>
+                <div class="payment-member-name-content">
+                    <label for="member-name" class="member-name-title">Member Name</label>
+                    <input type="text" id="member-name" class="member-name" disabled>
+                </div>
+            </div>
+        
+            <div class="payment-subcontent-2">
+                <div class="payment-plan-id-content">
+                    <label for="plan-id" class="plan-id-title">Plan ID</label>
+                    <select id="plan-id" name="plan-id" class="plan-id" disabled>
+                        <option value="">- -</option>
+                        <option value="BFP-01">BFP-01</option>
+                        <option value="EGP-03">EGP-03</option>
+                        <option value="SWP-06">SWP-06</option>
+                        <option value="SFP-01">SFP-01</option>
+                        <option value="BFP-03">BFP-03</option>
+                        <option value="CFM-12">CFM-12</option>
+                        <option value="BTP-01">BTP-01</option>
+                        <option value="PTP-06">PTP-06</option>
+                        <option value="TSP-03">TSP-03</option>
+                        <option value="TAM-12">TAM-12</option>
+                        <option value="ETP-06">ETP-06</option>
+                        <option value="PTP-12">PTP-12</option>
+                    </select>
+                </div>
+                <div class="payment-plan-name-content">
+                    <label for="plan-name" class="plan-name-title">Plan Name</label>
+                    <input type="text" id="plan-name" class="plan-name" disabled>
+                </div>
+                <div class="payment-plan-validity-content">
+                    <label for="plan-validity" class="plan-validity-title">Plan Validity</label>
+                    <input type="text" id="plan-validity" class="plan-validity" disabled>
+                </div>
+            </div>
+        
+            <div class="payment-subcontent-3">
+                <div class="payment-plan-date-start-content">
+                    <label for="plan-date-start" class="plan-date-start-title">Plan Date Start</label>
+                    <input type="date" id="plan-date-start" class="plan-date-start" disabled>
+                </div>
+                <div class="payment-plan-date-end-content">
+                    <label for="plan-date-end" class="plan-date-end-title">Plan Expiry</label>
+                    <input type="date" id="plan-date-end" class="plan-date-end" disabled>
+                </div>
+                <div class="payment-plan-price-content">
+                    <label for="plan-price" class="plan-price-title">Price</label>
+                    <input type="number" id="plan-price" class="plan-price" disabled>
+                </div>
+            </div>
+        
+            <div class="payment-subcontent-4">
+                <div class="payment-trainer-name-content">
+                    <label for="trainer-name" class="trainer-name-title">Trainer Name (w/ Trainer Plan)</label>
+                    <select id="trainer-name" name="trainer-name" class="trainer-name" disabled>
+                        <option value="">- -</option>
+                        <option value="Lexus Guevara">Lexus Guevara</option>
+                        <option value="Prince Paquiado">Prince Paquiado</option>
+                        <option value="Nicole Frances Meneses">Nicole Frances Meneses</option>
+                    </select>
+                </div>
+                <div class="payment-trainer-schedule-content">
+                    <label for="trainer-schedule" class="trainer-schedule-title">Schedule (w/ Trainer Plan)</label>
+                    <input type="text" id="trainer-schedule" class="trainer-schedule" disabled>
+                </div>
+                <div class="payment-trainer-sessions-content">
+                    <label for="trainer-sessions" class="trainer-sessions-title">Sessions (w/ Trainer Plan)</label>
+                    <input type="number" id="trainer-sessions" class="trainer-sessions" disabled>
+                </div>
+            </div>
+        
+            <div class="payment-confirmation">
+                <div class="left-confirmation">
+                    <button type="button" id="start-new-plan" class="start-new-plan">Start New Plan</button>
+                </div>
+                <div class="right-confirmation">
+                    <button type="button" id="continue-payment" class="continue-payment" disabled>Continue</button>
+                    <button type="button" id="cancel-payment" class="cancel-payment">Clear</button>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    <div class="background" id="background"></div>
+    <div class="error-message-box" id="error-message-box">
+        <span class="error-title" id="error-title">Logout</span>
+        <p class="error-message-login" id="error-message-login">Test message.</p>
+        <div class="confirmation">
+            <button class="confirm" type="button" onclick="confirmErrorMessageBox()" id="confirm-error-message-box">Confirm</button>
+            <button class="closeLogout" type="button" onclick="closeErrorMessageBox()" id="close-error-message-box">Cancel</button>
+        </div>
+    </div>
+    <div class="payment-modal" id="payment-modal">
+        <div class="payment-modal-title">Payment</div>
+        <div class="payment-modal-content" id="payment-modal-content">
+           <!-- <p>Member ID:<br>Member Name<br>Member Name<br>Member Name<br>Member Name</p> -->
+        </div>
+        <div class="payment-modal-confirmation">
+            <button class="payment-confirm" id="payment-confirm">Confirm</button>
+            <button class="payment-cancel" id="payment-cancel">Back</button>
+        </div>
+    </div>
+</body>
+
+<script type="module" src="../javascript/payment.js"></script>
+</html>
