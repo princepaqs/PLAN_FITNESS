@@ -28,8 +28,10 @@ if (!emailInput) {
         document.getElementById('profile-fullname').innerHTML = userList.name;
         document.getElementById('profile-nickname').innerHTML = userList.nickname;
         document.getElementById('profile-contact').innerHTML = userList.contact;
+        document.getElementById('profile-icon-main').src = userList.image;
 
         document.getElementById('fullname').value = userList.name;
+        document.getElementById('profile-icon').src = userList.image;
         document.getElementById('nickname').value = userList.nickname;
         document.getElementById('contact').value = userList.contact;
     }

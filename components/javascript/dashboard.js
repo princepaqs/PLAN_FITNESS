@@ -26,6 +26,8 @@ if (!emailInput) {
         document.getElementById('name').innerHTML = userList.name;
         document.getElementById('email').innerHTML = userList.email;
         document.getElementById('username').innerHTML = firstName;
+        document.getElementById('profile-icon').src = userList.image;
+        document.getElementById('profile-icon-main').src = userList.image;
     }
 }
 
@@ -100,7 +102,7 @@ if(role === 'admin'){
     
             // Create the profile image element
             const trainerProfile = document.createElement('img');
-            trainerProfile.src = trainer.profile;
+            trainerProfile.src = trainer.image;
             trainerProfile.alt = trainer.name;
             trainerProfile.classList.add('trainer-profile');
     
@@ -314,12 +316,12 @@ if(role === 'admin'){
                 <div style="display: flex; justify-content: space-around; text-align: center;">
                     <div>
                         <p style="font-weight: normal; margin-bottom: 3%">Total Members last Month</p>
-                        <p style="font-weight: normal; color: red; font-style: italic; margin-bottom: 3%">(February)</p>
+                        <p style="font-weight: normal; color: red; font-style: italic; margin-bottom: 3%">(March)</p>
                         <p style=" font-size: 500%; font-weight: bold; margin-bottom: 3%">8</p>
                     </div>
                     <div>
                         <p style="font-weight: normal; margin-bottom: 3%">Total Members this Month</p>
-                        <p style="font-weight: normal; color: red; font-style: italic; margin-bottom: 3%">(March)</p>
+                        <p style="font-weight: normal; color: red; font-style: italic; margin-bottom: 3%">(April)</p>
                         <p style=" font-size: 500%; font-weight: bold; margin-bottom: 3%">18</p>
                     </div>
                 </div>
@@ -344,7 +346,7 @@ if(role === 'admin'){
     
             // Create the profile image element
             const trainerProfile = document.createElement('img');
-            trainerProfile.src = trainer.profile;
+            trainerProfile.src = trainer.image;
             trainerProfile.alt = trainer.name;
             trainerProfile.classList.add('trainer-profile');
     

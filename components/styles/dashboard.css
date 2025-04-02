@@ -360,7 +360,7 @@ button{
 }
 
 .trainer-title, .members-title {
-    font-size: 2vh;
+    font-size: 3vh;
     font-weight: bold;
 }
 
@@ -390,14 +390,19 @@ button{
 
 .active-members {
     width: 80%;
-    margin-top: 2%;
+    /* margin-top: 2%; */
     padding-left: 2%;
     position: relative;
     overflow-y: auto;
+    /* background-color: white; */
 }
 
 .table-header {
     padding-bottom: 2%;
+}
+
+.members-title{
+    padding: 2%;
 }
 
 .members-title, .members-search, .table-header {
@@ -408,6 +413,7 @@ button{
 
 .search-wrapper {
     position: relative;
+    margin-left: 2%;
 }
 
 .member-search {
@@ -435,8 +441,8 @@ table {
 }
 
 th {
-    background-color: white;
-    top: 15%;
+    background-color: rgb(255, 255, 255);
+    top: 30%;
     position: sticky;
 }
 
@@ -557,10 +563,6 @@ td {
 
     .report-title {
         font-size: 2vh;
-    }
-
-    .report-content {
-        /* flex-direction: column; */
     }
 
     .report-members-content, .report-sales-content {
@@ -696,10 +698,6 @@ td {
 
     .report-title {
         font-size: 1.8vh;
-    }
-
-    .report-content {
-        /* flex-direction: column; */
     }
 
     .report-members-content, .report-sales-content {

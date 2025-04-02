@@ -22,6 +22,7 @@ if (!emailInput) {
         // Update UI elements
         document.getElementById('name').innerHTML = userList.name;
         document.getElementById('email').innerHTML = userList.email;
+        document.getElementById('profile-icon').src = userList.image;
     }
 }
 

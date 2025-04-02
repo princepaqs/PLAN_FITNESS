@@ -1,8 +1,36 @@
 // trainers.js
 
-import { cashiers } from './data.js';
+import { admin, members, trainers, cashiers } from './data.js';
 
+const emailInput = localStorage.getItem("email");
 const role = localStorage.getItem('role');
+// console.log(role);
+// const background = document.getElementById("background");
+// const errorTitle = document.getElementById("error-title");
+// const errorMessageBox = document.getElementById("error-message-box");
+// const errorMessageLogin = document.getElementById("error-message-login");
+// const confirmErrorMessageBox = document.getElementById("confirm-error-message-box");
+// const closeErrorMessageBox = document.getElementById("close-error-message-box");
+
+if (!emailInput) {
+    alert("You are not logged in!");
+} else {
+    // Find user in both trainers and cashiers lists
+    const userList = [...admin, ...cashiers, ...trainers].find(user => user.email === emailInput);
+
+    if (!userList) {
+        alert("Invalid user!");
+    } else {
+        // Extract first name only
+        const firstName = userList.name.split(" ")[0];
+
+        // Update UI elements
+        document.getElementById('name').innerHTML = userList.name;
+        document.getElementById('email').innerHTML = userList.email;
+        // document.getElementById('username').innerHTML = firstName;
+        document.getElementById('profile-icon').src = userList.image;
+    }
+}
 const dateElement = document.getElementById('date');
 const timeElement = document.getElementById('time');
 

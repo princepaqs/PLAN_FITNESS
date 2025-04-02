@@ -10,7 +10,8 @@ const admin = [
         dayOff: 'wednesday',
         dateHired: '01/01/2025',
         status: 'active',
-        role: 'admin'
+        role: 'admin',
+        image: '../../assets/images/alvin.png'
     }
 ]
 
@@ -26,7 +27,8 @@ const cashiers = [
         dayOff: 'wednesday',
         dateHired: '01/01/2025',
         status: 'active',
-        role: 'cashier'
+        role: 'cashier',
+        image: '../../assets/images/prince.png'
     },
     {
         id: 'C002',
@@ -39,7 +41,8 @@ const cashiers = [
         dayOff: 'wednesday',
         dateHired: '01/01/2025',
         status: 'active',
-        role: 'cashier'
+        role: 'cashier',
+        image: '../../assets/images/prince.png'
     }
 ]
 
@@ -56,7 +59,8 @@ const trainers = [
         profile: '../../assets/images/Icon.png',
         address: '123 Main St, Quezon City, Philippines',
         dateHired: '01/01/2025',
-        role: 'trainer'
+        role: 'trainer',
+        image: '../../assets/images/prince.png'
     },
     {
         id: 'T002',
@@ -69,7 +73,8 @@ const trainers = [
         profile: '../../assets/images/Icon.png',
         address: '456 Elm St, Makati City, Philippines',
         dateHired: '01/01/2025',
-        role: 'trainer'
+        role: 'trainer',
+        image: '../../assets/images/lexus.png'
     },
     {
         id: 'T003',
@@ -82,7 +87,8 @@ const trainers = [
         profile: '../../assets/images/Icon.png',
         address: '789 Oak St, Pasig City, Philippines',
         dateHired: '01/01/2025',
-        role: 'trainer'
+        role: 'trainer',
+        image: '../../assets/images/nicole.png'
     }
 ];
 
